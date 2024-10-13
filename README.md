@@ -35,6 +35,8 @@ F3-App is your one-stop shop for kickstarting a modern web application with all 
 - [ ] docker deployment
 - [ ] supabase
 - [ ] CI/CD pipeline
+- [ ] extension app
+- [ ] expo app template
 
 ## 🤔 Why F3-App?
 

@@ -1,6 +1,8 @@
-# 🚀 F3-App: The Fantastic, Fast, and Fun Monorepo Template!
+# 🚀 F3-App
 
-Welcome to F3-App, where we've taken the "F" in Full-stack, Fun, and Fantastic and tripled it! 🎉
+**The Fantastic, Fast, and Fun Monorepo Template!**
+
+Welcome to F3-App, where we've taken the "F" in Full-stack and tripled it! 🎉
 
 ## 🌟 What's This All About?
 
@@ -30,6 +32,9 @@ F3-App is your one-stop shop for kickstarting a modern web application with all 
 - [x] Configure UnoCSS (🎨 Making your app pretty, one utility class at a time)
 - [x] Implement Fastify (🏃‍♂️ Gotta go fast!)
 - [ ] Add PostgreSQL (🐘 Because elephants never forget... your data)
+- [ ] docker deployment
+- [ ] supabase
+- [ ] CI/CD pipeline
 
 ## 🤔 Why F3-App?
 

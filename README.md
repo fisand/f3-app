@@ -1,10 +1,10 @@
-# f3-apps
+# f3-app
 
 fastify, fastify-trpc, prisma, unocss
 
 
 ## todo
-- [ ] replace nextjs with remix (or vite react)
+- [x] replace nextjs with remix (or vite react)
 - [ ] use vitest
 - [x] use trpc api
 - [x] use prisma

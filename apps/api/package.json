@@ -9,6 +9,7 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "dev": "tsx watch ./src/index.ts",
+    "postinstall": "prisma generate",
     "preview": "node ./dist/index.js",
     "prisma:generate": "prisma generate",
     "test": "echo \"Error: no test specified\" && exit 1"

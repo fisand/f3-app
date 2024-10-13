@@ -1,6 +1,8 @@
 import { initTRPC } from '@trpc/server'
 import { z } from 'zod'
 
+import { prisma } from '../utils/prisma'
+
 type User = {
   id: string
   name: string
@@ -11,6 +13,9 @@ export const t = initTRPC.create()
 export const appRouter = t.router({
   hello: t.procedure.query(() => {
     return 'Hello, world!'
+  }),
+  getUsers: t.procedure.query(async () => {
+    return await prisma.user.findMany()
   }),
   getUserById: t.procedure.input(z.string()).query((opts) => {
     return users[opts.input] // input type is string

@@ -9,6 +9,9 @@ type User = {
 const users: Record<string, User> = {}
 export const t = initTRPC.create()
 export const appRouter = t.router({
+  hello: t.procedure.query(() => {
+    return 'Hello, world!'
+  }),
   getUserById: t.procedure.input(z.string()).query((opts) => {
     return users[opts.input] // input type is string
   }),

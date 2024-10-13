@@ -7,10 +7,15 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
+    "build": "rimraf dist && tsc",
     "dev": "tsx watch ./src/index.ts",
+    "preview": "node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "fastify": "^5.0.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*"
   }
 }

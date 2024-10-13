@@ -4,6 +4,7 @@ import type {
 import {
   fastifyTRPCPlugin,
 } from '@trpc/server/adapters/fastify'
+import consola from 'consola'
 import fastify from 'fastify'
 
 import { createContext } from './context'
@@ -20,16 +21,17 @@ server.register(fastifyTRPCPlugin, {
     createContext,
     onError({ path, error }) {
       // report to error monitoring
-      console.error(`Error in tRPC handler on path '${path}':`, error)
+      consola.error(`Error in tRPC handler on path '${path}':`, error)
     },
   } satisfies FastifyTRPCPluginOptions<AppRouter>['trpcOptions'],
 });
 (async () => {
   try {
     await server.listen({ port: 3000 })
+    consola.success('Server is running on port http://localhost:3000')
   }
   catch (err) {
-    server.log.error(err)
-    process.exit(1)
+    consola.error(err)
+    throw err
   }
 })()

@@ -10,4 +10,5 @@ export default defineConfig({
     'react-hooks/exhaustive-deps': 'error',
     'react-refresh/only-export-components': 'off',
   },
+  ignores: ['**/*.d.ts'],
 })

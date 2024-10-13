@@ -1,4 +1,7 @@
-# app-monorepo-template
+# f3-apps
+
+fastify, fastify-trpc, prisma, unocss
+
 
 ## todo
 - [ ] replace nextjs with remix (or vite react)

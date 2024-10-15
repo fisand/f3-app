@@ -27,8 +27,8 @@ server.register(fastifyTRPCPlugin, {
 });
 (async () => {
   try {
-    await server.listen({ port: 3000 })
-    consola.success('Server is running on port http://localhost:3000')
+    await server.listen({ port: 8978 })
+    consola.success('Server is running on port http://localhost:8978')
   }
   catch (err) {
     consola.error(err)

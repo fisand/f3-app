@@ -1,12 +1,12 @@
 {
-  "name": "my-nextjs-app",
+  "name": "web-next",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
   },
   "dependencies": {
     "@unocss/reset": "^0.63.4",

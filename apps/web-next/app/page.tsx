@@ -16,6 +16,9 @@ export default function Home() {
         />
         <ol>
           <li>
+            Nextjs 🩷 unocss
+          </li>
+          <li>
             Get started by editing <code>app/page.tsx</code>.
           </li>
           <li>Save and see your changes instantly.</li>
@@ -23,7 +26,7 @@ export default function Home() {
 
         <div className={styles.ctas}>
           <a
-            className={styles.primary}
+            className={`${styles.primary} bg-primary text-primary-foreground hover:bg-primary/90`}
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"

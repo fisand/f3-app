@@ -5,7 +5,8 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": []
+      "outputs": [],
+      "cache": false
     },
     "lint": {
       "dependsOn": ["^lint"]

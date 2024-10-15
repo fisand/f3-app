@@ -25,7 +25,7 @@ F3-App is your one-stop shop for kickstarting a modern web application with all 
 
 ## 📋 Todo List (Because Even Awesome Projects Have Room for Improvement)
 
-- [x] Replace Next.js with Vite React (✨ Done! Who needs server-side rendering anyway?)
+- [x] ~~Replace Next.js with Vite React (✨ Done! Who needs server-side rendering anyway?)~~ sometimes we need ssr
 - [ ] Implement Vitest (Because testing is important, even if it's not as fun as coding)
 - [x] Integrate tRPC API (✅ Type-safety for the win!)
 - [x] Set up Prisma (💽 Database management has never been this cool)

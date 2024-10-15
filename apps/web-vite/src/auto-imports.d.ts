@@ -6,9 +6,8 @@
 // biome-ignore lint: disable
 export {}
 declare global {
-  const Button: typeof import('../../../packages/ui/components/ui/button')['Button']
-  const Input: typeof import('../../../packages/ui/components/ui/input')['Input']
-  const buttonVariants: typeof import('../../../packages/ui/components/ui/button')['buttonVariants']
+  const ShadcnButton: typeof import('@repo/ui/src/components/ui/button')['Button']
+  const ShadcnInput: typeof import('@repo/ui/src/components/ui/input')['Input']
   const createRef: typeof import('react')['createRef']
   const forwardRef: typeof import('react')['forwardRef']
   const lazy: typeof import('react')['lazy']

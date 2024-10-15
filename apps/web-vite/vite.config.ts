@@ -45,8 +45,19 @@ export default defineConfig({
         IconsResolver({
           componentPrefix: 'Icon',
         }),
+        {
+          type: 'component',
+          resolve: (name: string) => {
+            if (name.startsWith('Shadcn')) {
+              const partialName = name.slice(6)
+              return {
+                name: partialName,
+                from: `@repo/ui/src/components/ui/${partialName.toLowerCase()}`,
+              }
+            }
+          },
+        },
       ],
-      dirs: ['./src/components/ui'],
     }),
     EslintPlugin(),
   ],

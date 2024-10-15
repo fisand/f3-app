@@ -1,5 +1,3 @@
-import { Button } from '@repo/ui/components/ui/button'
-import { Input } from '@repo/ui/components/ui/input'
 import { AnimatePresence, motion } from 'framer-motion'
 import { toast } from 'sonner'
 
@@ -60,9 +58,9 @@ function HomePage() {
                 }}
                 className="flex-center justify-between"
               >
-                <Button className="relative w-30">
+                <ShadcnButton className="relative w-30">
                   {user.name}
-                </Button>
+                </ShadcnButton>
 
                 <button
                   type="button"
@@ -96,7 +94,7 @@ function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center gap-2"
         >
-          <Input
+          <ShadcnInput
             type="text"
             maxLength={5}
             value={name}
@@ -106,7 +104,7 @@ function HomePage() {
             placeholder="Name"
             className="w-40"
           />
-          <Button
+          <ShadcnButton
             onClick={async () => {
               if (!name) {
                 toast.error('Name is required')
@@ -129,7 +127,7 @@ function HomePage() {
                 <span className="i-lucide:plus mr-1 h-4 w-4 text-primary-foreground" />
               )} */}
             New
-          </Button>
+          </ShadcnButton>
         </motion.div>
       </div>
 

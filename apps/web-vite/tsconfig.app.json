@@ -23,5 +23,5 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["src", "../../packages/ui/components", "../../packages/ui/lib"]
+  "include": ["src"]
 }

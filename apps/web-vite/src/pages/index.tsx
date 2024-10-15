@@ -1,3 +1,5 @@
+import { Button } from '@repo/ui/components/ui/button'
+import { Input } from '@repo/ui/components/ui/input'
 import { AnimatePresence, motion } from 'framer-motion'
 import { toast } from 'sonner'
 
@@ -87,49 +89,48 @@ function HomePage() {
             ))}
           </AnimatePresence>
         </div>
-        {!userList.isPending && (
-          <motion.div
-            layout
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2"
-          >
-            <Input
-              type="text"
-              maxLength={5}
-              value={name}
-              onInput={(e) => {
-                setName((e.target as HTMLInputElement).value)
-              }}
-              placeholder="Name"
-              className="w-40"
-            />
-            <Button
-              onClick={async () => {
-                if (!name) {
-                  toast.error('Name is required')
-                  return
-                }
-                if (userList.data && userList.data?.length >= 6) {
-                  toast.error('You have reached the maximum number of users')
-                  return
-                }
 
-                // await createUser.mutateAsync({ name })
-                setName('')
-                await userList.refetch()
-              }}
-              disabled={false}
-            >
-              {/* {createUser.isPending ? (
+        <motion.div
+          layout
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex items-center gap-2"
+        >
+          <Input
+            type="text"
+            maxLength={5}
+            value={name}
+            onInput={(e) => {
+              setName((e.target as HTMLInputElement).value)
+            }}
+            placeholder="Name"
+            className="w-40"
+          />
+          <Button
+            onClick={async () => {
+              if (!name) {
+                toast.error('Name is required')
+                return
+              }
+              if (userList.data && userList.data?.length >= 6) {
+                toast.error('You have reached the maximum number of users')
+                return
+              }
+
+              // await createUser.mutateAsync({ name })
+              setName('')
+              await userList.refetch()
+            }}
+            disabled={false}
+          >
+            {/* {createUser.isPending ? (
                 <span className="i-lucide:loader-circle mr-1 h-4 w-4 animate-spin" />
               ) : (
                 <span className="i-lucide:plus mr-1 h-4 w-4 text-primary-foreground" />
               )} */}
-              New
-            </Button>
-          </motion.div>
-        )}
+            New
+          </Button>
+        </motion.div>
       </div>
 
       <motion.div

@@ -6,9 +6,9 @@
 // biome-ignore lint: disable
 export {}
 declare global {
-  const Button: typeof import('./components/ui/button')['Button']
-  const Input: typeof import('./components/ui/input')['Input']
-  const buttonVariants: typeof import('./components/ui/button')['buttonVariants']
+  const Button: typeof import('../../../packages/ui/components/ui/button')['Button']
+  const Input: typeof import('../../../packages/ui/components/ui/input')['Input']
+  const buttonVariants: typeof import('../../../packages/ui/components/ui/button')['buttonVariants']
   const createRef: typeof import('react')['createRef']
   const forwardRef: typeof import('react')['forwardRef']
   const lazy: typeof import('react')['lazy']

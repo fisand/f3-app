@@ -37,6 +37,7 @@ export default defineConfig({
     UnoCSS({
       configFile: '../../uno.config.ts',
     }),
+    // todo monorepo
     AutoImport({
       imports: ['react'],
       dts: './src/auto-imports.d.ts',
@@ -52,7 +53,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000/trpc',
+        target: 'http://localhost:8978/trpc',
         rewrite: path => path.replace(/^\/api/, ''),
         changeOrigin: true,
       },

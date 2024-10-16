@@ -17,7 +17,8 @@
   "dependencies": {
     "@prisma/client": "5.20.0",
     "fastify": "^5.0.0",
-    "prisma": "^5.20.0"
+    "prisma": "^5.20.0",
+    "zod-prisma": "^0.5.4"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*"

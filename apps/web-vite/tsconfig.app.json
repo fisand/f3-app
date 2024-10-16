@@ -11,7 +11,8 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@ui-internal/*": ["../../packages/ui/src/*"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,

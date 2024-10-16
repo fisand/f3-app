@@ -58,9 +58,9 @@ function HomePage() {
                 }}
                 className="flex-center justify-between"
               >
-                <ShadcnButton className="relative w-30">
+                <Button className="relative w-30">
                   {user.name}
-                </ShadcnButton>
+                </Button>
 
                 <button
                   type="button"
@@ -94,7 +94,7 @@ function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center gap-2"
         >
-          <ShadcnInput
+          <Input
             type="text"
             maxLength={5}
             value={name}
@@ -104,7 +104,7 @@ function HomePage() {
             placeholder="Name"
             className="w-40"
           />
-          <ShadcnButton
+          <Button
             onClick={async () => {
               if (!name) {
                 toast.error('Name is required')
@@ -127,7 +127,7 @@ function HomePage() {
                 <span className="i-lucide:plus mr-1 h-4 w-4 text-primary-foreground" />
               )} */}
             New
-          </ShadcnButton>
+          </Button>
         </motion.div>
       </div>
 

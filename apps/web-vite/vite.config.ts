@@ -1,4 +1,5 @@
-import { resolve } from 'node:path'
+import fs from 'node:fs'
+import path, { resolve } from 'node:path'
 
 import EslintPlugin from '@nabla/vite-plugin-eslint'
 import react from '@vitejs/plugin-react'
@@ -16,6 +17,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@/': `${resolve(import.meta.dirname, 'src')}/`,
+      '@ui-internal/': `${resolve(import.meta.dirname, '../../packages/ui/src')}/`,
     },
   },
   plugins: [
@@ -48,11 +50,21 @@ export default defineConfig({
         {
           type: 'component',
           resolve: (name: string) => {
-            if (name.startsWith('Shadcn')) {
-              const partialName = name.slice(6)
-              return {
-                name: partialName,
-                from: `@repo/ui/src/components/ui/${partialName.toLowerCase()}`,
+            const uiComponentsPath = path.resolve(import.meta.dirname, '../../packages/ui/src/components/ui')
+            const components = fs.readdirSync(uiComponentsPath).map((component) => {
+              return component
+                .replace(/\.tsx$/, '') // 去掉 .tsx 后缀
+                .split('-')
+                .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+                .join('')
+            })
+
+            for (const component of components) {
+              if (name === component || name.startsWith(component)) {
+                return {
+                  name,
+                  from: `@repo/ui/src/components/ui/${component.toLowerCase()}`,
+                }
               }
             }
           },

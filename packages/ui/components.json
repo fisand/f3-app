@@ -11,7 +11,7 @@
   "rsc": false,
   "aliases": {
     "components": "@/components",
-    "utils": "@/ui-internal/lib/utils",
+    "utils": "@ui-internal/lib/utils",
     "ui": "@/components/ui",
     "lib": "@/lib",
     "hooks": "@/hooks"

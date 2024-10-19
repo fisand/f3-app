@@ -33,9 +33,10 @@ SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
   const colorScheme = useColorScheme()
-  const [loaded] = useFonts({
+  const [loaded, error] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   })
+  console.log('RootLayout')
 
   useEffect(() => {
     if (loaded) {
@@ -44,6 +45,7 @@ export default function RootLayout() {
   }, [loaded])
 
   if (!loaded) {
+    console.log('RootLayout not loaded', error)
     return null
   }
 

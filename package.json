@@ -8,6 +8,7 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "dev:expo": "pnpm --filter expo-app ios",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo lint"
   },
@@ -15,10 +16,14 @@
     "@trpc/client": "11.0.0-rc.571",
     "@trpc/react-query": "11.0.0-rc.571",
     "@trpc/server": "11.0.0-rc.571",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
+    "@types/react": "~18.2.0",
+    "@types/react-dom": "~18.2.0",
     "consola": "^3.2.3",
     "eslint": "^9.8.0",
     "eslint-config-hyoban": "^3.1.0",

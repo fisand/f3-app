@@ -10,14 +10,10 @@
   },
   "dependencies": {
     "@unocss/reset": "^0.63.4",
-    "next": "14.2.15",
-    "react": "^18",
-    "react-dom": "^18"
+    "next": "14.2.15"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
     "@unocss/postcss": "^0.63.4",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",

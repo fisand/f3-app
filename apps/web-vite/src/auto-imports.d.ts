@@ -8,8 +8,10 @@ export {}
 declare global {
   const Button: typeof import('@repo/ui/src/components/ui/button')['Button']
   const Input: typeof import('@repo/ui/src/components/ui/input')['Input']
+  const RainbowButton: typeof import('@repo/ui/src/components/ui/rainbow-button')['RainbowButton']
   const ShadcnButton: typeof import('@repo/ui/src/components/ui/button')['Button']
   const ShadcnInput: typeof import('@repo/ui/src/components/ui/input')['Input']
+  const ShimmerButton: typeof import('@repo/ui/src/components/ui/shimmer-button')['ShimmerButton']
   const createRef: typeof import('react')['createRef']
   const forwardRef: typeof import('react')['forwardRef']
   const lazy: typeof import('react')['lazy']

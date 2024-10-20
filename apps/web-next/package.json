@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@repo/ui": "workspace:*",
     "@unocss/reset": "^0.63.4",
     "next": "14.2.15"
   },

@@ -51,9 +51,9 @@ export default defineConfig({
           type: 'component',
           resolve: (name: string) => {
             const uiComponentsPath = path.resolve(import.meta.dirname, '../../packages/ui/src/components/ui')
-            const components = fs.readdirSync(uiComponentsPath).map((component) => {
+            const names = fs.readdirSync(uiComponentsPath).map(file => file.replace(/\.tsx$/, ''))
+            const components = names.map((component) => {
               return component
-                .replace(/\.tsx$/, '') // 去掉 .tsx 后缀
                 .split('-')
                 .map(part => part.charAt(0).toUpperCase() + part.slice(1))
                 .join('')
@@ -63,7 +63,7 @@ export default defineConfig({
               if (name === component || name.startsWith(component)) {
                 return {
                   name,
-                  from: `@repo/ui/src/components/ui/${component.toLowerCase()}`,
+                  from: `@repo/ui/src/components/ui/${names[components.indexOf(component)].toLowerCase().toLowerCase()}`,
                 }
               }
             }

@@ -37,6 +37,13 @@ function HomePage() {
       </motion.div>
       <div className="mx-auto w-100 flex-1 lt-sm:(w-full px-4)">
         <div className="flex flex-col gap-3 pb-5 pt-10">
+          <div className="z-10 min-h-64 flex items-center justify-center">
+            <ShimmerButton className="shadow-2xl">
+              <span className="whitespace-pre-wrap text-center text-sm text-white font-medium leading-none tracking-tight dark:from-white dark:to-slate-900/10 lg:text-lg">
+                f3-appppp?+
+              </span>
+            </ShimmerButton>
+          </div>
           <AnimatePresence>
             {userList.data?.map((user, index) => (
               <motion.span

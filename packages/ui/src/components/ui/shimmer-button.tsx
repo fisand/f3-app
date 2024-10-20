@@ -29,6 +29,7 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
   ) => {
     return (
       <button
+        type="button"
         style={
           {
             '--spread': '90deg',

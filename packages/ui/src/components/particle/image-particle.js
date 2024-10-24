@@ -841,27 +841,27 @@ export function inspiraImageParticles() {
     }
 
     _parseColor(strParam) {
-      let color
-      if (typeof strParam !== 'string') {
-        return
+      let color;
+      if (typeof strParam !== "string") {
+        return undefined;
       }
-      const str = strParam.replace(' ', '')
+      const str = strParam.replace(" ", "");
 
-      if ((color = /^#([\da-f]{2})([\da-f]{2})([\da-f]{2})/i.exec(str))) {
-        color = [Number.parseInt(color[1], 16), Number.parseInt(color[2], 16), Number.parseInt(color[3], 16)]
-      }
-      else if ((color = /^#([\da-f])([\da-f])([\da-f])/i.exec(str))) {
-        color = [Number.parseInt(color[1], 16) * 17, Number.parseInt(color[2], 16) * 17, Number.parseInt(color[3], 16) * 17]
-      }
-      else if ((color = /^rgba\((\d+),(\d+),(\d+),(\d+|\d?[^\d\n\r\u2028\u2029]\d+|\d{2,}(?:[^\d\n\r\u2028\u2029]\d+)?)\)/.exec(str))) {
-        color = [+color[1], +color[2], +color[3], +color[4]]
-      }
-      else if (!(color = /^rgb\((\d+),(\d+),(\d+)\)/.exec(str))) {
-        return
-      }
-      color = [+color[1], +color[2], +color[3]]
+      if ((color = /^#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})/.exec(str))) {
+        color = [parseInt(color[1], 16), parseInt(color[2], 16), parseInt(color[3], 16)];
+      } else if ((color = /^#([\da-fA-F])([\da-fA-F])([\da-fA-F])/.exec(str))) {
+        color = [
+          parseInt(color[1], 16) * 17,
+          parseInt(color[2], 16) * 17,
+          parseInt(color[3], 16) * 17,
+        ];
+      } else if ((color = /^rgba\(([\d]+),([\d]+),([\d]+),([\d]+|[\d]*.[\d]+)\)/.exec(str))) {
+        color = [+color[1], +color[2], +color[3], +color[4]];
+      } else if ((color = /^rgb\(([\d]+),([\d]+),([\d]+)\)/.exec(str))) {
+        color = [+color[1], +color[2], +color[3]];
+      } else return undefined;
 
-      return color
+      return color;
     }
   }
 

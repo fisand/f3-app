@@ -1,5 +1,4 @@
 import './globals.css'
-import '@unocss/reset/tailwind.css'
 
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'

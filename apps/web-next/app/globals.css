@@ -3,6 +3,7 @@
   --foreground: #171717;
 }
 
+@import '@unocss/reset/tailwind.css';
 @unocss all;
 
 @media (prefers-color-scheme: dark) {

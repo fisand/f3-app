@@ -1,4 +1,3 @@
-import { Particle } from '@repo/ui/src/components/particle'
 import Image from 'next/image'
 
 import styles from './page.module.css'
@@ -7,10 +6,15 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <div>
-          <Particle src="https://nextjs.org/icons/next.svg" responsiveWidth color="#3b82f6" />
-        </div>
-        <ol className="flex-col-center">
+        <Image
+          className={styles.logo}
+          src="https://nextjs.org/icons/next.svg"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
+        />
+        <ol>
           <li>
             Nextjs 🩷 unocss
           </li>

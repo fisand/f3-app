@@ -1,11 +1,8 @@
-'use client'
-import { cn } from '@ui-internal/lib/utils'
-import { useEffect, useRef } from 'react'
+import { cn } from '@/lib/utils'
 
-import type { InspiraImageParticle as ImageParticle } from './image-particle'
-import { inspiraImageParticles } from './image-particle'
+import { type InspiraImageParticle as ImageParticle, inspiraImageParticles } from './image-particle'
 
-export function Particle(props: {
+export const Particle = (props: {
   src: string
   className?: string
   canvasWidth?: string
@@ -23,13 +20,12 @@ export function Particle(props: {
   fadeDirection?: 'random' | 'top' | 'left' | 'bottom' | 'right' | 'none'
   noise?: number
   responsiveWidth?: boolean
-}) {
+}) => {
   const particles = useRef<ImageParticle>()
   const imageRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
-    if (!imageRef.current)
-      return
+    if (!imageRef.current) return
 
     const { InspiraImageParticle } = inspiraImageParticles()
     particles.current = new InspiraImageParticle(imageRef.current)

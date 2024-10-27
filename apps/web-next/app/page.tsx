@@ -1,3 +1,4 @@
+import { ShimmerButton } from '@repo/ui/src/components/ui/shimmer-button'
 import Image from 'next/image'
 
 import styles from './page.module.css'
@@ -25,12 +26,7 @@ export default function Home() {
         </ol>
 
         <div className={styles.ctas}>
-          <a
-            className={`${styles.primary} bg-primary text-primary-foreground hover:bg-primary/90`}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <ShimmerButton className="">
             <Image
               className={styles.logo}
               src="https://nextjs.org/icons/vercel.svg"
@@ -39,12 +35,12 @@ export default function Home() {
               height={20}
             />
             Deploy now
-          </a>
+          </ShimmerButton>
           <a
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.secondary}
+            className={`${styles.secondary} !h-50px`}
           >
             Read our docs
           </a>

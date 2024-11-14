@@ -1,13 +1,13 @@
 import 'react-native-reanimated'
 import '../global.css'
 
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import { QueryClient } from '@tanstack/react-query'
-import { httpBatchLink } from '@trpc/client'
+import { httpBatchLink } from '@trpc/react-query'
 import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
+import { StatusBar } from 'expo-status-bar'
 import { useEffect } from 'react'
 
 import { useColorScheme } from '@/hooks/useColorScheme'
@@ -20,8 +20,8 @@ const trpcClient = trpc.createClient({
   links: [
     httpBatchLink({
       url: 'your api url',
-      async headers() {
-        const token = await AsyncStorage.getItem('your token')
+      headers() {
+        const token = ''
         return token ? { Authorization: `Bearer ${token}` } : {}
       },
     }),
@@ -33,10 +33,9 @@ SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
   const colorScheme = useColorScheme()
-  const [loaded, error] = useFonts({
+  const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   })
-  console.log('RootLayout')
 
   useEffect(() => {
     if (loaded) {
@@ -45,7 +44,6 @@ export default function RootLayout() {
   }, [loaded])
 
   if (!loaded) {
-    console.log('RootLayout not loaded', error)
     return null
   }
 
@@ -56,6 +54,7 @@ export default function RootLayout() {
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
         </Stack>
+        <StatusBar style="auto" />
       </ThemeProvider>
     </trpc.Provider>
   )

@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils'
 
-import { type InspiraImageParticle as ImageParticle, inspiraImageParticles } from './image-particle'
+import type { InspiraImageParticle as ImageParticle } from './image-particle'
+import { inspiraImageParticles } from './image-particle'
 
-export const Particle = (props: {
+export function Particle(props: {
   src: string
   className?: string
   canvasWidth?: string
@@ -20,12 +21,13 @@ export const Particle = (props: {
   fadeDirection?: 'random' | 'top' | 'left' | 'bottom' | 'right' | 'none'
   noise?: number
   responsiveWidth?: boolean
-}) => {
+}) {
   const particles = useRef<ImageParticle>()
   const imageRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
-    if (!imageRef.current) return
+    if (!imageRef.current)
+      return
 
     const { InspiraImageParticle } = inspiraImageParticles()
     particles.current = new InspiraImageParticle(imageRef.current)

@@ -1,6 +1,7 @@
-import * as z from "zod"
-import * as imports from "../../prisma/null"
-import { CompleteUser, RelatedUserModel } from "./index"
+import * as z from 'zod'
+
+import type { CompleteUser } from './index'
+import { RelatedUserModel } from './index'
 
 export const PostModel = z.object({
   id: z.number().int(),

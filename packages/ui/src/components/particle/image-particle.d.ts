@@ -50,8 +50,8 @@ interface InspiraImageParticleOptions {
  * Interface for event handling methods.
  */
 export interface EventHandlers {
-  on(event: string, callback: (params?: any) => void): void
-  emit(event: string, params?: any): void
+  on: (event: string, callback: (params?: any) => void) => void
+  emit: (event: string, params?: any) => void
 }
 
 /**
@@ -62,10 +62,10 @@ export declare class InspiraImageParticle implements EventHandlers {
 
   // Public Properties
   state: string
-  touches: Array<{ x: number; y: number; z: number; force: number }>
+  touches: Array<{ x: number, y: number, z: number, force: number }>
   colorArr: number[]
   vertices: Float32Array | false
-  events: { [key: string]: Function[] }
+  events: Record<string, Function[]>
   canvas?: HTMLCanvasElement
   context?: CanvasRenderingContext2D | WebGLRenderingContext
   particles: any[]

@@ -1,4 +1,3 @@
-import consola from 'consola'
 import { Image, Platform, StyleSheet } from 'react-native'
 
 import { HelloWave } from '@/components/HelloWave'
@@ -8,9 +7,9 @@ import { ThemedView } from '@/components/ThemedView'
 import { trpc } from '@/trpc'
 
 export default function HomeScreen() {
-  const { data: users } = trpc.getUsers.useQuery()
+  const { data: users, isFetching } = trpc.getUsers.useQuery()
 
-  consola.info(users)
+  console.info(users, isFetching)
 
   return (
     <ParallaxScrollView
@@ -23,7 +22,9 @@ export default function HomeScreen() {
       )}
     >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title" className="!text-[#00ff88]">
+          Welcome!
+        </ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
@@ -37,7 +38,11 @@ export default function HomeScreen() {
           Press
           {' '}
           <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
+            {Platform.select({
+              ios: 'cmd + d',
+              android: 'cmd + m',
+              web: 'F12',
+            })}
           </ThemedText>
           {' '}
           to open developer tools.

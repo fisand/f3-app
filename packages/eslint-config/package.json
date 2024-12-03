@@ -8,7 +8,9 @@
   "keywords": [],
   "exports": {
     "./web": "./web.mjs",
-    "./node": "./node.mjs"
+    "./node": "./node.mjs",
+    "./expo": "./expo.mjs",
+    "./next": "./next.mjs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

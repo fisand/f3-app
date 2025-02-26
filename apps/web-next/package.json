@@ -16,13 +16,13 @@
     "@repo/ui": "workspace:*",
     "@unocss/reset": "^0.63.4",
     "eslint-config": "workspace:*",
-    "next": "15.0.1"
+    "next": "15.1.7"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@unocss/postcss": "^0.63.4",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.15",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.7",
     "typescript": "^5",
     "unocss": "^0.63.4"
   }

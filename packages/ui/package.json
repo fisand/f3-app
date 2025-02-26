@@ -10,8 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.2",

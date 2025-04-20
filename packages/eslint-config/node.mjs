@@ -6,5 +6,6 @@ export default defineConfig({
   strict: true,
   tailwindCSS: false,
   unocss: true,
-  ignores: ['**/*.d.ts'],
+  ignores: ['**/*.d.ts', '**/zod/**/*.ts'],
+  ignoreFiles: ['**/*.d.ts', 'src/zod/**/*.ts'],
 })

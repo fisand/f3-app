@@ -6,6 +6,5 @@ export default defineConfig({
   strict: true,
   tailwindCSS: false,
   unocss: true,
-}, {
   ignores: ['**/*.d.ts'],
 })

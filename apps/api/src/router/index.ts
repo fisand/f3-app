@@ -1,6 +1,6 @@
 import { initTRPC } from '@trpc/server'
 import { prisma } from 'db'
-import { z } from 'zod'
+import * as v from 'valibot'
 
 type User = {
   id: string
@@ -16,16 +16,14 @@ export const appRouter = t.router({
   getUsers: t.procedure.query(async () => {
     return await prisma.user.findMany()
   }),
-  getUserById: t.procedure.input(z.string()).query((opts) => {
+  getUserById: t.procedure.input(input => v.parse(v.string(), input)).query((opts) => {
     return users[opts.input] // input type is string
   }),
   createUser: t.procedure
-    .input(
-      z.object({
-        name: z.string().min(3),
-        bio: z.string().max(142).optional(),
-      }),
-    )
+    .input(input => v.parse(v.object({
+      name: v.pipe(v.string(), v.minLength(3)),
+      bio: v.pipe(v.string(), v.maxLength(142)),
+    }), input))
     .mutation((opts) => {
       const id = Date.now().toString()
       const user: User = { id, ...opts.input }

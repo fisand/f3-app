@@ -8,17 +8,13 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "dev": "tsx watch ./src/index.ts",
-    "postinstall": "prisma generate",
     "preview": "node ./dist/index.js",
-    "prisma:generate": "prisma generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@prisma/client": "5.20.0",
+    "db": "workspace:*",
     "eslint-config": "workspace:*",
-    "fastify": "^5.0.0",
-    "prisma": "^5.20.0",
-    "zod-prisma": "^0.5.4"
+    "fastify": "^5.0.0"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*"

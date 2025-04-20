@@ -1,7 +1,6 @@
 import { initTRPC } from '@trpc/server'
+import { prisma } from 'db'
 import { z } from 'zod'
-
-import { prisma } from '../utils/prisma'
 
 type User = {
   id: string

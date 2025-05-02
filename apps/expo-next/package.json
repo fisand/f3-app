@@ -12,14 +12,13 @@
     "test": "jest --watchAll",
     "web": "expo start --web"
   },
-  "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
-  },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/bottom-tabs": "^7.0.0",
     "@react-navigation/native": "^7.0.0",
+    "@trpc/client": "catalog:trpc",
+    "@trpc/react-query": "catalog:trpc",
+    "@trpc/server": "catalog:trpc",
     "eslint-config": "workspace:*",
     "expo": "~52.0.6",
     "expo-blur": "~14.0.1",
@@ -34,6 +33,8 @@
     "expo-system-ui": "~4.0.2",
     "expo-web-browser": "~14.0.1",
     "nativewind": "^4.1.23",
+    "react": "catalog:react18",
+    "react-dom": "catalog:react18",
     "react-native": "0.76.1",
     "react-native-gesture-handler": "~2.20.2",
     "react-native-reanimated": "~3.16.1",

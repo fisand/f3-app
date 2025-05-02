@@ -5,11 +5,14 @@ import {
   fastifyTRPCPlugin,
 } from '@trpc/server/adapters/fastify'
 import consola from 'consola'
+import * as dotenv from 'dotenv'
 import fastify from 'fastify'
 
 import { createContext } from './context'
 import type { AppRouter } from './router'
 import { appRouter } from './router'
+
+dotenv.config()
 
 const server = fastify({
   maxParamLength: 5000,

@@ -14,6 +14,7 @@
   "dependencies": {
     "@typeschema/valibot": "^0.14.0",
     "db": "workspace:*",
+    "dotenv": "^16.5.0",
     "eslint-config": "workspace:*",
     "fastify": "^5.0.0"
   },

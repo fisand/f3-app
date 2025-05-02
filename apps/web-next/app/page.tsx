@@ -1,5 +1,4 @@
 import { ShimmerButton } from '@repo/ui/src/components/ui/shimmer-button'
-import Image from 'next/image'
 
 import styles from './page.module.css'
 
@@ -7,14 +6,6 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
         <ol>
           <li>
             Nextjs 🩷 unocss
@@ -27,13 +18,6 @@ export default function Home() {
 
         <div className={styles.ctas}>
           <ShimmerButton className="">
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
             Deploy now
           </ShimmerButton>
           <a
@@ -53,13 +37,7 @@ export default function Home() {
           rel="noopener noreferrer"
           className="text-green-500 font-500"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
+          <span className="i-lucide:file-text h-4 w-4 inline-flex" />
           Learn
         </a>
         <a
@@ -68,13 +46,7 @@ export default function Home() {
           rel="noopener noreferrer"
           className="text-blue-500 font-500"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
+          <span className="i-lucide:biceps-flexed h-4 w-4 inline-flex" />
           Examples
         </a>
         <a
@@ -83,13 +55,7 @@ export default function Home() {
           rel="noopener noreferrer"
           className="text-red-500 font-500"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
+          <span className="i-lucide:square-arrow-out-up-right h-4 w-4 inline-flex" />
           Go to nextjs.org →
         </a>
       </footer>

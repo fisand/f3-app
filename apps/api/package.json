@@ -12,11 +12,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@typeschema/valibot": "^0.14.0",
+    "@typeschema/valibot": "catalog:",
     "db": "workspace:*",
-    "dotenv": "^16.5.0",
+    "dotenv": "catalog:",
     "eslint-config": "workspace:*",
-    "fastify": "^5.0.0"
+    "fastify": "catalog:"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*"

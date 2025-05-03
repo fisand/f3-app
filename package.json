@@ -13,22 +13,22 @@
     "lint": "turbo lint"
   },
   "dependencies": {
-    "valibot": "^1.0.0"
+    "valibot": "catalog:"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
     "@types/react": "~18.3.1",
-    "@types/react-dom": "~18.3.1",
-    "consola": "^3.2.3",
+    "@types/react-dom": "catalog:",
+    "consola": "catalog:",
     "eslint": "^9.25.0",
-    "eslint-config-hyoban": "^4.0.3",
-    "prettier": "^3.2.5",
-    "rimraf": "^6.0.1",
-    "tsx": "^4.19.4",
-    "turbo": "^2.5.0",
+    "eslint-config-hyoban": "catalog:",
+    "prettier": "catalog:",
+    "rimraf": "catalog:",
+    "tsx": "catalog:",
+    "turbo": "catalog:",
     "typescript": "^5.4.5",
-    "unocss": "66.1.0-beta.2",
-    "unocss-preset-animations": "^1.1.1",
-    "unocss-preset-shadcn": "^0.3.2"
+    "unocss": "catalog:",
+    "unocss-preset-animations": "catalog:",
+    "unocss-preset-shadcn": "catalog:"
   }
 }

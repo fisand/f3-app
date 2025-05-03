@@ -24,8 +24,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@ts-bridge/cli": "^0.6.1",
+    "@ts-bridge/cli": "catalog:",
     "typescript": "^5.7.2",
-    "vitest": "^2.1.8"
+    "vitest": "catalog:"
   }
 }

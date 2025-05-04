@@ -89,7 +89,7 @@ catalog:
   tailwindcss: ^3.4.14
   tsx: ^4.19.4
   turbo: ^2.5.0
-  unocss: 66.1.0-beta.2
+  unocss: ^66.1.0
   unocss-preset-animations: ^1.1.1
   unocss-preset-shadcn: ^0.3.2
   unplugin-auto-import: ^19.1.0

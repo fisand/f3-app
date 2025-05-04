@@ -10,9 +10,11 @@
     "dev": "turbo dev",
     "dev:expo": "pnpm --filter expo-next ios",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo lint"
+    "lint": "turbo lint",
+    "nip": "nip"
   },
   "dependencies": {
+    "@antfu/nip": "^0.1.0",
     "valibot": "catalog:"
   },
   "devDependencies": {

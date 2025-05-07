@@ -1,3 +1,4 @@
+import '@unocss/reset/tailwind.css'
 import './globals.css'
 
 import type { Metadata } from 'next'

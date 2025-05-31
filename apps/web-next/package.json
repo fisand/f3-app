@@ -14,7 +14,7 @@
     "@repo/ui": "workspace:*",
     "@unocss/reset": "catalog:",
     "eslint-config": "workspace:*",
-    "next": "catalog:",
+    "next": "^15.3.3",
     "react": "catalog:react19",
     "react-dom": "catalog:react19"
   },

@@ -1,9 +1,26 @@
 {
   "name": "db",
   "version": "1.0.0",
+  "packageManager": "pnpm@10.5.2",
   "description": "",
-  "main": "src/index.ts",
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "scripts": {
+    "build": "tsdown",
     "clean": "rm -rf dist",
     "db:deploy": "prisma migrate deploy",
     "db:dev": "prisma migrate dev",
@@ -12,17 +29,13 @@
     "format": "prisma format",
     "generate": "prisma generate",
     "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0",
-    "studio": "prisma studio",
-    "postinstall": "pnpm run generate"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.5.2",
-  "devDependencies": {
-    "prisma": "catalog:"
+    "postinstall": "pnpm run generate",
+    "studio": "prisma studio"
   },
   "dependencies": {
     "@prisma/client": "catalog:"
+  },
+  "devDependencies": {
+    "prisma": "catalog:"
   }
 }

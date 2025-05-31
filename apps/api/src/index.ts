@@ -16,7 +16,9 @@ dotenv.config()
 
 const server = fastify({
   maxParamLength: 5000,
+  logger: true,
 })
+
 server.register(fastifyTRPCPlugin, {
   prefix: '/trpc',
   trpcOptions: {

@@ -4,7 +4,6 @@
   "description": "",
   "author": "",
   "license": "ISC",
-  "keywords": [],
   "exports": {
     ".": {
       "import": {
@@ -20,11 +19,10 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "scripts": {
-    "build": "ts-bridge build --project ./tsconfig.json --clean",
+    "build": "tsdown",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@ts-bridge/cli": "catalog:",
     "typescript": "^5.7.2",
     "vitest": "catalog:"
   }

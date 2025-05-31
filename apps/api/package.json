@@ -6,9 +6,9 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "build": "tsdown",
     "dev": "tsx watch ./src/index.ts",
-    "preview": "node ./dist/index.js",
+    "preview": "node ./dist/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

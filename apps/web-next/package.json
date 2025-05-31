@@ -19,7 +19,7 @@
     "react-dom": "catalog:react19"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^22.15.29",
     "@unocss/postcss": "catalog:",
     "eslint": "^9",
     "eslint-config-next": "catalog:",

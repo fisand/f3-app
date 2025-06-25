@@ -1,7 +1,6 @@
 import fs from 'node:fs'
 import path, { resolve } from 'node:path'
 
-import EslintPlugin from '@nabla/vite-plugin-eslint'
 import react from '@vitejs/plugin-react'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -71,7 +70,6 @@ export default defineConfig({
         },
       ],
     }),
-    EslintPlugin(),
   ],
   server: {
     proxy: {

@@ -1,5 +1,6 @@
 {
   "name": "db",
+  "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@10.5.2",
   "description": "",
@@ -26,6 +27,7 @@
     "db:dev": "prisma migrate dev",
     "db:dev:create": "prisma migrate dev --create-only",
     "db:push": "prisma db push",
+    "dev": "tsdown --w",
     "format": "prisma format",
     "generate": "prisma generate",
     "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0",

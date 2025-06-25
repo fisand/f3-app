@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@antfu/nip": "^0.1.0",
-    "tsdown": "^0.12.5",
+    "tsdown": "^0.12.9",
     "valibot": "catalog:"
   },
   "devDependencies": {
@@ -24,8 +24,8 @@
     "@types/react": "~18.3.1",
     "@types/react-dom": "catalog:",
     "consola": "catalog:",
-    "eslint": "^9.25.0",
-    "eslint-config-hyoban": "^4.0.7",
+    "eslint": "^9.29.0",
+    "eslint-config-hyoban": "^4.0.8",
     "prettier": "catalog:",
     "rimraf": "catalog:",
     "tsx": "catalog:",

@@ -35,9 +35,9 @@
     "studio": "prisma studio"
   },
   "dependencies": {
-    "@prisma/client": "catalog:"
+    "@prisma/client": "^6.12.0"
   },
   "devDependencies": {
-    "prisma": "catalog:"
+    "prisma": "^6.12.0"
   }
 }

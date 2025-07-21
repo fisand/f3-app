@@ -27,11 +27,11 @@
     "db:dev": "prisma migrate dev",
     "db:dev:create": "prisma migrate dev --create-only",
     "db:push": "prisma db push",
-    "dev": "tsdown --w",
+    "dev": "tsdown --w --no-clean",
     "format": "prisma format",
     "generate": "prisma generate",
     "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0",
-    "postinstall": "pnpm run generate",
+    "postinstall": "pnpm run generate && pnpm run build",
     "studio": "prisma studio"
   },
   "dependencies": {

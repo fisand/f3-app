@@ -7,6 +7,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
+import type { PluginOption } from 'vite'
 import { defineConfig } from 'vite'
 import Checker from 'vite-plugin-checker'
 import Pages from 'vite-plugin-pages'
@@ -29,7 +30,7 @@ export default defineConfig({
         'fisand-icons': FileSystemIconLoader(`${resolve(import.meta.dirname, 'src/assets/icons')}/`, svg =>
           svg.replace(/^<svg /, '<svg fill="currentColor" ')),
       },
-    }),
+    }) as PluginOption,
     Pages({
       dirs: [{ dir: 'src/pages', baseRoute: '' }],
       exclude: ['**/[A-Z]*.tsx'],
@@ -37,7 +38,7 @@ export default defineConfig({
     }),
     UnoCSS({
       configFile: '../../uno.config.ts',
-    }),
+    }) as PluginOption,
     // todo monorepo
     AutoImport({
       imports: ['react'],
@@ -69,7 +70,7 @@ export default defineConfig({
           },
         },
       ],
-    }),
+    }) as PluginOption,
   ],
   server: {
     proxy: {

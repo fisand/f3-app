@@ -6,6 +6,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
+import type { PluginOption } from 'vite'
 import { defineConfig } from 'vite'
 import checker from 'vite-plugin-checker'
 import tsconfigPaths from 'vite-tsconfig-paths'
@@ -25,7 +26,7 @@ export default defineConfig({
         'fisand-icons': FileSystemIconLoader(`${resolve(import.meta.dirname, 'app/assets/icons')}/`, svg =>
           svg.replace(/^<svg /, '<svg fill="currentColor" ')),
       },
-    }),
+    }) as PluginOption,
     AutoImport({
       imports: ['react'],
       dts: './app/auto-imports.d.ts',
@@ -35,7 +36,7 @@ export default defineConfig({
         }),
       ],
       dirs: ['./app/components/ui'],
-    }),
+    }) as PluginOption,
   ],
   build: {
     rollupOptions: {

@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
-    "@unocss/reset": "catalog:",
+    "@unocss/reset": "~66.3.3",
     "eslint-config": "workspace:*",
     "next": "^15.3.3",
     "react": "catalog:react19",
@@ -20,9 +20,9 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
-    "@unocss/postcss": "catalog:",
+    "@unocss/postcss": "~66.3.3",
     "eslint-config-next": "catalog:",
     "typescript": "^5",
-    "unocss": "catalog:"
+    "unocss": "~66.3.3"
   }
 }

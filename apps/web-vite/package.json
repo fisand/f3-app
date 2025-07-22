@@ -15,7 +15,7 @@
     "@trpc/client": "catalog:trpc",
     "@trpc/react-query": "catalog:trpc",
     "@trpc/server": "catalog:trpc",
-    "@unocss/reset": "catalog:",
+    "@unocss/reset": "~66.3.3",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "eslint-config": "workspace:*",

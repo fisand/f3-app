@@ -22,8 +22,8 @@
     "framer-motion": "catalog:",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
-    "react-router": "catalog:",
-    "react-router-dom": "catalog:",
+    "react-router": "7.6.3",
+    "react-router-dom": "7.6.3",
     "sonner": "catalog:",
     "tailwind-merge": "catalog:"
   },

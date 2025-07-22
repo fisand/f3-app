@@ -1,11 +1,11 @@
-import path from 'node:path'
+const path = require('node:path')
 
-export default {
-  plugins: {
-    '@unocss/postcss': {
+module.exports = {
+  plugins: [
+    ['@unocss/postcss', {
       content: ['./app/**/*.{html,js,ts,jsx,tsx}', '../../packages/ui/src/**/*.{ts,tsx}'],
       configFile: '../../uno.config.ts',
-      cwd: path.resolve(import.meta.dirname, '../../'),
-    },
-  },
+      cwd: path.resolve(__dirname, '../../'),
+    }],
+  ],
 }

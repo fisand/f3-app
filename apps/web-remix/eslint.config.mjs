@@ -5,7 +5,7 @@ export default defineConfig({
   restrictedSyntax: ['jsx', 'tsx'],
   strict: true,
   unocss: true,
-  tailwindCSS: false
+  tailwindCSS: false,
 }, {
   rules: {
     'react-hooks/rules-of-hooks': 'error',

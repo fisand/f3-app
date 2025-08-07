@@ -74,8 +74,6 @@
   "devDependencies": {
     "@react-router/dev": "7.6.3",
     "@types/node": "^22.14.1",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
     "eslint": "^9.25.0",
     "eslint-config-hyoban": "^4.0.3",
     "react-router-devtools": "^1.1.10",

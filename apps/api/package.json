@@ -13,6 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@repo/sdk": "workspace:*",
     "@typeschema/valibot": "catalog:",
     "db": "workspace:*",
     "dotenv": "catalog:",

@@ -75,7 +75,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8978/trpc',
+        target: 'http://localhost:5000/trpc',
         rewrite: path => path.replace(/^\/api/, ''),
         changeOrigin: true,
       },

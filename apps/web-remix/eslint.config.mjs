@@ -1,7 +1,7 @@
 import { defineConfig } from 'eslint-config-hyoban'
 
 export default defineConfig({
-  react: 'vite',
+  react: 'remix',
   restrictedSyntax: ['jsx', 'tsx'],
   strict: true,
   unocss: true,

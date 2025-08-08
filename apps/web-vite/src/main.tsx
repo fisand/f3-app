@@ -21,6 +21,7 @@ const trpcClient = trpc.createClient({
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.querySelector('#root')!).render(
+  // eslint-disable-next-line @eslint-react/no-context-provider
   <trpc.Provider client={trpcClient} queryClient={queryClient}>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>

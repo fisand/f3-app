@@ -6,6 +6,7 @@ export default defineConfig({
   strict: true,
   unocss: true,
   tailwindCSS: false,
+  ignores: ['**/*.d.ts', '**/components/ui/**'],
 }, {
   rules: {
     'react-hooks/rules-of-hooks': 'error',

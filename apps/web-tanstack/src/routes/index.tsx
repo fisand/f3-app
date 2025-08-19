@@ -14,7 +14,7 @@ function App() {
             TanStack 🩷 unocss
           </li>
           <li className="mb-2">
-            Get started by editing <code className="rounded bg-gray-100/5 px-1 py-0.5 font-semibold font-inherit">app/page.tsx</code>.
+            Get started by editing <code className="rounded bg-gray-100/5 px-1 py-0.5 font-semibold font-inherit">src/routes/index.tsx</code>.
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
@@ -24,7 +24,7 @@ function App() {
             Deploy now
           </ShimmerButton>
           <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://tanstack.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="h-12 min-w-[180px] flex cursor-pointer appearance-none items-center justify-center border border-0 border-gray-200/8 rounded-full px-5 py-0 text-base font-medium leading-5 transition-all duration-200 lt-sm:h-10 lt-sm:min-w-0 hover:border-transparent hover:bg-gray-100 lt-sm:px-4 lt-sm:text-sm"
@@ -35,7 +35,7 @@ function App() {
       </main>
       <footer className="row-start-3 flex gap-6 lt-sm:flex-wrap lt-sm:items-center lt-sm:justify-center">
         <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://tanstack.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-green-500 font-500 hover:underline hover:underline-offset-4"
@@ -44,7 +44,7 @@ function App() {
           Learn
         </a>
         <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://tanstack.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-blue-500 font-500 hover:underline hover:underline-offset-4"
@@ -53,13 +53,13 @@ function App() {
           Examples
         </a>
         <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://tanstack.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-red-500 font-500 hover:underline hover:underline-offset-4"
         >
           <span className="i-lucide:square-arrow-out-up-right h-4 w-4 inline-flex" />
-          Go to nextjs.org →
+          Go to TanStack
         </a>
       </footer>
     </div>

@@ -1,16 +1,16 @@
 {
   "name": "web-tanstack",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "vite dev --port 9527",
-    "start": "node .output/server/index.mjs",
     "build": "vite build",
-    "serve": "vite preview",
-    "test": "vitest run",
-    "lint": "eslint",
+    "check": "prettier --write . && eslint --fix",
+    "dev": "vite dev --port 9527",
     "format": "prettier",
-    "check": "prettier --write . && eslint --fix"
+    "lint": "eslint",
+    "serve": "vite preview",
+    "start": "node .output/server/index.mjs",
+    "test": "vitest run"
   },
   "dependencies": {
     "@faker-js/faker": "^9.6.0",

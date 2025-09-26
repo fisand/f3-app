@@ -23,8 +23,9 @@
     "@types/node": "^22.15.29",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
+    "@typescript-eslint/typescript-estree": "^8.44.1",
     "consola": "catalog:",
-    "eslint": "^9.29.0",
+    "eslint": "^9.36.0",
     "eslint-config-hyoban": "^4.0.8",
     "prettier": "catalog:",
     "rimraf": "catalog:",
@@ -40,7 +41,9 @@
       "react": "19.0.0",
       "react-dom": "19.0.0",
       "@types/react": "19.1.9",
-      "@types/react-dom": "19.1.7"
+      "@types/react-dom": "19.1.7",
+      "@typescript-eslint/typescript-estree": "^8.44.1",
+      "@stylistic/eslint-plugin": "^5.4.0"
     }
   }
 }

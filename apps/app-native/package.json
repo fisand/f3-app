@@ -44,7 +44,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@tailwindcss/postcss": "^4.1.11",
-    "eslint": "^9.25.0",
+    "eslint": "^9.36.0",
     "eslint-config-expo": "~9.2.0",
     "postcss": "^8.5.6",
     "prettier-plugin-tailwindcss": "^0.5.14",

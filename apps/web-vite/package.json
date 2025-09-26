@@ -36,7 +36,7 @@
     "@typescript-eslint/parser": "catalog:",
     "@vitejs/plugin-react": "catalog:",
     "api": "workspace:*",
-    "eslint": "^9.12.0",
+    "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "catalog:",
     "eslint-plugin-react-refresh": "catalog:",
     "typescript": "^5.9.2",

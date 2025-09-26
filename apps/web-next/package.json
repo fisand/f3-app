@@ -22,7 +22,7 @@
     "@types/node": "^22.15.29",
     "@unocss/postcss": "~66.3.3",
     "eslint-config-next": "catalog:",
-    "typescript": "^5",
+    "typescript": "^5.9.2",
     "unocss": "~66.3.3"
   }
 }

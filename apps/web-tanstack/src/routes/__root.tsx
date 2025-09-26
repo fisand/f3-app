@@ -1,4 +1,6 @@
-/// <reference types="vite/client" />
+import '@unocss/reset/tailwind.css'
+import 'virtual:uno.css'
+
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import {
   createRootRoute,

@@ -6,9 +6,14 @@ import { orpc } from '../../orpc'
 export const Route = createFileRoute('/posts/')({
   component: RouteComponent,
   loader: async () => {
-    const data = await orpc.pong.call()
-    console.info('orpc.pong loader', data)
-    return { data }
+    try {
+      const data = await orpc.pong.call()
+      console.info('orpc.pong loader', data)
+      return { data }
+    }
+    catch {
+      return { data: null }
+    }
   },
 })
 

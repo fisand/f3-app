@@ -39,7 +39,7 @@
     "eslint": "^9.12.0",
     "eslint-plugin-react-hooks": "catalog:",
     "eslint-plugin-react-refresh": "catalog:",
-    "typescript": "^5.6.3",
+    "typescript": "^5.9.2",
     "unplugin-auto-import": "catalog:",
     "unplugin-icons": "catalog:",
     "vite": "^7.1.0",

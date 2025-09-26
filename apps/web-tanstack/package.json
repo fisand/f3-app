@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@orpc/tanstack-query": "catalog:orpc",
+    "@repo/ui": "workspace:*",
     "@tanstack/nitro-v2-vite-plugin": "^1.132.0",
     "@tanstack/react-query": "catalog:",
     "@tanstack/react-router": "^1.132.7",
@@ -23,7 +24,8 @@
     "nitro": "npm:nitro-nightly@latest",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "vite-plugin-checker": "catalog:"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",

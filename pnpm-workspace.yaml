@@ -95,7 +95,7 @@ catalog:
   unplugin-auto-import: ^19.1.0
   unplugin-icons: ^22.1.0
   valibot: ^1.0.0
-  vite-plugin-checker: ^0.9.1
+  vite-plugin-checker: ^0.10.3
   vite-plugin-pages: ^0.33.0
   vitest: ^2.1.8
   zod: ^3.23.8

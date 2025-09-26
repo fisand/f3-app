@@ -4,14 +4,17 @@ export default defineConfig({
   react: 'remix',
   restrictedSyntax: ['jsx', 'tsx'],
   strict: true,
-  tailwindCSS: false,
   unocss: true,
-  ignores: ['**/*.d.ts', '**/routeTree.gen.ts'],
+  tailwindCSS: false,
+  ignores: ['**/*.d.ts', '**/components/ui/**'],
 }, {
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'react-refresh/only-export-components': 'off',
-    '@eslint-react/jsx-no-undef': 'off',
+    'max-params': 'off',
+
+    '@typescript-eslint/no-explicit-any': 'warn',
   },
+  ignores: ['**/*.d.ts'],
 })

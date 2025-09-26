@@ -12,6 +12,10 @@ catalogs:
     "@trpc/client": 11.1.1
     "@trpc/react-query": 11.1.1
     "@trpc/server": 11.1.1
+  orpc:
+    "@orpc/client": 1.9.0
+    "@orpc/tanstack-query": 1.9.0
+    "@orpc/server": 1.9.0
 catalog:
   "@babel/core": ^7.25.2
   "@expo/vector-icons": ^14.0.2

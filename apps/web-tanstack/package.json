@@ -1,27 +1,29 @@
 {
   "name": "rc-tanstack-app",
+  "type": "module",
   "version": "1.0.0",
+  "packageManager": "pnpm@10.14.0",
   "description": "",
-  "main": "index.js",
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.14.0",
-  "type": "module",
+  "keywords": ["tanstack", "react", "start"],
+  "main": "index.js",
   "scripts": {
-    "dev": "vite dev",
     "build": "vite build",
+    "dev": "vite dev",
     "start": "node .output/server/index.mjs"
   },
   "dependencies": {
+    "@orpc/tanstack-query": "catalog:orpc",
     "@tanstack/nitro-v2-vite-plugin": "^1.132.0",
+    "@tanstack/react-query": "catalog:",
     "@tanstack/react-router": "^1.132.7",
     "@tanstack/react-start": "^1.132.7",
     "@vitejs/plugin-react": "^5.0.3",
+    "nitro": "npm:nitro-nightly@latest",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "vite": "^7.1.7",
-    "nitro": "npm:nitro-nightly@latest"
+    "vite": "^7.1.7"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",

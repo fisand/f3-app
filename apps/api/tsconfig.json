@@ -1,8 +1,8 @@
 {
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "module": "es2015",
+    "moduleResolution": "bundler",
     "lib": [
       "ES2022"
     ],

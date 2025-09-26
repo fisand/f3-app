@@ -1,24 +1,17 @@
-import '@unocss/reset/tailwind.css'
-import 'virtual:uno.css'
-
-import type { QueryClient } from '@tanstack/react-query'
+/// <reference types="vite/client" />
+import type { ReactNode } from 'react'
 import {
-  createRootRouteWithContext,
+  Outlet,
+  createRootRoute,
   HeadContent,
   Scripts,
 } from '@tanstack/react-router'
 
-import appCss from '../styles.css?url'
-
-interface MyRouterContext {
-  queryClient: QueryClient
-}
-
-export const Route = createRootRouteWithContext<MyRouterContext>()({
+export const Route = createRootRoute({
   head: () => ({
     meta: [
       {
-        charSet: 'utf8',
+        charSet: 'utf-8',
       },
       {
         name: 'viewport',
@@ -28,20 +21,21 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         title: 'TanStack Start Starter',
       },
     ],
-    links: [
-      {
-        rel: 'stylesheet',
-        href: appCss,
-      },
-    ],
   }),
-
-  shellComponent: RootDocument,
+  component: RootComponent,
 })
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootComponent() {
   return (
-    <html lang="en">
+    <RootDocument>
+      <Outlet />
+    </RootDocument>
+  )
+}
+
+function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
+  return (
+    <html>
       <head>
         <HeadContent />
       </head>

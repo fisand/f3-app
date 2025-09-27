@@ -1,8 +1,9 @@
 import { resolve } from 'node:path'
 
+// import { nitro } from 'nitro/vite'
+import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
-import { nitro } from 'nitro/vite'
 import UnoCSS from 'unocss/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import Icons from 'unplugin-icons/vite'
@@ -17,7 +18,7 @@ export default defineConfig({
   },
   plugins: [
     tsConfigPaths(),
-    nitro(),
+    nitroV2Plugin(),
     checker({
       typescript: true,
     }),

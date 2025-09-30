@@ -635,9 +635,6 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^5.0.3
         version: 5.0.3(vite@7.1.7(@types/node@24.5.2)(jiti@2.6.0)(lightningcss@1.30.1)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))
-      nitro:
-        specifier: npm:nitro-nightly@latest
-        version: nitro-nightly@3.0.0-20250925-181710-5191890e(@libsql/client@0.15.14(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@netlify/blobs@9.1.2)(better-sqlite3@12.2.0)(drizzle-orm@0.44.5(@libsql/client@0.15.14(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@prisma/client@6.12.0(prisma@6.12.0(typescript@5.9.2))(typescript@5.9.2))(better-sqlite3@12.2.0)(prisma@6.12.0(typescript@5.9.2)))(idb-keyval@6.2.2)(rolldown@1.0.0-beta.10-commit.87188ed)(vite@7.1.7(@types/node@24.5.2)(jiti@2.6.0)(lightningcss@1.30.1)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))
       react:
         specifier: 19.0.0
         version: 19.0.0
@@ -5066,9 +5063,6 @@ packages:
   '@types/hammerjs@2.0.46':
     resolution: {integrity: sha512-ynRvcq6wvqexJ9brDMS4BnBLzmr0e14d6ZJTEShTBWKymQiHwlAyGu0ZPEFI2Fh1U53F7tN9ufClWM5KvqkKOw==}
 
-  '@types/http-proxy@1.17.16':
-    resolution: {integrity: sha512-sdWoUajOB1cd0A8cRRQ1cfyWNbmFKLAqBB89Y8x5iYyG/mkJHc0YUH8pdWBy2omi9qtCpiIgGjuwO0dQST2l5w==}
-
   '@types/istanbul-lib-coverage@2.0.6':
     resolution: {integrity: sha512-2QF/t/auWm0lsy8XtKVPG19v3sSOQlJe/YHZgfjb/KBBHOGSV+J2q/S671rcq9uTBrLAXmZpqJiaQbMT+zNU1w==}
 
@@ -7096,10 +7090,6 @@ packages:
   domutils@3.2.2:
     resolution: {integrity: sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==}
 
-  dot-prop@10.0.0:
-    resolution: {integrity: sha512-s7RhKKTxc+GiZkfewpLsuWpPeCPe0patP9G/qRJ2VN/BWA+Ydq65K2Pfse234zjGszTVJCzPLze54vD8eyE8NQ==}
-    engines: {node: '>=20'}
-
   dot-prop@9.0.0:
     resolution: {integrity: sha512-1gxPBJpI/pcjQhKgIU91II6Wkay+dLcN3M6rf2uwP8hRur3HtQXjVrdAK3sjC0piaEuxzMwjXChcETiJl47lAQ==}
     engines: {node: '>=18'}
@@ -8210,10 +8200,6 @@ packages:
   fs-constants@1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
 
-  fs-extra@11.3.2:
-    resolution: {integrity: sha512-Xr9F6z6up6Ws+NjzMCZc6WXg2YFRlrLP9NQDO3VQrWrfiojdhS56TzueT88ze0uBdCTwEIhQ3ptnmKeWGFAe0A==}
-    engines: {node: '>=14.14'}
-
   fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
@@ -8942,9 +8928,6 @@ packages:
     resolution: {integrity: sha512-WYDyuc/uFcGp6YtM2H0uKmUwieOuzeE/5YocFJLnLfclZ4inf3mRn8ZVy1s7Hxji7Jxm6Ss8gqpexD/GlKoGgg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  jsonfile@6.2.0:
-    resolution: {integrity: sha512-FGuPw30AdOIUTRMC2OMRtQV+jkVj2cfPqSeWXv1NEAJ1qZ5zb1X6z1mFhbfOB/iy3ssJCD+3KuZ8r8C3uVFlAg==}
-
   jsx-ast-utils@3.3.5:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
@@ -9641,22 +9624,6 @@ packages:
       babel-plugin-react-compiler:
         optional: true
       sass:
-        optional: true
-
-  nitro-nightly@3.0.0-20250925-181710-5191890e:
-    resolution: {integrity: sha512-ZwrzrdMR1YNd7ellsILcL0UfAVCDU+tHLAt3aymeaRALNlbhLP7VzZnRMNVKhWhTw3Vzk3/Bg1X12jVu/iB3PA==}
-    engines: {node: ^20.19.0 || >=22.12.0}
-    hasBin: true
-    peerDependencies:
-      rolldown: '*'
-      vite: ^7
-      xml2js: ^0.6.2
-    peerDependenciesMeta:
-      rolldown:
-        optional: true
-      vite:
-        optional: true
-      xml2js:
         optional: true
 
   nitropack@2.12.6:
@@ -11814,10 +11781,6 @@ packages:
   unique-string@2.0.0:
     resolution: {integrity: sha512-uNaeirEPvpZWSgzwsPGtU2zVSTrn/8L5q/IexZmH0eH6SA73CmAA5U4GwORTxQAZs95TAXLNqeLoPPNO5gZfWg==}
     engines: {node: '>=8'}
-
-  universalify@2.0.1:
-    resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
-    engines: {node: '>= 10.0.0'}
 
   unocss-preset-animations@1.2.1:
     resolution: {integrity: sha512-HFdYPSLZ8SaAgTLfTNoiV5+1xAdcttOtFSPsZyHbA0qSis7Sansf90pz7a2yhs9Yq6Nos9P4onDttfdO8dwKPA==}
@@ -17783,10 +17746,6 @@ snapshots:
 
   '@types/hammerjs@2.0.46': {}
 
-  '@types/http-proxy@1.17.16':
-    dependencies:
-      '@types/node': 22.15.29
-
   '@types/istanbul-lib-coverage@2.0.6': {}
 
   '@types/istanbul-lib-report@3.0.3':
@@ -20347,6 +20306,7 @@ snapshots:
   crossws@0.4.1(srvx@0.8.7):
     optionalDependencies:
       srvx: 0.8.7
+    optional: true
 
   crypto-random-string@2.0.0: {}
 
@@ -20636,10 +20596,6 @@ snapshots:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
-
-  dot-prop@10.0.0:
-    dependencies:
-      type-fest: 5.0.1
 
   dot-prop@9.0.0:
     dependencies:
@@ -21054,7 +21010,7 @@ snapshots:
       '@typescript-eslint/eslint-plugin': 8.35.0(@typescript-eslint/parser@8.35.0(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2)
       '@typescript-eslint/parser': 8.35.0(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2)
       eslint: 9.36.0(jiti@2.6.0)
-      eslint-import-resolver-typescript: 3.10.0(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.39.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint@9.36.0(jiti@2.6.0)))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.35.0(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint@9.36.0(jiti@2.6.0)))(eslint@9.36.0(jiti@2.6.0))
+      eslint-import-resolver-typescript: 3.10.0(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.39.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint@9.36.0(jiti@2.6.0)))(eslint-plugin-import@2.31.0)(eslint@9.36.0(jiti@2.6.0))
       eslint-plugin-expo: 0.1.4(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2)
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.35.0(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint-import-resolver-typescript@3.10.0)(eslint@9.36.0(jiti@2.6.0))
       eslint-plugin-react: 7.37.5(eslint@9.36.0(jiti@2.6.0))
@@ -21161,7 +21117,7 @@ snapshots:
       '@typescript-eslint/parser': 8.35.0(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2)
       eslint: 9.36.0(jiti@2.6.0)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.0(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.39.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint@9.36.0(jiti@2.6.0)))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.35.0(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint@9.36.0(jiti@2.6.0)))(eslint@9.36.0(jiti@2.6.0))
+      eslint-import-resolver-typescript: 3.10.0(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.39.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint@9.36.0(jiti@2.6.0)))(eslint-plugin-import@2.31.0)(eslint@9.36.0(jiti@2.6.0))
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.35.0(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint-import-resolver-typescript@3.10.0)(eslint@9.36.0(jiti@2.6.0))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.36.0(jiti@2.6.0))
       eslint-plugin-react: 7.37.5(eslint@9.36.0(jiti@2.6.0))
@@ -21202,7 +21158,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.10.0(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.39.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint@9.36.0(jiti@2.6.0)))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.35.0(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint@9.36.0(jiti@2.6.0)))(eslint@9.36.0(jiti@2.6.0)):
+  eslint-import-resolver-typescript@3.10.0(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.39.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint@9.36.0(jiti@2.6.0)))(eslint-plugin-import@2.31.0)(eslint@9.36.0(jiti@2.6.0)):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.1
@@ -21231,7 +21187,7 @@ snapshots:
       '@typescript-eslint/parser': 8.35.0(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2)
       eslint: 9.36.0(jiti@2.6.0)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.0(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.39.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint@9.36.0(jiti@2.6.0)))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.35.0(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint@9.36.0(jiti@2.6.0)))(eslint@9.36.0(jiti@2.6.0))
+      eslint-import-resolver-typescript: 3.10.0(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.39.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint@9.36.0(jiti@2.6.0)))(eslint-plugin-import@2.31.0)(eslint@9.36.0(jiti@2.6.0))
     transitivePeerDependencies:
       - supports-color
 
@@ -22189,12 +22145,6 @@ snapshots:
   fs-constants@1.0.0:
     optional: true
 
-  fs-extra@11.3.2:
-    dependencies:
-      graceful-fs: 4.2.11
-      jsonfile: 6.2.0
-      universalify: 2.0.1
-
   fs.realpath@1.0.0: {}
 
   fsevents@2.3.3:
@@ -22971,12 +22921,6 @@ snapshots:
       espree: 9.6.1
       semver: 7.7.2
 
-  jsonfile@6.2.0:
-    dependencies:
-      universalify: 2.0.1
-    optionalDependencies:
-      graceful-fs: 4.2.11
-
   jsx-ast-utils@3.3.5:
     dependencies:
       array-includes: 3.1.8
@@ -23721,109 +23665,6 @@ snapshots:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
-
-  nitro-nightly@3.0.0-20250925-181710-5191890e(@libsql/client@0.15.14(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@netlify/blobs@9.1.2)(better-sqlite3@12.2.0)(drizzle-orm@0.44.5(@libsql/client@0.15.14(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@prisma/client@6.12.0(prisma@6.12.0(typescript@5.9.2))(typescript@5.9.2))(better-sqlite3@12.2.0)(prisma@6.12.0(typescript@5.9.2)))(idb-keyval@6.2.2)(rolldown@1.0.0-beta.10-commit.87188ed)(vite@7.1.7(@types/node@24.5.2)(jiti@2.6.0)(lightningcss@1.30.1)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1)):
-    dependencies:
-      '@rollup/plugin-alias': 5.1.1(rollup@4.52.2)
-      '@rollup/plugin-commonjs': 28.0.6(rollup@4.52.2)
-      '@rollup/plugin-inject': 5.0.5(rollup@4.52.2)
-      '@rollup/plugin-json': 6.1.0(rollup@4.52.2)
-      '@rollup/plugin-node-resolve': 16.0.1(rollup@4.52.2)
-      '@rollup/plugin-replace': 6.0.2(rollup@4.52.2)
-      '@rollup/plugin-terser': 0.4.4(rollup@4.52.2)
-      '@types/http-proxy': 1.17.16
-      '@vercel/nft': 0.30.1(rollup@4.52.2)
-      c12: 3.3.0(magicast@0.3.5)
-      chokidar: 4.0.3
-      citty: 0.1.6
-      compatx: 0.2.0
-      confbox: 0.2.2
-      consola: 3.4.2
-      cookie-es: 2.0.0
-      croner: 9.1.0
-      crossws: 0.4.1(srvx@0.8.7)
-      db0: 0.3.2(@libsql/client@0.15.14(bufferutil@4.0.9)(utf-8-validate@5.0.10))(better-sqlite3@12.2.0)(drizzle-orm@0.44.5(@libsql/client@0.15.14(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@prisma/client@6.12.0(prisma@6.12.0(typescript@5.9.2))(typescript@5.9.2))(better-sqlite3@12.2.0)(prisma@6.12.0(typescript@5.9.2)))
-      defu: 6.1.4
-      destr: 2.0.5
-      dot-prop: 10.0.0
-      esbuild: 0.25.10
-      escape-string-regexp: 5.0.0
-      etag: 1.8.1
-      exsolve: 1.0.7
-      fetchdts: 0.1.7
-      fs-extra: 11.3.2
-      gzip-size: 7.0.0
-      h3: 2.0.0-beta.4(crossws@0.4.1(srvx@0.8.7))
-      hookable: 5.5.3
-      httpxy: 0.1.7
-      ioredis: 5.8.0
-      jiti: 2.6.0
-      klona: 2.0.6
-      knitwork: 1.2.0
-      listhen: 1.9.0
-      magic-string: 0.30.19
-      magicast: 0.3.5
-      mime: 4.1.0
-      mlly: 1.8.0
-      ofetch: 1.4.1
-      ohash: 2.0.11
-      pathe: 2.0.3
-      perfect-debounce: 2.0.0
-      pkg-types: 2.3.0
-      pretty-bytes: 7.1.0
-      rollup: 4.52.2
-      rollup-plugin-visualizer: 6.0.3(rolldown@1.0.0-beta.10-commit.87188ed)(rollup@4.52.2)
-      rou3: 0.7.5
-      scule: 1.3.0
-      semver: 7.7.2
-      serve-placeholder: 2.0.2
-      serve-static: 2.2.0
-      source-map: 0.7.6
-      srvx: 0.8.7
-      std-env: 3.9.0
-      tinyglobby: 0.2.15
-      ufo: 1.6.1
-      ultrahtml: 1.6.0
-      uncrypto: 0.1.3
-      unctx: 2.4.1
-      undici: 7.16.0
-      unenv: 2.0.0-rc.21
-      unimport: 5.4.0
-      unplugin-utils: 0.3.0
-      unstorage: 1.17.1(@netlify/blobs@9.1.2)(db0@0.3.2(@libsql/client@0.15.14(bufferutil@4.0.9)(utf-8-validate@5.0.10))(better-sqlite3@12.2.0)(drizzle-orm@0.44.5(@libsql/client@0.15.14(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@prisma/client@6.12.0(prisma@6.12.0(typescript@5.9.2))(typescript@5.9.2))(better-sqlite3@12.2.0)(prisma@6.12.0(typescript@5.9.2))))(idb-keyval@6.2.2)(ioredis@5.8.0)
-      untyped: 2.0.0
-      unwasm: 0.3.11
-      youch: 4.1.0-beta.11
-      youch-core: 0.3.3
-    optionalDependencies:
-      rolldown: 1.0.0-beta.10-commit.87188ed
-      vite: 7.1.7(@types/node@24.5.2)(jiti@2.6.0)(lightningcss@1.30.1)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1)
-    transitivePeerDependencies:
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@capacitor/preferences'
-      - '@deno/kv'
-      - '@electric-sql/pglite'
-      - '@libsql/client'
-      - '@netlify/blobs'
-      - '@planetscale/database'
-      - '@upstash/redis'
-      - '@vercel/blob'
-      - '@vercel/functions'
-      - '@vercel/kv'
-      - aws4fetch
-      - better-sqlite3
-      - drizzle-orm
-      - encoding
-      - idb-keyval
-      - mysql2
-      - sqlite3
-      - supports-color
-      - uploadthing
 
   nitropack@2.12.6(@libsql/client@0.15.14(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@netlify/blobs@9.1.2)(better-sqlite3@12.2.0)(drizzle-orm@0.44.5(@libsql/client@0.15.14(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@prisma/client@6.12.0(prisma@6.12.0(typescript@5.9.2))(typescript@5.9.2))(better-sqlite3@12.2.0)(prisma@6.12.0(typescript@5.9.2)))(idb-keyval@6.2.2)(rolldown@1.0.0-beta.10-commit.87188ed):
     dependencies:
@@ -26348,8 +26189,6 @@ snapshots:
   unique-string@2.0.0:
     dependencies:
       crypto-random-string: 2.0.0
-
-  universalify@2.0.1: {}
 
   unocss-preset-animations@1.2.1(@unocss/preset-wind3@66.3.3)(unocss@66.1.3(postcss@8.5.6)(vite@7.1.7(@types/node@22.15.29)(jiti@2.6.0)(lightningcss@1.30.1)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))(vue@3.5.13(typescript@5.9.2))):
     dependencies:

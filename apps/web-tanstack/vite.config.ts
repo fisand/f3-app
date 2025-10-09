@@ -1,9 +1,9 @@
 import { resolve } from 'node:path'
 
-import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
+// import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
-// import { nitro } from 'nitro/vite'
+import { nitro } from 'nitro/vite'
 import UnoCSS from 'unocss/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import Icons from 'unplugin-icons/vite'
@@ -18,7 +18,17 @@ export default defineConfig({
   },
   plugins: [
     tanstackStart(),
-    nitroV2Plugin(),
+    // react's vite plugin must come after start's vite plugin
+    viteReact(),
+    nitro({
+      config: {
+        output: {
+          dir: '.output',
+          publicDir: '.output/public',
+          serverDir: '.output/server',
+        },
+      },
+    }),
     tsConfigPaths(),
     checker({
       typescript: true,
@@ -34,8 +44,8 @@ export default defineConfig({
     UnoCSS({
       configFile: '../../uno.config.ts',
     }) as PluginOption,
-    // nitro(),
-    // react's vite plugin must come after start's vite plugin
-    viteReact(),
   ],
+  build: {
+    outDir: '.output/public',
+  },
 })

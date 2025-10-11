@@ -32,6 +32,14 @@ export function Navbar({ items, className }: NavbarProps) {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  const handleClick = useCallback((item: NavItem) => {
+    setActiveTab(item.name)
+    console.info(item.name)
+    if (item.name.toLowerCase() === 'connect') {
+      openConnectModal?.()
+    }
+  }, [openConnectModal])
+
   return (
     <div
       className={cn(
@@ -48,12 +56,7 @@ export function Navbar({ items, className }: NavbarProps) {
             <Link
               key={item.name}
               to={item.url}
-              onClick={() => {
-                setActiveTab(item.name)
-                if (item.name.toLowerCase() === 'connect') {
-                  openConnectModal?.()
-                }
-              }}
+              onClick={() => handleClick(item)}
               className={cn(
                 'relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors',
                 'text-white/40 hover:text-white',

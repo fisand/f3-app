@@ -1,30 +1,31 @@
-import * as fs from 'node:fs'
-
+import { Button } from '@repo/ui/src/components/ui/button'
+import { Input } from '@repo/ui/src/components/ui/input'
 import { ShimmerButton } from '@repo/ui/src/components/ui/shimmer-button'
 import { createFileRoute, useRouter } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
-import { motion } from 'framer-motion'
-
-const filePath = 'count.txt'
-
-async function readCount() {
-  return Number.parseInt(
-    await fs.promises.readFile(filePath, 'utf8').catch(() => '0'),
-    10,
-  )
-}
+import { db, user } from 'drizzle'
+import { eq } from 'drizzle-orm'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+import { toast } from 'sonner'
 
 const getCount = createServerFn({
   method: 'GET',
-}).handler(() => {
-  return readCount()
+}).handler(async () => {
+  const users = await db.select().from(user)
+  return { users }
 })
 
 const updateCount = createServerFn({ method: 'POST' })
-  .inputValidator((d: number) => d)
+  .inputValidator((data: { email: string, name: string }) => data)
   .handler(async ({ data }) => {
-    const count = await readCount()
-    await fs.promises.writeFile(filePath, `${count + data}`)
+    await db.insert(user).values(data)
+  })
+
+const deleteCount = createServerFn({ method: 'POST' })
+  .inputValidator((data: { id: number }) => data)
+  .handler(async ({ data }) => {
+    await db.delete(user).where(eq(user.id, data.id))
   })
 
 export const Route = createFileRoute('/')({
@@ -34,7 +35,10 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   const router = useRouter()
-  const state = Route.useLoaderData()
+  const { users } = Route.useLoaderData()
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
 
   return (
     <div className="h-screen w-screen flex flex-col gap-5">
@@ -71,17 +75,111 @@ function Home() {
           <div className="z-10 min-h-64 flex items-center justify-center">
             <ShimmerButton
               className="shadow-2xl"
-              onClick={() => {
-                updateCount({ data: 1 }).then(() => {
-                  router.invalidate()
-                })
-              }}
             >
-              <span className="whitespace-pre-wrap text-center text-sm text-white font-medium leading-none tracking-tight dark:from-white dark:to-slate-900/10 lg:text-lg">
-                Add 1 to {state}?
+              <span className="whitespace-pre-wrap text-center text-sm text-white font-medium leading-none tracking-tight lowercase dark:from-white dark:to-slate-900/10 lg:text-lg">
+                DIRZZLE + TANSTACK + REACT
               </span>
             </ShimmerButton>
           </div>
+
+          <AnimatePresence>
+            {users?.map((user, index) => (
+              <motion.span
+                layout
+                key={user.id}
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={{
+                  visible: (i: number) => ({
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      delay: (i + 0.05) * 0.05,
+                    },
+                  }),
+                  hidden: { opacity: 0, y: 10 },
+                }}
+                className="flex-center justify-between"
+              >
+                <Button className="relative w-30">
+                  {user.name}
+                </Button>
+
+                <button
+                  type="button"
+                  className="bg-primary ml-auto flex-col-center rounded"
+                  disabled={false}
+                  onClick={async () => {
+                    await router.invalidate()
+                  }}
+                >
+                  <span className="i-lucide:square-check text-primary-foreground h-5 w-5" />
+                </button>
+
+                <button
+                  type="button"
+                  className="bg-primary ml-2 flex-col-center rounded"
+                  disabled={false}
+                  onClick={async () => {
+                    await deleteCount({ data: { id: user.id } })
+                    await router.invalidate()
+                  }}
+                >
+                  <span className="i-lucide:x text-primary-foreground h-5 w-5" />
+                </button>
+              </motion.span>
+            ))}
+
+            <motion.div
+              layout
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center gap-2"
+            >
+              <Input
+                type="text"
+                maxLength={50}
+                value={name}
+                onInput={(e) => {
+                  setName((e.target as HTMLInputElement).value)
+                }}
+                placeholder="Name"
+                className="bg-accent flex-1"
+              />
+              <Input
+                type="email"
+                maxLength={50}
+                value={email}
+                onInput={(e) => {
+                  setEmail((e.target as HTMLInputElement).value)
+                }}
+                placeholder="Email"
+                className="bg-accent flex-1"
+              />
+              <Button
+                onClick={async () => {
+                  if (!name) {
+                    toast.error('Name is required')
+                    return
+                  }
+                  if (users && users?.length >= 6) {
+                    toast.error('You have reached the maximum number of users')
+                    return
+                  }
+
+                  await updateCount({ data: { email, name } })
+                  await router.invalidate()
+
+                  setName('')
+                }}
+                disabled={false}
+              >
+                New
+              </Button>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
 

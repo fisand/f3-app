@@ -9,6 +9,7 @@ import {
   Scripts,
 } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
+import { Toaster } from 'sonner'
 
 const queryClient = new QueryClient()
 
@@ -35,6 +36,7 @@ function RootComponent() {
     <RootDocument>
       <QueryClientProvider client={queryClient}>
         <Outlet />
+        <Toaster position="top-center" />
       </QueryClientProvider>
     </RootDocument>
   )

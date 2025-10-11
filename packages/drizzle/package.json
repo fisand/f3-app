@@ -28,6 +28,7 @@
     "kit-pull": "drizzle-kit pull",
     "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0",
     "migrate": "drizzle-kit migrate",
+    "postinstall": "pnpm run build",
     "push": "drizzle-kit push"
   },
   "dependencies": {

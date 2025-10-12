@@ -13,7 +13,7 @@ function HomePage() {
       <motion.div
         initial={{ opacity: 0, y: -6 }}
         animate={{ opacity: 1, y: 0 }}
-        className="border-border h-14 border-b border-b-1"
+        className="h-14 border-b border-b-1 border-border"
       >
         <div className="mx-auto h-full flex items-center justify-between container lt-sm:px-4">
           <span className="flex items-center gap-1.5 text-lg font-500">
@@ -71,24 +71,24 @@ function HomePage() {
 
                 <button
                   type="button"
-                  className="bg-primary ml-auto flex-col-center rounded"
+                  className="ml-auto flex-col-center rounded bg-primary"
                   disabled={false}
                   onClick={async () => {
                     await userList.refetch()
                   }}
                 >
-                  <span className="i-lucide:square-check text-primary-foreground h-5 w-5" />
+                  <span className="i-lucide:square-check h-5 w-5 text-primary-foreground" />
                 </button>
 
                 <button
                   type="button"
-                  className="bg-primary ml-2 flex-col-center rounded"
+                  className="ml-2 flex-col-center rounded bg-primary"
                   disabled={false}
                   onClick={async () => {
                     await userList.refetch()
                   }}
                 >
-                  <span className="i-lucide:x text-primary-foreground h-5 w-5" />
+                  <span className="i-lucide:x h-5 w-5 text-primary-foreground" />
                 </button>
               </motion.span>
             ))}
@@ -141,7 +141,7 @@ function HomePage() {
       <motion.div
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
-        className="border-border grid grid-cols-3 h-14 border-t border-t-1"
+        className="grid grid-cols-3 h-14 border-t border-t-1 border-border"
       >
         <span />
         <div className="mx-auto h-full flex-center gap-2 lt-sm:px-4">

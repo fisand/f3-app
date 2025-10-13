@@ -173,6 +173,7 @@ function Home() {
                   await router.invalidate()
 
                   setName('')
+                  setEmail('')
                 }}
                 disabled={false}
               >

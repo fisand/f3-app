@@ -1,9 +1,9 @@
 import { resolve } from 'node:path'
 
-import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
+// import { nitroV2Plugin as nitro } from '@tanstack/nitro-v2-vite-plugin'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
-// import { nitro } from 'nitro/vite'
+import { nitro } from 'nitro/vite'
 import UnoCSS from 'unocss/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import Icons from 'unplugin-icons/vite'
@@ -20,9 +20,7 @@ export default defineConfig({
     tanstackStart(),
     // react's vite plugin must come after start's vite plugin
     viteReact(),
-    nitroV2Plugin({
-      compatibilityDate: '2025-10-11',
-    }),
+    nitro(),
     tsConfigPaths(),
     checker({
       typescript: true,
@@ -39,7 +37,10 @@ export default defineConfig({
       configFile: '../../uno.config.ts',
     }) as PluginOption,
   ],
-  // build: {
-  //   outDir: '.output/public',
-  // },
+  build: {
+    outDir: '.output/public',
+    rollupOptions: {
+      external: ['@libsql/client', 'drizzle-orm', 'dotenv'],
+    },
+  },
 })

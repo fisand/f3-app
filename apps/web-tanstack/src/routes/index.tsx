@@ -77,7 +77,7 @@ function Home() {
               className="shadow-2xl"
             >
               <span className="whitespace-pre-wrap text-center text-sm text-white font-medium leading-none tracking-tight lowercase dark:from-white dark:to-slate-900/10 lg:text-lg">
-                DIRZZLE + TANSTACK + REACT
+                DRIZZLE + TANSTACK + REACT
               </span>
             </ShimmerButton>
           </div>

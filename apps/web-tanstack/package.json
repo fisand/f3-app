@@ -17,9 +17,10 @@
   "dependencies": {
     "@orpc/tanstack-query": "catalog:orpc",
     "@repo/ui": "workspace:*",
+    "@tanstack/nitro-v2-vite-plugin": "^1.133.19",
     "@tanstack/react-query": "catalog:",
-    "@tanstack/react-router": "^1.132.47",
-    "@tanstack/react-start": "^1.132.56",
+    "@tanstack/react-router": "^1.134.9",
+    "@tanstack/react-start": "^1.134.9",
     "@vitejs/plugin-react": "^5.0.3",
     "drizzle": "workspace:*",
     "framer-motion": "catalog:",

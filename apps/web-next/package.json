@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "next build --turbo",
     "dev": "next dev --turbo",
     "lint": "next lint",
     "preview": "pnpm dlx serve out",
@@ -12,17 +12,16 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
-    "@unocss/reset": "~66.3.3",
+    "@unocss/reset": "~66.5.4",
     "eslint-config": "workspace:*",
-    "next": "^15.5.0",
-    "react": "catalog:react19",
-    "react-dom": "catalog:react19"
+    "next": "^16.0.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
     "@unocss/postcss": "~66.3.3",
-    "eslint-config-next": "catalog:",
-    "typescript": "^5.9.2",
-    "unocss": "~66.3.3"
+    "eslint-config-next": "16.0.1",
+    "typescript": "^5.9.2"
   }
 }

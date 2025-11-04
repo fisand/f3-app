@@ -6,7 +6,7 @@
   "scripts": {
     "build": "next build --turbo",
     "dev": "next dev --turbo",
-    "lint": "next lint",
+    "lint": "eslint",
     "preview": "pnpm dlx serve out",
     "start": "next start"
   },

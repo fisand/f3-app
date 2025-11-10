@@ -17,17 +17,16 @@
   "dependencies": {
     "@orpc/tanstack-query": "catalog:orpc",
     "@repo/ui": "workspace:*",
-    "@tanstack/nitro-v2-vite-plugin": "^1.133.19",
     "@tanstack/react-query": "catalog:",
-    "@tanstack/react-router": "^1.134.9",
-    "@tanstack/react-start": "^1.134.9",
+    "@tanstack/react-router": "^1.135.0",
+    "@tanstack/react-start": "^1.135.0",
     "@vitejs/plugin-react": "^5.0.3",
     "drizzle": "workspace:*",
     "framer-motion": "catalog:",
     "nitro": "3.0.1-alpha.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "vite": "7.1.9",
+    "vite": "7.2.2",
     "vite-plugin-checker": "catalog:"
   },
   "devDependencies": {

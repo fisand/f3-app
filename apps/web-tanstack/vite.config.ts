@@ -20,7 +20,9 @@ export default defineConfig({
     tanstackStart(),
     // react's vite plugin must come after start's vite plugin
     viteReact(),
-    nitro(),
+    nitro({
+      noExternals: true,
+    }),
     tsConfigPaths(),
     checker({
       typescript: true,

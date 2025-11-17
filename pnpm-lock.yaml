@@ -209,8 +209,8 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1(@unocss/preset-wind3@66.5.2)(unocss@66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1)))
       unocss-preset-shadcn:
-        specifier: ^0.5.0
-        version: 0.5.0(unocss-preset-animations@1.2.1(@unocss/preset-wind3@66.5.2)(unocss@66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))))(unocss@66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1)))
+        specifier: ^1.0.1
+        version: 1.0.1(unocss-preset-animations@1.2.1(@unocss/preset-wind3@66.5.2)(unocss@66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))))(unocss@66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1)))
 
   apps/api:
     dependencies:
@@ -11916,8 +11916,8 @@ packages:
       '@unocss/preset-wind3':
         optional: true
 
-  unocss-preset-shadcn@0.5.0:
-    resolution: {integrity: sha512-e/bF/+b5adcolHio3kst3WVF+f09+BiDkyTshUVqcWXB0RabQ0T8lzqfM3KAegTTi1iJo1jjCZoE88cUzaVDmQ==}
+  unocss-preset-shadcn@1.0.1:
+    resolution: {integrity: sha512-/I39ZO2ntPyRHz+VA8pa+E/empR4sJU//zMjgI0ph5c5LttRs84gcm74pz/wO+sfqMjjN4SbSScD2n+TfE4FHw==}
     peerDependencies:
       unocss: '>=0.56.0 < 101'
       unocss-preset-animations: ^1.1.1
@@ -26133,7 +26133,7 @@ snapshots:
     optionalDependencies:
       '@unocss/preset-wind3': 66.5.2
 
-  unocss-preset-shadcn@0.5.0(unocss-preset-animations@1.2.1(@unocss/preset-wind3@66.5.2)(unocss@66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))))(unocss@66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))):
+  unocss-preset-shadcn@1.0.1(unocss-preset-animations@1.2.1(@unocss/preset-wind3@66.5.2)(unocss@66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))))(unocss@66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))):
     dependencies:
       unocss: 66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))
       unocss-preset-animations: 1.2.1(@unocss/preset-wind3@66.5.2)(unocss@66.5.2(postcss@8.5.6)(vite@7.2.2(@types/node@22.15.29)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1)))

@@ -21,7 +21,9 @@ export default defineConfig({
     // react's vite plugin must come after start's vite plugin
     viteReact(),
     nitro({
-      noExternals: true,
+      externals: {
+        noTrace: true,
+      },
     }),
     tsConfigPaths(),
     checker({
@@ -41,8 +43,5 @@ export default defineConfig({
   ],
   build: {
     outDir: '.output/public',
-    rollupOptions: {
-      external: ['@libsql/client', 'drizzle-orm', 'dotenv'],
-    },
   },
 })

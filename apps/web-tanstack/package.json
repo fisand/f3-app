@@ -15,6 +15,7 @@
     "start": "node .output/server/index.mjs"
   },
   "dependencies": {
+    "@bprogress/react": "^1.2.7",
     "@orpc/tanstack-query": "catalog:orpc",
     "@repo/ui": "workspace:*",
     "@tanstack/react-query": "catalog:",
@@ -25,15 +26,15 @@
     "framer-motion": "catalog:",
     "nitro": "3.0.1-alpha.1",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "vite": "npm:rolldown-vite@latest",
-    "vite-plugin-checker": "catalog:"
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "typescript": "^5.9.2",
+    "vite": "npm:rolldown-vite@latest",
+    "vite-plugin-checker": "catalog:",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }

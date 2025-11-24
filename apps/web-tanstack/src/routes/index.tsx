@@ -1,7 +1,7 @@
 import { Button } from '@repo/ui/src/components/ui/button'
 import { Input } from '@repo/ui/src/components/ui/input'
 import { ShimmerButton } from '@repo/ui/src/components/ui/shimmer-button'
-import { createFileRoute, useRouter } from '@tanstack/react-router'
+import { createFileRoute, Link, useRouter } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
 import { db, user } from 'drizzle'
 import { eq } from 'drizzle-orm'
@@ -181,6 +181,12 @@ function Home() {
               </Button>
             </motion.div>
           </AnimatePresence>
+
+          <Link to="/posts/$postId" params={{ postId: '1' }}>
+            <Button>
+              Go to Post 1
+            </Button>
+          </Link>
         </div>
       </div>
 

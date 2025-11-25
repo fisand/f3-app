@@ -9,15 +9,15 @@ function HomePage() {
   const [name, setName] = useState('')
 
   return (
-    <div className="h-screen w-screen flex flex-col gap-5">
+    <div className="flex flex-col gap-5 h-screen w-screen">
       <motion.div
         initial={{ opacity: 0, y: -6 }}
         animate={{ opacity: 1, y: 0 }}
-        className="h-14 border-b border-b-1 border-border"
+        className="border-b border-b-1 border-border h-14"
       >
-        <div className="mx-auto h-full flex items-center justify-between container lt-sm:px-4">
-          <span className="flex items-center gap-1.5 text-lg font-500">
-            <span className="h-5.5 w-5.5 flex-col-center rounded-lg bg-white p-1">
+        <div className="mx-auto flex h-full items-center justify-between lt-sm:px-4 container">
+          <span className="text-lg font-500 flex gap-1.5 items-center">
+            <span className="p-1 rounded-lg bg-white flex-col-center h-5.5 w-5.5">
               <span className="i-logos:fastify-icon h-4 w-4" />
             </span>
             <span className="i-devicon-plain:trpc h-5.5 w-5.5" />
@@ -35,11 +35,11 @@ function HomePage() {
           </a>
         </div>
       </motion.div>
-      <div className="mx-auto w-100 flex-1 lt-sm:(w-full px-4)">
-        <div className="flex flex-col gap-3 pb-5 pt-10">
-          <div className="z-10 min-h-64 flex items-center justify-center">
+      <div className="mx-auto flex-1 w-100 lt-sm:(px-4 w-full)">
+        <div className="pb-5 pt-10 flex flex-col gap-3">
+          <div className="flex min-h-64 items-center justify-center z-10">
             <ShimmerButton className="shadow-2xl">
-              <span className="whitespace-pre-wrap text-center text-sm text-white font-medium leading-none tracking-tight dark:from-white dark:to-slate-900/10 lg:text-lg">
+              <span className="text-sm text-white leading-none tracking-tight font-medium text-center whitespace-pre-wrap lg:text-lg dark:from-white dark:to-slate-900/10">
                 f3-appppp?+
               </span>
             </ShimmerButton>
@@ -65,30 +65,30 @@ function HomePage() {
                 }}
                 className="flex-center justify-between"
               >
-                <Button className="relative w-30">
+                <Button className="w-30 relative">
                   {user.name}
                 </Button>
 
                 <button
                   type="button"
-                  className="ml-auto flex-col-center rounded bg-primary"
+                  className="ml-auto rounded bg-primary flex-col-center"
                   disabled={false}
                   onClick={async () => {
                     await userList.refetch()
                   }}
                 >
-                  <span className="i-lucide:square-check h-5 w-5 text-primary-foreground" />
+                  <span className="i-lucide:square-check text-primary-foreground h-5 w-5" />
                 </button>
 
                 <button
                   type="button"
-                  className="ml-2 flex-col-center rounded bg-primary"
+                  className="ml-2 rounded bg-primary flex-col-center"
                   disabled={false}
                   onClick={async () => {
                     await userList.refetch()
                   }}
                 >
-                  <span className="i-lucide:x h-5 w-5 text-primary-foreground" />
+                  <span className="i-lucide:x text-primary-foreground h-5 w-5" />
                 </button>
               </motion.span>
             ))}
@@ -99,7 +99,7 @@ function HomePage() {
           layout
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-2"
+          className="flex gap-2 items-center"
         >
           <Input
             type="text"
@@ -141,12 +141,12 @@ function HomePage() {
       <motion.div
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-3 h-14 border-t border-t-1 border-border"
+        className="border-t border-t-1 border-border grid grid-cols-3 h-14"
       >
         <span />
-        <div className="mx-auto h-full flex-center gap-2 lt-sm:px-4">
+        <div className="mx-auto flex-center gap-2 h-full lt-sm:px-4">
           <a href="https://fastify.io/" target="_blank" rel="noreferrer noopener">
-            <span className="h-5.5 w-5.5 flex-col-center rounded-lg bg-white p-1">
+            <span className="p-1 rounded-lg bg-white flex-col-center h-5.5 w-5.5">
               <span className="i-logos:fastify-icon h-4 w-4" />
             </span>
           </a>

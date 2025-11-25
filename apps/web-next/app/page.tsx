@@ -2,14 +2,14 @@ import { ShimmerButton } from '@repo/ui/src/components/ui/shimmer-button'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen items-center justify-items-center gap-16 p-20 font-sans dark:bg-gray-900 lt-sm:p-8 lt-sm:pb-20">
-      <main className="row-start-2 flex flex-col gap-8 lt-sm:items-center">
-        <ol className="m-0 list-inside pl-0 text-sm leading-6 tracking-tighter font-mono lt-sm:text-center">
-          <li className="mb-2 text-blue-700 lt-sm:text-red-700">
+    <div className="font-sans p-20 gap-16 grid grid-rows-[20px_1fr_20px] min-h-screen items-center justify-items-center lt-sm:p-8 lt-sm:pb-20 dark:bg-gray-900">
+      <main className="flex flex-col gap-8 row-start-2 lt-sm:items-center">
+        <ol className="text-sm leading-6 tracking-tighter font-mono m-0 pl-0 list-inside lt-sm:text-center">
+          <li className="text-blue-700 mb-2 lt-sm:text-red-700">
             Nextjs 🩷 unocss
           </li>
           <li className="mb-2">
-            Get started by editing <code className="rounded bg-gray-100/5 px-1 py-0.5 font-semibold font-inherit">app/page.tsx</code>.
+            Get started by editing <code className="font-inherit font-semibold px-1 py-0.5 rounded bg-gray-100/5">app/page.tsx</code>.
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
@@ -22,38 +22,38 @@ export default function Home() {
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
-            className="h-12 min-w-[180px] flex cursor-pointer appearance-none items-center justify-center border border-0 border-gray-200/8 rounded-full px-5 py-0 text-base font-medium leading-5 transition-all duration-200 lt-sm:h-10 lt-sm:min-w-0 hover:border-transparent hover:bg-gray-100 lt-sm:px-4 lt-sm:text-sm"
+            className="text-base leading-5 font-medium px-5 py-0 appearance-none border border-0 border-gray-200/8 rounded-full flex h-12 min-w-[180px] cursor-pointer transition-all duration-200 items-center justify-center lt-sm:text-sm lt-sm:px-4 hover:border-transparent hover:bg-gray-100 lt-sm:h-10 lt-sm:min-w-0"
           >
             Read our docs
           </a>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 lt-sm:flex-wrap lt-sm:items-center lt-sm:justify-center">
+      <footer className="flex gap-6 row-start-3 lt-sm:flex-wrap lt-sm:items-center lt-sm:justify-center">
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-green-500 font-500 hover:underline hover:underline-offset-4"
+          className="text-green-500 font-500 flex gap-2 items-center hover:underline hover:underline-offset-4"
         >
-          <span className="i-lucide:file-text h-4 w-4 inline-flex" />
+          <span className="i-lucide:file-text inline-flex h-4 w-4" />
           Learn
         </a>
         <a
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-blue-500 font-500 hover:underline hover:underline-offset-4"
+          className="text-blue-500 font-500 flex gap-2 items-center hover:underline hover:underline-offset-4"
         >
-          <span className="i-lucide:biceps-flexed h-4 w-4 inline-flex" />
+          <span className="i-lucide:biceps-flexed inline-flex h-4 w-4" />
           Examples
         </a>
         <a
           href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-red-500 font-500 hover:underline hover:underline-offset-4"
+          className="text-red-500 font-500 flex gap-2 items-center hover:underline hover:underline-offset-4"
         >
-          <span className="i-lucide:square-arrow-out-up-right h-4 w-4 inline-flex" />
+          <span className="i-lucide:square-arrow-out-up-right inline-flex h-4 w-4" />
           Go to nextjs.org →
         </a>
       </footer>

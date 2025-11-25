@@ -21,6 +21,7 @@ export default defineConfig({
     // react's vite plugin must come after start's vite plugin
     viteReact(),
     nitro({
+      builder: 'rolldown',
       externals: {
         noTrace: true,
       },
@@ -43,5 +44,21 @@ export default defineConfig({
   ],
   build: {
     outDir: '.output/public',
+    rolldownOptions: {
+      output: {
+        advancedChunks: {
+          groups: [
+            {
+              name: 'main',
+              test: /node_modules[\\/](react|@tanstack[\\/]react-router|@tanstack[\\/]react-query|@tanstack[\\/]react-start|@orpc[\\/]tanstack-query)/,
+            },
+            {
+              name: 'vendor',
+              test: /node_modules[\\/](framer-motion|@repo[\\/]ui|@bprogress[\\/]react)/,
+            },
+          ],
+        },
+      },
+    },
   },
 })

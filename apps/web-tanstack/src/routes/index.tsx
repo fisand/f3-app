@@ -47,7 +47,7 @@ function Home() {
         animate={{ opacity: 1, y: 0 }}
         className="border-b border-b-1 border-border h-14"
       >
-        <div className="mx-auto flex h-full items-center justify-between lt-sm:px-4 container">
+        <div className="mx-auto container flex h-full items-center justify-between lt-sm:px-4">
           <span className="text-lg font-500 flex gap-1.5 items-center">
             <span className="p-1 rounded-lg bg-white flex-col-center h-5.5 w-5.5">
               <span className="i-logos:fastify-icon h-4 w-4" />

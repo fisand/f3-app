@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "packageManager": "pnpm@10.14.0",
   "description": "",
-  "author": "",
   "license": "ISC",
   "keywords": ["tanstack", "react", "start"],
   "main": "index.js",

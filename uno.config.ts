@@ -44,7 +44,11 @@ export default defineConfig({
     },
   ],
   presets: [
-    presetWind4(),
+    presetWind4({
+      preflights: {
+        property: true
+      }
+    }),
     presetIcons(),
     presetAnimations(),
     presetShadcn({

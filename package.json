@@ -36,7 +36,7 @@
     "tsx": "^4.21.0",
     "turbo": "^2.6.3",
     "typescript": "^5.9.2",
-    "unocss": "^66.5.2",
+    "unocss": "^66.5.10",
     "unocss-preset-animations": "^1.2.1",
     "unocss-preset-shadcn": "^1.0.1"
   },

@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "packageManager": "pnpm@10.5.2",
   "description": "",
-  "author": "",
   "license": "ISC",
   "exports": {
     ".": {
@@ -38,6 +37,7 @@
     "@prisma/client": "^6.12.0"
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
     "prisma": "^6.12.0"
   }
 }

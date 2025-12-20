@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "packageManager": "pnpm@10.5.2",
   "description": "",
-  "author": "",
   "license": "ISC",
   "exports": {
     ".": {
@@ -37,6 +36,7 @@
     "drizzle-orm": "^0.44.5"
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
     "drizzle-kit": "^0.31.4"
   }
 }

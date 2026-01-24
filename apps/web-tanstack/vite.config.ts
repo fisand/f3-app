@@ -21,10 +21,7 @@ export default defineConfig({
     // react's vite plugin must come after start's vite plugin
     viteReact(),
     nitro({
-      builder: 'rolldown',
-      externals: {
-        noTrace: true,
-      },
+      builder: 'vite',
     }),
     tsConfigPaths(),
     checker({

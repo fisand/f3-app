@@ -22,9 +22,7 @@ export default defineConfig({
     viteReact(),
     nitro({
       builder: 'rolldown',
-      externals: {
-        noTrace: true,
-      },
+      noExternals: false,
     }),
     tsConfigPaths(),
     checker({

@@ -20,16 +20,16 @@
     "@vitejs/plugin-react": "^5.0.3",
     "drizzle": "workspace:*",
     "framer-motion": "^12.23.26",
-    "nitro": "3.0.1-alpha.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "nitro": "3.0.1-alpha.2",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "typescript": "^5.9.2",
-    "vite": "8.0.0-beta.2",
+    "vite": "8.0.0-beta.10",
     "vite-plugin-checker": "^0.12.0",
     "vite-tsconfig-paths": "^5.1.4"
   }

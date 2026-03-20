@@ -16,14 +16,14 @@
   },
   "dependencies": {
     "@antfu/nip": "^0.1.0",
-    "tsdown": "^0.15.12",
-    "valibot": "^1.2.0",
     "@tanstack/react-query": "^5.90.21",
-    "@tanstack/react-start": "^1.166.8",
     "@tanstack/react-router": "^1.166.7",
+    "@tanstack/react-start": "^1.166.8",
     "@trpc/client": "^11.12.0",
     "@trpc/react-query": "^11.12.0",
-    "@trpc/server": "^11.12.0"
+    "@trpc/server": "^11.12.0",
+    "tsdown": "^0.21.4",
+    "valibot": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",

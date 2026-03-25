@@ -19,6 +19,7 @@
   "exclude": [
     "node_modules",
     "dist",
-    "tsdown.config.ts"
+    "tsdown.config.ts",
+    "drizzle.config.ts"
   ]
 }

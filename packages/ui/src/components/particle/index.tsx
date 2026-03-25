@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react'
+
 import { cn } from '@/lib/utils'
 
 import type { InspiraImageParticle as ImageParticle } from './image-particle'
@@ -22,7 +24,7 @@ export function Particle(props: {
   noise?: number
   responsiveWidth?: boolean
 }) {
-  const particles = useRef<ImageParticle>()
+  const particles = useRef<ImageParticle>(null)
   const imageRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {

@@ -10,9 +10,11 @@ import Icons from 'unplugin-icons/vite'
 import type { PluginOption } from 'vite'
 import { defineConfig } from 'vite'
 import checker from 'vite-plugin-checker'
-import tsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
+  resolve: {
+    tsconfigPaths: true,
+  },
   server: {
     port: 3000,
   },
@@ -24,7 +26,6 @@ export default defineConfig({
       builder: 'rolldown',
       noExternals: false,
     }),
-    tsConfigPaths(),
     checker({
       typescript: true,
     }),
@@ -44,7 +45,7 @@ export default defineConfig({
     outDir: '.output/public',
     rolldownOptions: {
       output: {
-        advancedChunks: {
+        codeSplitting: {
           groups: [
             {
               name: 'main',

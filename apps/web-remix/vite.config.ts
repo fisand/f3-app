@@ -9,13 +9,14 @@ import Icons from 'unplugin-icons/vite'
 import type { PluginOption } from 'vite'
 import { defineConfig } from 'vite'
 import checker from 'vite-plugin-checker'
-import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
+  resolve: {
+    tsconfigPaths: true,
+  },
   plugins: [
     unocss(),
     reactRouter(),
-    tsconfigPaths(),
     checker({
       typescript: true,
     }),

@@ -8,7 +8,7 @@
   "keywords": ["tanstack", "react", "start"],
   "main": "index.js",
   "scripts": {
-    "build": "vite build",
+    "build": "pnpm --filter drizzle build && vite build",
     "dev": "vite dev",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "DB_FILE_NAME=file:../../packages/drizzle/src/db/sqlite3.db node .output/server/index.mjs",

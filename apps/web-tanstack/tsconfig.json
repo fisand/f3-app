@@ -8,7 +8,8 @@
     "strictNullChecks": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@ui-internal/*": ["../../packages/ui/src/*"]
+      "@ui-internal/*": ["../../packages/ui/src/*"],
+      "drizzle": ["../../packages/drizzle/src/index.ts"]
     }
   }
 }

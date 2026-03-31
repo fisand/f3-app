@@ -9,7 +9,10 @@ function RouteComponent() {
   return (
     <div>
       <h2>Post Details</h2>
-      <p>Post ID: {postId}</p>
+      <p>
+        Post ID:
+        {postId}
+      </p>
       <p>This page inherits the posts layout!</p>
     </div>
   )

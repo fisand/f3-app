@@ -1,1 +1,1 @@
-export { default } from 'eslint-config/web'
+export { default } from 'eslint-config/node'

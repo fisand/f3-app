@@ -9,7 +9,10 @@ export default function Home() {
             Nextjs 🩷 unocss
           </li>
           <li className="mb-2">
-            Get started by editing <code className="font-inherit font-semibold px-1 py-0.5 rounded bg-gray-100/5">app/page.tsx</code>.
+            Get started by editing
+            {' '}
+            <code className="font-inherit font-semibold px-1 py-0.5 rounded bg-gray-100/5">app/page.tsx</code>
+            .
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>

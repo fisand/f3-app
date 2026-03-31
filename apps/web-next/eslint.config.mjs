@@ -1,10 +1,11 @@
 import { defineConfig } from 'eslint-config-hyoban'
 
 export default defineConfig({
-  react: 'next',
+  react: true,
+  nextjs: true,
   unocss: true,
-  tailwindCSS: false,
-  ignores: ['**/*.d.ts'],
+  tailwindcss: false,
+  ignores: ['**/*.d.ts', '**/*.md', '**/*.json', '**/*.jsonc', '**/*.yaml', '**/*.yml', '**/*.toml'],
 }, {
   rules: {},
 })

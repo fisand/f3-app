@@ -21,7 +21,7 @@
   "devDependencies": {
     "@types/node": "^22.15.29",
     "@unocss/postcss": "~66.3.3",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "16.2.1",
     "typescript": "^6.0.2"
   }
 }

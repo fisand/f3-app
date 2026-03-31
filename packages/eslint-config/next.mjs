@@ -1,12 +1,12 @@
 import { defineConfig } from 'eslint-config-hyoban'
 
 export default defineConfig({
-  react: 'next',
-  restrictedSyntax: ['jsx', 'tsx'],
+  react: true,
+  nextjs: true,
   strict: true,
-  tailwindCSS: false,
+  tailwindcss: false,
   unocss: true,
-  ignores: ['**/*.d.ts'],
+  ignores: ['**/*.d.ts', '**/*.md', '**/*.json', '**/*.jsonc', '**/*.yaml', '**/*.yml', '**/*.toml'],
 }, {
   rules: {
     'react-hooks/rules-of-hooks': 'error',

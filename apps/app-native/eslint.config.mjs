@@ -2,12 +2,11 @@ import { defineConfig } from 'eslint-config-hyoban'
 
 export default defineConfig(
   {
-    react: 'expo',
-    restrictedSyntax: ['jsx', 'tsx'],
+    react: true,
     strict: true,
-    tailwindCSS: true,
+    tailwindcss: true,
     unocss: false,
-    ignores: ['**/*.d.ts', '**/components/ui/**', 'package.json'],
+    ignores: ['**/*.d.ts', '**/components/ui/**', 'package.json', '**/*.md', '**/*.json', '**/*.jsonc', '**/*.yaml', '**/*.yml', '**/*.toml'],
   },
   {
     rules: {
@@ -23,9 +22,12 @@ export default defineConfig(
 
       'max-params': 'off',
       'no-console': 'off',
+      'node/prefer-global/process': 'off',
 
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-expressions': 'off',
+      'ts/no-require-imports': 'off',
+      'ts/no-use-before-define': 'off',
 
       '@eslint-react/naming-convention/filename-extension': 'off',
       '@eslint-react/no-complex-conditional-rendering': 'off',

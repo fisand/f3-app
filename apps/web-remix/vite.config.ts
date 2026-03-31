@@ -52,7 +52,7 @@ export default defineConfig({
           return
 
         // ignore sourcemap warning about 'Can't resolve original location of error.'
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // eslint-disable-next-line ts/no-explicit-any
         if (log.cause && (log.cause as any).message === `Can't resolve original location of error.`) {
           return
         }

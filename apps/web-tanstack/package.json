@@ -1,19 +1,18 @@
 {
   "name": "rc-tanstack-app",
-  "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@10.14.0",
   "description": "",
-  "license": "ISC",
   "keywords": [
-    "tanstack",
     "react",
-    "start"
+    "start",
+    "tanstack"
   ],
+  "license": "ISC",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm --filter drizzle build && vite build",
-    "dev": "vite dev",
+    "build": "pnpm --filter drizzle build && vp build",
+    "dev": "vp dev",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "DB_FILE_NAME=file:../../packages/drizzle/src/db/sqlite3.db node .output/server/index.mjs",
     "start": "node .output/server/index.mjs"
@@ -34,7 +33,9 @@
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "typescript": "^6.0.2",
-    "vite": "^8.0.3",
-    "vite-plugin-checker": "^0.12.0"
-  }
+    "vite": "catalog:",
+    "vite-plugin-checker": "^0.12.0",
+    "vite-plus": "catalog:"
+  },
+  "packageManager": "pnpm@10.14.0"
 }

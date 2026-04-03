@@ -1,13 +1,13 @@
 {
   "name": "api",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
-  "author": "",
   "license": "ISC",
+  "author": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "tsdown",
+    "build": "vp pack",
     "dev": "tsx watch ./src/index.ts",
     "preview": "node ./dist/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"

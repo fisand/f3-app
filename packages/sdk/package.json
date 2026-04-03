@@ -1,10 +1,12 @@
 {
   "name": "@repo/sdk",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
-  "author": "",
   "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
       "import": {
@@ -17,15 +19,14 @@
       }
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
   "scripts": {
-    "build": "tsdown",
-    "dev": "tsdown --w --no-clean",
+    "build": "vp pack",
+    "dev": "vp pack --w --no-clean",
     "postinstall": "pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "vitest": "^4.0.15"
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
   }
 }

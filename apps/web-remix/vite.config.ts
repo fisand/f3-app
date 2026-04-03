@@ -1,14 +1,14 @@
-import { resolve } from 'node:path'
+import { resolve } from "node:path";
 
-import { reactRouter } from '@react-router/dev/vite'
-import unocss from 'unocss/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import { FileSystemIconLoader } from 'unplugin-icons/loaders'
-import IconsResolver from 'unplugin-icons/resolver'
-import Icons from 'unplugin-icons/vite'
-import type { PluginOption } from 'vite'
-import { defineConfig } from 'vite'
-import checker from 'vite-plugin-checker'
+import { reactRouter } from "@react-router/dev/vite";
+import unocss from "unocss/vite";
+import AutoImport from "unplugin-auto-import/vite";
+import { FileSystemIconLoader } from "unplugin-icons/loaders";
+import IconsResolver from "unplugin-icons/resolver";
+import Icons from "unplugin-icons/vite";
+import checker from "vite-plugin-checker";
+import type { PluginOption } from "vite-plus";
+import { defineConfig } from "vite-plus";
 
 export default defineConfig({
   resolve: {
@@ -21,47 +21,51 @@ export default defineConfig({
       typescript: true,
     }),
     Icons({
-      compiler: 'jsx',
-      jsx: 'react',
+      compiler: "jsx",
+      jsx: "react",
       customCollections: {
-        'fisand-icons': FileSystemIconLoader(`${resolve(import.meta.dirname, 'app/assets/icons')}/`, svg =>
-          svg.replace(/^<svg /, '<svg fill="currentColor" ')),
+        "fisand-icons": FileSystemIconLoader(
+          `${resolve(import.meta.dirname, "app/assets/icons")}/`,
+          (svg) => svg.replace(/^<svg /, '<svg fill="currentColor" '),
+        ),
       },
     }) as PluginOption,
     AutoImport({
-      imports: ['react'],
-      dts: './app/auto-imports.d.ts',
+      imports: ["react"],
+      dts: "./app/auto-imports.d.ts",
       resolvers: [
         IconsResolver({
-          componentPrefix: 'Icon',
+          componentPrefix: "Icon",
         }),
       ],
-      dirs: ['./app/components/ui'],
+      dirs: ["./app/components/ui"],
     }) as PluginOption,
   ],
   build: {
     rollupOptions: {
       onLog(level, log, handler) {
         // ignore /*#__PURE__*/
-        if (log.message.includes('/*#__PURE__*/')) {
-          return
+        if (log.message.includes("/*#__PURE__*/")) {
+          return;
         }
 
         // ignore rollup warning about 'use client'
-        if (log.message.includes('Module level directives cause errors when bundled'))
-          return
+        if (log.message.includes("Module level directives cause errors when bundled")) return;
 
         // ignore sourcemap warning about 'Can't resolve original location of error.'
-        // eslint-disable-next-line ts/no-explicit-any
-        if (log.cause && (log.cause as any).message === `Can't resolve original location of error.`) {
-          return
+
+        if (
+          log.cause &&
+          (log.cause as any).message === `Can't resolve original location of error.`
+        ) {
+          return;
         }
 
-        handler(level, log)
+        handler(level, log);
       },
     },
   },
   server: {
     port: 9300,
   },
-})
+});

@@ -46,8 +46,8 @@ export default defineConfig({
   presets: [
     presetWind4({
       preflights: {
-        property: true
-      }
+        property: true,
+      },
     }),
     presetIcons(),
     presetAnimations(),
@@ -63,15 +63,24 @@ export default defineConfig({
     },
   ],
   rules: [
-    ['animate-rainbow', {
-      animation: 'rainbow var(--speed, 2s) infinite linear',
-    }],
-    ['animate-shimmer-slide', {
-      animation: 'shimmer-slide var(--speed) ease-in-out infinite alternate',
-    }],
-    ['animate-spin-around', {
-      animation: 'spin-around calc(var(--speed) * 2) infinite linear',
-    }],
+    [
+      'animate-rainbow',
+      {
+        animation: 'rainbow var(--speed, 2s) infinite linear',
+      },
+    ],
+    [
+      'animate-shimmer-slide',
+      {
+        animation: 'shimmer-slide var(--speed) ease-in-out infinite alternate',
+      },
+    ],
+    [
+      'animate-spin-around',
+      {
+        animation: 'spin-around calc(var(--speed) * 2) infinite linear',
+      },
+    ],
   ],
   theme: {
     colors: {

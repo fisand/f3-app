@@ -1,12 +1,14 @@
 {
   "name": "app-monorepo-template",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "turbo build",
+    "check": "vp check --fix",
     "dev": "turbo dev",
     "dev:expo": "pnpm --filter expo-next ios",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo lint",
+    "format": "vp fmt . --write",
+    "lint": "vp lint .",
     "nip": "nip",
     "catalog": "pnpx codemod pnpm/catalog",
     "prepare": "vp config"
@@ -25,11 +27,7 @@
     "@types/node": "^22.15.29",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
-    "@typescript-eslint/typescript-estree": "^8.58.0",
     "consola": "^3.4.2",
-    "eslint": "^10.1.0",
-    "eslint-config-hyoban": "^7.0.3",
-    "prettier": "^3.7.4",
     "rimraf": "^6.1.2",
     "tsx": "^4.21.0",
     "turbo": "^2.6.3",

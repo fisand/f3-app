@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm lint && tsc -b && vp build",
+    "build": "vp lint . && tsc -b && vp build",
     "dev": "vp dev",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "vp lint .",
     "preview": "vp preview"
   },
   "dependencies": {
@@ -14,7 +14,6 @@
     "@unocss/reset": "~66.3.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "eslint-config": "workspace:*",
     "framer-motion": "^12.23.26",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
@@ -30,7 +29,6 @@
     "@iconify-json/simple-icons": "^1.2.62",
     "@vitejs/plugin-react": "^5.1.2",
     "api": "workspace:*",
-    "unplugin-auto-import": "^20.3.0",
     "unplugin-icons": "^22.5.0",
     "vite": "catalog:",
     "vite-plugin-checker": "^0.12.0",

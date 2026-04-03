@@ -28,7 +28,7 @@
     "dev": "vp pack --w --no-clean",
     "format": "prisma format",
     "generate": "prisma generate",
-    "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0",
+    "lint": "vp lint src",
     "postinstall": "pnpm run generate && pnpm run build",
     "studio": "prisma studio"
   },

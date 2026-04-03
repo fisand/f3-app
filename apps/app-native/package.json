@@ -5,12 +5,12 @@
   "main": "expo-router/entry",
   "scripts": {
     "android": "expo start --android",
-    "expo:lint": "expo lint",
+    "expo:lint": "vp lint .",
     "ios": "expo start --ios",
     "reset-project": "node ./scripts/reset-project.js",
     "start": "expo start",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "vp lint ."
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
@@ -45,9 +45,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@tailwindcss/postcss": "^4.1.11",
-    "eslint-config-expo": "~55.0.0",
     "postcss": "^8.5.6",
-    "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.4.17",
     "typescript": "^6.0.2"
   }

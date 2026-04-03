@@ -41,10 +41,7 @@ export default defineConfig({
       `,
     },
   ],
-  presets: [
-    presetWind3(),
-    presetIcons(),
-  ],
+  presets: [presetWind3(), presetIcons()],
   shortcuts: [
     {
       'flex-center': 'flex justify-center items-center',
@@ -52,15 +49,24 @@ export default defineConfig({
     },
   ],
   rules: [
-    ['animate-rainbow', {
-      animation: 'rainbow var(--speed, 2s) infinite linear',
-    }],
-    ['animate-shimmer-slide', {
-      animation: 'shimmer-slide var(--speed) ease-in-out infinite alternate',
-    }],
-    ['animate-spin-around', {
-      animation: 'spin-around calc(var(--speed) * 2) infinite linear',
-    }],
+    [
+      'animate-rainbow',
+      {
+        animation: 'rainbow var(--speed, 2s) infinite linear',
+      },
+    ],
+    [
+      'animate-shimmer-slide',
+      {
+        animation: 'shimmer-slide var(--speed) ease-in-out infinite alternate',
+      },
+    ],
+    [
+      'animate-spin-around',
+      {
+        animation: 'spin-around calc(var(--speed) * 2) infinite linear',
+      },
+    ],
   ],
   theme: {
     colors: {

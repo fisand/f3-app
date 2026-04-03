@@ -4,7 +4,13 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-function Checkbox({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & { ref?: React.RefObject<React.ElementRef<typeof CheckboxPrimitive.Root> | null> }) {
+function Checkbox({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & {
+  ref?: React.RefObject<React.ElementRef<typeof CheckboxPrimitive.Root> | null>
+}) {
   return (
     <CheckboxPrimitive.Root
       ref={ref}
@@ -14,10 +20,8 @@ function Checkbox({ ref, className, ...props }: React.ComponentPropsWithoutRef<t
       )}
       {...props}
     >
-      <CheckboxPrimitive.Indicator
-        className={cn('flex items-center justify-center text-current')}
-      >
-        <CheckIcon className="h-4 w-4" />
+      <CheckboxPrimitive.Indicator className={cn('flex items-center justify-center text-current')}>
+        <CheckIcon className='h-4 w-4' />
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   )

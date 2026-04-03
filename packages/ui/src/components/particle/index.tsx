@@ -28,8 +28,7 @@ export function Particle(props: {
   const imageRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
-    if (!imageRef.current)
-      return
+    if (!imageRef.current) return
 
     const { InspiraImageParticle } = inspiraImageParticles()
     particles.current = new InspiraImageParticle(imageRef.current)

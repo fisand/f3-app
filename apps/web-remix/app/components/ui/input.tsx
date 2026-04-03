@@ -2,7 +2,12 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-function Input({ ref, className, type, ...props }: React.ComponentProps<'input'> & { ref?: React.RefObject<HTMLInputElement | null> }) {
+function Input({
+  ref,
+  className,
+  type,
+  ...props
+}: React.ComponentProps<'input'> & { ref?: React.RefObject<HTMLInputElement | null> }) {
   return (
     <input
       type={type}

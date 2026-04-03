@@ -58,16 +58,14 @@ export function TypingAnimation({
   }, [delay, startOnView])
 
   useEffect(() => {
-    if (!started)
-      return
+    if (!started) return
 
     let i = 0
     const typingEffect = setInterval(() => {
       if (i < children.length) {
         setDisplayedText(children.slice(0, Math.max(0, i + 1)))
         i++
-      }
-      else {
+      } else {
         clearInterval(typingEffect)
       }
     }, duration)
@@ -80,10 +78,7 @@ export function TypingAnimation({
   return (
     <MotionComponent
       ref={elementRef}
-      className={cn(
-        'text-4xl font-bold leading-[5rem] tracking-[-0.02em]',
-        className,
-      )}
+      className={cn('text-4xl font-bold leading-[5rem] tracking-[-0.02em]', className)}
       {...props}
     >
       {displayedText}

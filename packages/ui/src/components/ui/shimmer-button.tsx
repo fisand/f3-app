@@ -2,8 +2,7 @@ import { cn } from '@ui-internal/lib/utils'
 import type { CSSProperties } from 'react'
 import * as React from 'react'
 
-export interface ShimmerButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ShimmerButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   shimmerColor?: string
   shimmerSize?: string
   borderRadius?: string
@@ -29,7 +28,7 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
   ) => {
     return (
       <button
-        type="button"
+        type='button'
         style={
           {
             '--spread': '90deg',
@@ -56,9 +55,9 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
           )}
         >
           {/* spark */}
-          <div className="[aspect-ratio:1] [border-radius:0] [mask:none] absolute inset-0 h-[100cqh] animate-shimmer-slide">
+          <div className='[aspect-ratio:1] [border-radius:0] [mask:none] absolute inset-0 h-[100cqh] animate-shimmer-slide'>
             {/* spark before */}
-            <div className="[background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))] [translate:0_0] absolute w-auto rotate-0 animate-spin-around -inset-full" />
+            <div className='[background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))] [translate:0_0] absolute w-auto rotate-0 animate-spin-around -inset-full' />
           </div>
         </div>
         {children}

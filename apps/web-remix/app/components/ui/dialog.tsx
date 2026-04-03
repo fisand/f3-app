@@ -14,7 +14,13 @@ const DialogPortal = DialogPrimitive.Portal
 
 const DialogClose = DialogPrimitive.Close
 
-function DialogOverlay({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> & { ref?: React.RefObject<React.ElementRef<typeof DialogPrimitive.Overlay> | null> }) {
+function DialogOverlay({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> & {
+  ref?: React.RefObject<React.ElementRef<typeof DialogPrimitive.Overlay> | null>
+}) {
   return (
     <DialogPrimitive.Overlay
       ref={ref}
@@ -28,7 +34,14 @@ function DialogOverlay({ ref, className, ...props }: React.ComponentPropsWithout
 }
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
-function DialogContent({ ref, className, children, ...props }: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & { ref?: React.RefObject<React.ElementRef<typeof DialogPrimitive.Content> | null> }) {
+function DialogContent({
+  ref,
+  className,
+  children,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
+  ref?: React.RefObject<React.ElementRef<typeof DialogPrimitive.Content> | null>
+}) {
   return (
     <DialogPortal>
       <DialogOverlay />
@@ -41,9 +54,9 @@ function DialogContent({ ref, className, children, ...props }: React.ComponentPr
         {...props}
       >
         {children}
-        <DialogPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute right-4 top-4 rounded-sm opacity-70 transition-opacity disabled:pointer-events-none hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2">
-          <Cross2Icon className="h-4 w-4" />
-          <span className="sr-only">Close</span>
+        <DialogPrimitive.Close className='ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute right-4 top-4 rounded-sm opacity-70 transition-opacity disabled:pointer-events-none hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2'>
+          <Cross2Icon className='h-4 w-4' />
+          <span className='sr-only'>Close</span>
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>
     </DialogPortal>
@@ -51,53 +64,50 @@ function DialogContent({ ref, className, children, ...props }: React.ComponentPr
 }
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
-function DialogHeader({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+function DialogHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn(
-        'flex flex-col space-y-1.5 text-center sm:text-left',
-        className,
-      )}
+      className={cn('flex flex-col space-y-1.5 text-center sm:text-left', className)}
       {...props}
     />
   )
 }
 DialogHeader.displayName = 'DialogHeader'
 
-function DialogFooter({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+function DialogFooter({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn(
-        'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
-        className,
-      )}
+      className={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)}
       {...props}
     />
   )
 }
 DialogFooter.displayName = 'DialogFooter'
 
-function DialogTitle({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title> & { ref?: React.RefObject<React.ElementRef<typeof DialogPrimitive.Title> | null> }) {
+function DialogTitle({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title> & {
+  ref?: React.RefObject<React.ElementRef<typeof DialogPrimitive.Title> | null>
+}) {
   return (
     <DialogPrimitive.Title
       ref={ref}
-      className={cn(
-        'text-lg font-semibold leading-none tracking-tight',
-        className,
-      )}
+      className={cn('text-lg font-semibold leading-none tracking-tight', className)}
       {...props}
     />
   )
 }
 DialogTitle.displayName = DialogPrimitive.Title.displayName
 
-function DialogDescription({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description> & { ref?: React.RefObject<React.ElementRef<typeof DialogPrimitive.Description> | null> }) {
+function DialogDescription({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description> & {
+  ref?: React.RefObject<React.ElementRef<typeof DialogPrimitive.Description> | null>
+}) {
   return (
     <DialogPrimitive.Description
       ref={ref}

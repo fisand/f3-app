@@ -3,13 +3,7 @@ import 'virtual:uno.css'
 
 import { ProgressProvider, useProgress } from '@bprogress/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import {
-  createRootRoute,
-  HeadContent,
-  Outlet,
-  Scripts,
-  useRouter,
-} from '@tanstack/react-router'
+import { createRootRoute, HeadContent, Outlet, Scripts, useRouter } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 import { Toaster } from 'sonner'
 
@@ -38,7 +32,7 @@ function RootComponent() {
     <RootDocument>
       <QueryClientProvider client={queryClient}>
         <App />
-        <Toaster position="top-center" />
+        <Toaster position='top-center' />
       </QueryClientProvider>
     </RootDocument>
   )
@@ -57,19 +51,20 @@ function App() {
     stop()
   })
 
-  return (
-    <Outlet />
-  )
+  return <Outlet />
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html className="dark">
+    <html className='dark'>
       <head>
         <HeadContent />
       </head>
       <body>
-        <ProgressProvider color="linear-gradient(to right, #34d399, #67e8f9)" options={{ showSpinner: false }}>
+        <ProgressProvider
+          color='linear-gradient(to right, #34d399, #67e8f9)'
+          options={{ showSpinner: false }}
+        >
           {children}
         </ProgressProvider>
         <Scripts />

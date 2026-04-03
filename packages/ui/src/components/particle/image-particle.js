@@ -1,11 +1,11 @@
 /* eslint-disable unicorn/no-abusive-eslint-disable */
 /* eslint-disable */
 export function inspiraImageParticles() {
-  const _requestAnimationFrame
-    = window.requestAnimationFrame
-    || window.webkitRequestAnimationFrame
-    || window.mozRequestAnimationFrame
-    || function (callback) {
+  const _requestAnimationFrame =
+    window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    function (callback) {
       setTimeout(callback, 10)
     }
   const PI2 = Math.PI * 2
@@ -27,12 +27,10 @@ export function inspiraImageParticles() {
           options = JSON.parse(JSON.stringify(optionsParam.dataset))
           if (optionsParam.nodeName === 'IMG') {
             options.image = optionsParam
-          }
-          else {
+          } else {
             options.wrapperElement = optionsParam
           }
-        }
-        else {
+        } else {
           options = optionsParam
         }
       }
@@ -66,8 +64,7 @@ export function inspiraImageParticles() {
       this._draw = this[`_${value}Renderer`]
       try {
         this[`_${value}InitContext`]()
-      }
-      catch (e) {
+      } catch (e) {
         console.log(e)
         if (value !== 'default') {
           this.renderer = 'default'
@@ -107,8 +104,7 @@ export function inspiraImageParticles() {
             document.body.addEventListener('touchmove', this._touchHandler)
             document.body.addEventListener('touchend', this._clearTouches)
             document.body.addEventListener('touchcancel', this._clearTouches)
-          }
-          else {
+          } else {
             this.canvas.addEventListener('mousemove', this._mouseHandler)
             this.canvas.addEventListener('mouseout', this._clearTouches)
             this.canvas.addEventListener('click', this._clickHandler)
@@ -139,8 +135,7 @@ export function inspiraImageParticles() {
         this._calculate()
         this._draw()
         _requestAnimationFrame(() => this._animate())
-      }
-      else {
+      } else {
         this.emit('stopped')
       }
     }
@@ -161,9 +156,9 @@ export function inspiraImageParticles() {
     get _clickHandler() {
       return (e) => {
         const strength = this.clickStrength
-        this.origins.map(o => (o.z -= strength))
+        this.origins.map((o) => (o.z -= strength))
         setTimeout(() => {
-          this.origins.map(o => (o.z += strength))
+          this.origins.map((o) => (o.z += strength))
         }, 100)
       }
     }
@@ -243,7 +238,10 @@ export function inspiraImageParticles() {
     }
 
     _webglInitContext() {
-      this.context = this.context || this.canvas.getContext('webgl2') || this.canvas.getContext('experimental-webgl')
+      this.context =
+        this.context ||
+        this.canvas.getContext('webgl2') ||
+        this.canvas.getContext('experimental-webgl')
       this.fragmentShaderScript = `#version 300 es
   
           precision highp float;
@@ -344,8 +342,16 @@ export function inspiraImageParticles() {
         const perspectiveMatrix = [x, 0, a, 0, 0, y, b, 0, 0, 0, c, d, 0, 0, -1, 0]
         const modelViewMatrix = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
         this.context.viewport(0, 0, this.width, this.height)
-        this.context.uniformMatrix4fv(this.uModelViewMatrix, false, new Float32Array(perspectiveMatrix))
-        this.context.uniformMatrix4fv(this.uPerspectiveMatrix, false, new Float32Array(modelViewMatrix))
+        this.context.uniformMatrix4fv(
+          this.uModelViewMatrix,
+          false,
+          new Float32Array(perspectiveMatrix),
+        )
+        this.context.uniformMatrix4fv(
+          this.uPerspectiveMatrix,
+          false,
+          new Float32Array(modelViewMatrix),
+        )
         this.context.uniform1f(this.uPointSize, this.particleSize)
         this.context.uniform1f(this.uDepth, this.depth)
         // this.context.uniform4fv(this.uVertexColors, new Float32Array(this.vertexColors));
@@ -381,32 +387,28 @@ export function inspiraImageParticles() {
       if (this.maxWidth) {
         if (this.maxWidth.endsWith('%')) {
           this.maxWidth = (this.width * this.maxWidth.replace('%', '')) / 100
-        }
-        else {
+        } else {
           this.maxWidth *= 1
         }
       }
       if (this.maxHeight) {
         if (this.maxHeight.endsWith('%')) {
           this.maxHeight = (this.height * this.maxHeight.replace('%', '')) / 100
-        }
-        else {
+        } else {
           this.maxHeight *= 1
         }
       }
       if (this.minWidth) {
         if (this.minWidth.endsWith('%')) {
           this.minWidth = (this.width * this.minWidth.replace('%', '')) / 100
-        }
-        else {
+        } else {
           this.minWidth *= 1
         }
       }
       if (this.minHeight) {
         if (this.minHeight.endsWith('%')) {
           this.minHeight = (this.height * this.minHeight.replace('%', '')) / 100
-        }
-        else {
+        } else {
           this.minHeight *= 1
         }
       }
@@ -421,11 +423,14 @@ export function inspiraImageParticles() {
       this.waitDuration = options.waitDuration * 1 || 200
       this.shrinkDuration = options.shrinkDuration * 1 || 200
       this.shrinkDistance = options.shrinkDistance * 1 || 50
-      this.threeDimensional
-        = options.threeDimensional !== undefined && options.threeDimensional !== 'false'
+      this.threeDimensional =
+        options.threeDimensional !== undefined && options.threeDimensional !== 'false'
           ? !!options.threeDimensional
           : false
-      this.lifeCycle = options.lifeCycle !== undefined && options.lifeCycle !== 'false' ? !!options.lifeCycle : false
+      this.lifeCycle =
+        options.lifeCycle !== undefined && options.lifeCycle !== 'false'
+          ? !!options.lifeCycle
+          : false
       this.layerDistance = options.layerDistance || this.particleGap
       this.initPosition = options.initPosition || 'random'
       this.initDirection = options.initDirection || 'random'
@@ -487,13 +492,17 @@ export function inspiraImageParticles() {
         particle.x += particle.vx
         particle.y += particle.vy
         particle.z += particle.vz
-        if (particle.x < 0 || particle.x >= this.width || particle.y < 0 || particle.y >= this.height) {
+        if (
+          particle.x < 0 ||
+          particle.x >= this.width ||
+          particle.y < 0 ||
+          particle.y >= this.height
+        ) {
           particle.isHidden = true
           if (this.state === 'stopping') {
             particle.isDead = true
           }
-        }
-        else {
+        } else {
           if (this.state === 'stopping' && !particle.isDead) {
             renderCount++
           }
@@ -508,10 +517,9 @@ export function inspiraImageParticles() {
             origin.tick += 1
             if (origin.tick >= 0) {
               if (origin.tick < this.growDuration) {
-                a *= (origin.tick / this.growDuration)
+                a *= origin.tick / this.growDuration
                 // z -= 50 * (tick / this.shrinkDuration);
-              }
-              else {
+              } else {
                 tick = origin.tick - this.growDuration - this.waitDuration
                 if (tick >= 0 && tick <= this.shrinkDuration) {
                   touch = this.touches[touchIndex]
@@ -529,12 +537,19 @@ export function inspiraImageParticles() {
                   }
                 }
               }
-            }
-            else {
+            } else {
               a = 0
             }
           }
-          this.vertices.push(x, y, z, origin.vertexColors[0], origin.vertexColors[1], origin.vertexColors[2], a)
+          this.vertices.push(
+            x,
+            y,
+            z,
+            origin.vertexColors[0],
+            origin.vertexColors[1],
+            origin.vertexColors[2],
+            a,
+          )
         }
       }
       if (this.state === 'stopping' && renderCount === 0) {
@@ -623,13 +638,14 @@ export function inspiraImageParticles() {
     }
 
     _fade() {
-      this.state = this.fadePosition === 'explode'
-      || this.fadePosition === 'top'
-      || this.fadePosition === 'left'
-      || this.fadePosition === 'bottom'
-      || this.fadePosition === 'right'
-        ? 'stopping'
-        : 'stopped'
+      this.state =
+        this.fadePosition === 'explode' ||
+        this.fadePosition === 'top' ||
+        this.fadePosition === 'left' ||
+        this.fadePosition === 'bottom' ||
+        this.fadePosition === 'right'
+          ? 'stopping'
+          : 'stopped'
       if (this.origins) {
         for (index = 0; index < this.origins.length; index++) {
           this._fadeOriginPosition(this.origins[index])
@@ -643,10 +659,8 @@ export function inspiraImageParticles() {
         case 'random': {
           origin.x = Math.random() * this.width * 2 - this.width
           origin.y = Math.random() * this.height * 2 - this.height
-          if (origin.x > 0)
-            origin.x += this.width
-          if (origin.y > 0)
-            origin.y += this.height
+          if (origin.x > 0) origin.x += this.width
+          if (origin.y > 0) origin.y += this.height
           break
         }
         case 'top': {
@@ -670,7 +684,7 @@ export function inspiraImageParticles() {
           break
         }
         default:
-          // Stay in place
+        // Stay in place
       }
     }
 
@@ -768,23 +782,26 @@ export function inspiraImageParticles() {
       if (this.responsiveWidth) {
         this.width = this.wrapperElement.clientWidth
       }
-      this.ratio
-        = Math.min(this.width, this.maxWidth || Number.POSITIVE_INFINITY)
-        / Math.min(this.height, this.maxHeight || Number.POSITIVE_INFINITY)
+      this.ratio =
+        Math.min(this.width, this.maxWidth || Number.POSITIVE_INFINITY) /
+        Math.min(this.height, this.maxHeight || Number.POSITIVE_INFINITY)
       if (this.ratio < this.imageRatio) {
-        this.renderWidth = Math.trunc(Math.min(
-          this.width || Number.POSITIVE_INFINITY,
-          this.minWidth || this.imageWidth || Number.POSITIVE_INFINITY,
-          this.maxWidth || Number.POSITIVE_INFINITY,
-        ))
+        this.renderWidth = Math.trunc(
+          Math.min(
+            this.width || Number.POSITIVE_INFINITY,
+            this.minWidth || this.imageWidth || Number.POSITIVE_INFINITY,
+            this.maxWidth || Number.POSITIVE_INFINITY,
+          ),
+        )
         this.renderHeight = Math.trunc(this.renderWidth / this.imageRatio)
-      }
-      else {
-        this.renderHeight = Math.trunc(Math.min(
-          this.height || Number.POSITIVE_INFINITY,
-          this.minHeight || this.imageHeight || Number.POSITIVE_INFINITY,
-          this.maxHeight || Number.POSITIVE_INFINITY,
-        ))
+      } else {
+        this.renderHeight = Math.trunc(
+          Math.min(
+            this.height || Number.POSITIVE_INFINITY,
+            this.minHeight || this.imageHeight || Number.POSITIVE_INFINITY,
+            this.maxHeight || Number.POSITIVE_INFINITY,
+          ),
+        )
         this.renderWidth = Math.trunc(this.renderHeight * this.imageRatio)
       }
       this.offsetX = Math.trunc((this.width - this.renderWidth) / 2)
@@ -813,11 +830,10 @@ export function inspiraImageParticles() {
                   color: this.colorArr,
                   tick,
                   seed,
-                  vertexColors: this.colorArr.map(c => c / 255),
+                  vertexColors: this.colorArr.map((c) => c / 255),
                 })
               }
-            }
-            else {
+            } else {
               r = data[index]
               g = data[index + 1]
               b = data[index + 2]
@@ -848,15 +864,25 @@ export function inspiraImageParticles() {
       const str = strParam.replace(' ', '')
 
       if ((color = /^#([\da-f]{2})([\da-f]{2})([\da-f]{2})/i.exec(str))) {
-        color = [Number.parseInt(color[1], 16), Number.parseInt(color[2], 16), Number.parseInt(color[3], 16)]
-      }
-      else if ((color = /^#([\da-f])([\da-f])([\da-f])/i.exec(str))) {
-        color = [Number.parseInt(color[1], 16) * 17, Number.parseInt(color[2], 16) * 17, Number.parseInt(color[3], 16) * 17]
-      }
-      else if ((color = /^rgba\((\d+),(\d+),(\d+),(\d+|\d?[^\d\n\r\u2028\u2029]\d+|\d{2,}(?:[^\d\n\r\u2028\u2029]\d+)?)\)/.exec(str))) {
+        color = [
+          Number.parseInt(color[1], 16),
+          Number.parseInt(color[2], 16),
+          Number.parseInt(color[3], 16),
+        ]
+      } else if ((color = /^#([\da-f])([\da-f])([\da-f])/i.exec(str))) {
+        color = [
+          Number.parseInt(color[1], 16) * 17,
+          Number.parseInt(color[2], 16) * 17,
+          Number.parseInt(color[3], 16) * 17,
+        ]
+      } else if (
+        (color =
+          /^rgba\((\d+),(\d+),(\d+),(\d+|\d?[^\d\n\r\u2028\u2029]\d+|\d{2,}(?:[^\d\n\r\u2028\u2029]\d+)?)\)/.exec(
+            str,
+          ))
+      ) {
         color = [+color[1], +color[2], +color[3], +color[4]]
-      }
-      else if (!(color = /^rgb\((\d+),(\d+),(\d+)\)/.exec(str))) {
+      } else if (!(color = /^rgb\((\d+),(\d+),(\d+)\)/.exec(str))) {
         return
       }
       color = [+color[1], +color[2], +color[3]]

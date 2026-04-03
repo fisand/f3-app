@@ -1,7 +1,7 @@
 import { useConnectModal } from '@rainbow-me/rainbowkit'
 import { motion } from 'framer-motion'
 import type { LucideIcon } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router'
 
 import { cn } from '@/lib/utils'
@@ -32,13 +32,16 @@ export function Navbar({ items, className }: NavbarProps) {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const handleClick = useCallback((item: NavItem) => {
-    setActiveTab(item.name)
-    console.info(item.name)
-    if (item.name.toLowerCase() === 'connect') {
-      openConnectModal?.()
-    }
-  }, [openConnectModal])
+  const handleClick = useCallback(
+    (item: NavItem) => {
+      setActiveTab(item.name)
+      console.info(item.name)
+      if (item.name.toLowerCase() === 'connect') {
+        openConnectModal?.()
+      }
+    },
+    [openConnectModal],
+  )
 
   return (
     <div
@@ -47,7 +50,7 @@ export function Navbar({ items, className }: NavbarProps) {
         className,
       )}
     >
-      <div className="flex items-center gap-3 border rounded-full px-1 py-1 shadow-lg backdrop-blur-lg">
+      <div className='flex items-center gap-3 border rounded-full px-1 py-1 shadow-lg backdrop-blur-lg'>
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -63,14 +66,14 @@ export function Navbar({ items, className }: NavbarProps) {
                 isActive && 'text-white',
               )}
             >
-              <span className="hidden md:inline">{item.name}</span>
-              <span className="md:hidden">
+              <span className='hidden md:inline'>{item.name}</span>
+              <span className='md:hidden'>
                 <Icon size={18} strokeWidth={2.5} />
               </span>
               {isActive && (
                 <motion.div
-                  layoutId="lamp"
-                  className="absolute inset-0 w-full rounded-full bg-rose-300/5 -z-10"
+                  layoutId='lamp'
+                  className='absolute inset-0 w-full rounded-full bg-rose-300/5 -z-10'
                   initial={false}
                   transition={{
                     type: 'spring',
@@ -78,10 +81,10 @@ export function Navbar({ items, className }: NavbarProps) {
                     damping: 30,
                   }}
                 >
-                  <div className="absolute left-1/2 h-1 w-8 rounded-t-full bg-rose-300 -top-2 -translate-x-1/2">
-                    <div className="absolute h-6 w-12 rounded-full bg-rose-300/20 blur-md -left-2 -top-2" />
-                    <div className="absolute h-6 w-8 rounded-full bg-rose-300/20 blur-md -top-1" />
-                    <div className="absolute left-2 top-0 h-4 w-4 rounded-full bg-rose-300/20 blur-sm" />
+                  <div className='absolute left-1/2 h-1 w-8 rounded-t-full bg-rose-300 -top-2 -translate-x-1/2'>
+                    <div className='absolute h-6 w-12 rounded-full bg-rose-300/20 blur-md -left-2 -top-2' />
+                    <div className='absolute h-6 w-8 rounded-full bg-rose-300/20 blur-md -top-1' />
+                    <div className='absolute left-2 top-0 h-4 w-4 rounded-full bg-rose-300/20 blur-sm' />
                   </div>
                 </motion.div>
               )}

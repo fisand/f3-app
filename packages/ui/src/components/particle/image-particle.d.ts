@@ -62,7 +62,7 @@ export declare class InspiraImageParticle implements EventHandlers {
 
   // Public Properties
   state: string
-  touches: Array<{ x: number, y: number, z: number, force: number }>
+  touches: Array<{ x: number; y: number; z: number; force: number }>
   colorArr: number[]
   vertices: Float32Array | false
   events: Record<string, Function[]>

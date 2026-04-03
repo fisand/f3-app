@@ -1,19 +1,18 @@
 {
   "name": "web-next",
-  "type": "module",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build --turbo",
     "dev": "next dev --turbo",
-    "lint": "eslint",
+    "lint": "vp lint .",
     "preview": "pnpm dlx serve out",
     "start": "next start"
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
     "@unocss/reset": "~66.5.4",
-    "eslint-config": "workspace:*",
     "next": "^16.1.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
@@ -21,7 +20,6 @@
   "devDependencies": {
     "@types/node": "^22.15.29",
     "@unocss/postcss": "~66.3.3",
-    "eslint-config-next": "16.2.1",
     "typescript": "^6.0.2"
   }
 }

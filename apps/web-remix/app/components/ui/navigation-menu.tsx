@@ -5,14 +5,18 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-function NavigationMenu({ ref, className, children, ...props }: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root> & { ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.Root> | null> }) {
+function NavigationMenu({
+  ref,
+  className,
+  children,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root> & {
+  ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.Root> | null>
+}) {
   return (
     <NavigationMenuPrimitive.Root
       ref={ref}
-      className={cn(
-        'relative z-10 flex max-w-max flex-1 items-center justify-center',
-        className,
-      )}
+      className={cn('relative z-10 flex max-w-max flex-1 items-center justify-center', className)}
       {...props}
     >
       {children}
@@ -22,14 +26,17 @@ function NavigationMenu({ ref, className, children, ...props }: React.ComponentP
 }
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName
 
-function NavigationMenuList({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List> & { ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.List> | null> }) {
+function NavigationMenuList({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List> & {
+  ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.List> | null>
+}) {
   return (
     <NavigationMenuPrimitive.List
       ref={ref}
-      className={cn(
-        'group flex flex-1 list-none items-center justify-center space-x-1',
-        className,
-      )}
+      className={cn('group flex flex-1 list-none items-center justify-center space-x-1', className)}
       {...props}
     />
   )
@@ -42,25 +49,37 @@ const navigationMenuTriggerStyle = cva(
   'group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50',
 )
 
-function NavigationMenuTrigger({ ref, className, children, ...props }: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger> & { ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.Trigger> | null> }) {
+function NavigationMenuTrigger({
+  ref,
+  className,
+  children,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger> & {
+  ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.Trigger> | null>
+}) {
   return (
     <NavigationMenuPrimitive.Trigger
       ref={ref}
       className={cn(navigationMenuTriggerStyle(), 'group', className)}
       {...props}
     >
-      {children}
-      {' '}
+      {children}{' '}
       <ChevronDownIcon
-        className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
-        aria-hidden="true"
+        className='relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180'
+        aria-hidden='true'
       />
     </NavigationMenuPrimitive.Trigger>
   )
 }
 NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName
 
-function NavigationMenuContent({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content> & { ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.Content> | null> }) {
+function NavigationMenuContent({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content> & {
+  ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.Content> | null>
+}) {
   return (
     <NavigationMenuPrimitive.Content
       ref={ref}
@@ -76,7 +95,13 @@ NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName
 
 const NavigationMenuLink = NavigationMenuPrimitive.Link
 
-function NavigationMenuViewport({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport> & { ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.Viewport> | null> }) {
+function NavigationMenuViewport({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport> & {
+  ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.Viewport> | null>
+}) {
   return (
     <div className={cn('absolute left-0 top-full flex justify-center')}>
       <NavigationMenuPrimitive.Viewport
@@ -90,10 +115,15 @@ function NavigationMenuViewport({ ref, className, ...props }: React.ComponentPro
     </div>
   )
 }
-NavigationMenuViewport.displayName
-  = NavigationMenuPrimitive.Viewport.displayName
+NavigationMenuViewport.displayName = NavigationMenuPrimitive.Viewport.displayName
 
-function NavigationMenuIndicator({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Indicator> & { ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.Indicator> | null> }) {
+function NavigationMenuIndicator({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Indicator> & {
+  ref?: React.RefObject<React.ElementRef<typeof NavigationMenuPrimitive.Indicator> | null>
+}) {
   return (
     <NavigationMenuPrimitive.Indicator
       ref={ref}
@@ -103,12 +133,11 @@ function NavigationMenuIndicator({ ref, className, ...props }: React.ComponentPr
       )}
       {...props}
     >
-      <div className="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
+      <div className='bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md' />
     </NavigationMenuPrimitive.Indicator>
   )
 }
-NavigationMenuIndicator.displayName
-  = NavigationMenuPrimitive.Indicator.displayName
+NavigationMenuIndicator.displayName = NavigationMenuPrimitive.Indicator.displayName
 
 export {
   NavigationMenu,

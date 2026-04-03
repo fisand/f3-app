@@ -9,7 +9,15 @@ const HoverCard = HoverCardPrimitive.Root
 
 const HoverCardTrigger = HoverCardPrimitive.Trigger
 
-function HoverCardContent({ ref, className, align = 'center', sideOffset = 4, ...props }: React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content> & { ref?: React.RefObject<React.ElementRef<typeof HoverCardPrimitive.Content> | null> }) {
+function HoverCardContent({
+  ref,
+  className,
+  align = 'center',
+  sideOffset = 4,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content> & {
+  ref?: React.RefObject<React.ElementRef<typeof HoverCardPrimitive.Content> | null>
+}) {
   return (
     <HoverCardPrimitive.Content
       ref={ref}

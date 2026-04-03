@@ -13,7 +13,7 @@
   "scripts": {
     "build": "pnpm --filter drizzle build && vp build",
     "dev": "vp dev",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "vp lint .",
     "preview": "DB_FILE_NAME=file:../../packages/drizzle/src/db/sqlite3.db node .output/server/index.mjs",
     "start": "node .output/server/index.mjs"
   },

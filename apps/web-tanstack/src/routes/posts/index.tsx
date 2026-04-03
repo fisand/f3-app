@@ -10,8 +10,7 @@ export const Route = createFileRoute('/posts/')({
       const data = await orpc.pong.call()
       console.info('orpc.pong loader', data)
       return { data }
-    }
-    catch {
+    } catch {
       return { data: null }
     }
   },

@@ -11,7 +11,14 @@ const Tooltip = TooltipPrimitive.Root
 
 const TooltipTrigger = TooltipPrimitive.Trigger
 
-function TooltipContent({ ref, className, sideOffset = 4, ...props }: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> & { ref?: React.RefObject<React.ElementRef<typeof TooltipPrimitive.Content> | null> }) {
+function TooltipContent({
+  ref,
+  className,
+  sideOffset = 4,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> & {
+  ref?: React.RefObject<React.ElementRef<typeof TooltipPrimitive.Content> | null>
+}) {
   return (
     <TooltipPrimitive.Portal>
       <TooltipPrimitive.Content

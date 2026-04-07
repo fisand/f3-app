@@ -5,7 +5,7 @@
   "scripts": {
     "build": "react-router typegen && react-router build",
     "dev": "react-router dev",
-    "lint": "vp lint .",
+    "lint": "react-router typegen && vp lint .",
     "start": "DATABASE_URL=file:./db/sqlite3.db react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
   },

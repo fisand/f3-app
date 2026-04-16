@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 // import { nitroV2Plugin as nitro } from '@tanstack/nitro-v2-vite-plugin'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
+import rsc from '@vitejs/plugin-rsc'
 import { nitro } from 'nitro/vite'
 import UnoCSS from 'unocss/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
@@ -19,7 +20,12 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [
-    tanstackStart(),
+    tanstackStart({
+      rsc: {
+        enabled: true,
+      },
+    }),
+    rsc(),
     // react's vite plugin must come after start's vite plugin
     viteReact(),
     nitro({

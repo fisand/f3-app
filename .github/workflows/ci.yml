@@ -19,6 +19,6 @@ jobs:
       - uses: voidzero-dev/setup-vp@v1
         with:
           cache: true
-      - run: vp install
-      - run: vp check
-      - run: vp build
+      - run: pnpm run install
+      - run: pnpm run check
+      - run: pnpm run build

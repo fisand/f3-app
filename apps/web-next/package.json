@@ -12,14 +12,14 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
-    "@unocss/reset": "~66.5.4",
     "next": "^16.1.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "4.1.11",
     "@types/node": "^22.15.29",
-    "@unocss/postcss": "~66.3.3",
+    "tailwindcss": "4.1.11",
     "typescript": "^6.0.2"
   }
 }

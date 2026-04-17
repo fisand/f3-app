@@ -1,3 +1,6 @@
+@import 'tailwindcss';
+@import '../../../../../packages/ui/src/styles/tailwind.css';
+
 body {
   font-family: 'Open Sans', sans-serif;
 }

@@ -1,9 +1,7 @@
 import { resolve } from 'node:path'
 
+import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-import UnoCSS from 'unocss/vite'
-import { FileSystemIconLoader } from 'unplugin-icons/loaders'
-import Icons from 'unplugin-icons/vite'
 import Checker from 'vite-plugin-checker'
 import Pages from 'vite-plugin-pages'
 import type { PluginOption } from 'vite-plus'
@@ -18,25 +16,13 @@ export default defineConfig({
     },
   },
   plugins: [
-    react(),
-    Checker({ typescript: true }),
-    Icons({
-      compiler: 'jsx',
-      jsx: 'react',
-      customCollections: {
-        'fisand-icons': FileSystemIconLoader(
-          `${resolve(import.meta.dirname, 'src/assets/icons')}/`,
-          (svg) => svg.replace(/^<svg /, '<svg fill="currentColor" '),
-        ),
-      },
-    }) as PluginOption,
+    tailwindcss() as PluginOption,
+    react() as PluginOption,
+    Checker({ typescript: true }) as PluginOption,
     Pages({
       dirs: [{ dir: 'src/pages', baseRoute: '' }],
       exclude: ['**/[A-Z]*.tsx'],
       importMode: 'sync',
-    }),
-    UnoCSS({
-      configFile: resolve(import.meta.dirname, '../../uno.config.ts'),
     }) as PluginOption,
   ],
   server: {

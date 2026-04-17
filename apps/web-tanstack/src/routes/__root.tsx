@@ -1,5 +1,4 @@
-import '@unocss/reset/tailwind.css'
-import 'virtual:uno.css'
+import '../styles.css'
 
 import { ProgressProvider, useProgress } from '@bprogress/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'

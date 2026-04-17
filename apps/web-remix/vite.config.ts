@@ -1,9 +1,5 @@
-import { resolve } from 'node:path'
-
+import tailwindcss from '@tailwindcss/vite'
 import { reactRouter } from '@react-router/dev/vite'
-import unocss from 'unocss/vite'
-import { FileSystemIconLoader } from 'unplugin-icons/loaders'
-import Icons from 'unplugin-icons/vite'
 import checker from 'vite-plugin-checker'
 import type { PluginOption } from 'vite-plus'
 import { defineConfig } from 'vite-plus'
@@ -13,20 +9,10 @@ export default defineConfig({
     tsconfigPaths: true,
   },
   plugins: [
-    unocss(),
-    reactRouter(),
+    tailwindcss() as PluginOption,
+    reactRouter() as PluginOption,
     checker({
       typescript: true,
-    }),
-    Icons({
-      compiler: 'jsx',
-      jsx: 'react',
-      customCollections: {
-        'fisand-icons': FileSystemIconLoader(
-          `${resolve(import.meta.dirname, 'app/assets/icons')}/`,
-          (svg) => svg.replace(/^<svg /, '<svg fill="currentColor" '),
-        ),
-      },
     }) as PluginOption,
   ],
   build: {

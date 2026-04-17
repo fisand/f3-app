@@ -1,11 +1,6 @@
-import { useQuery } from '@tanstack/react-query'
 import { createFileRoute } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
-import {
-  createFromReadableStream,
-  renderServerComponent,
-  renderToReadableStream,
-} from '@tanstack/react-start/rsc'
+import { renderServerComponent } from '@tanstack/react-start/rsc'
 
 // Create a server function
 // const getGreeting = createServerFn().handler(async () => {

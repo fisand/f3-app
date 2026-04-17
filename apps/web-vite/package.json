@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
-    "@unocss/reset": "~66.3.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",
@@ -23,13 +22,8 @@
     "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
-    "@iconify-json/devicon-plain": "^1.2.47",
-    "@iconify-json/logos": "^1.2.10",
-    "@iconify-json/lucide": "^1.2.62",
-    "@iconify-json/simple-icons": "^1.2.62",
     "@vitejs/plugin-react": "^5.1.2",
     "api": "workspace:*",
-    "unplugin-icons": "^22.5.0",
     "vite": "catalog:",
     "vite-plugin-checker": "^0.12.0",
     "vite-plugin-pages": "^0.33.2",

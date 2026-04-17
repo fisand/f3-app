@@ -18,14 +18,14 @@ function HomePage() {
       <motion.div
         initial={{ opacity: 0, y: -6 }}
         animate={{ opacity: 1, y: 0 }}
-        className='border-b border-b-1 border-border h-14'
+        className='border-b border-border h-14'
       >
         <div className='mx-auto container flex h-full items-center justify-between lt-sm:px-4'>
-          <span className='text-lg font-500 flex gap-1.5 items-center'>
+          <span className='text-lg font-medium flex gap-1.5 items-center'>
             <span className='p-1 rounded-lg bg-white flex-col-center h-5.5 w-5.5'>
-              <span className='i-logos:fastify-icon h-4 w-4' />
+              <span className='i-logos-fastify-icon h-4 w-4' />
             </span>
-            <span className='i-devicon-plain:trpc h-5.5 w-5.5' />
+            <span className='i-devicon-plain-trpc h-5.5 w-5.5' />
             f3-app
           </span>
 
@@ -35,11 +35,11 @@ function HomePage() {
             target='_blank'
             className='flex-col-center'
           >
-            <span className='i-simple-icons:github h-5.5 w-5.5 cursor-pointer transition-all hover:scale-105' />
+            <span className='i-simple-icons-github h-5.5 w-5.5 cursor-pointer transition-all hover:scale-105' />
           </a>
         </div>
       </motion.div>
-      <div className='mx-auto flex-1 w-100 lt-sm:(px-4 w-full)'>
+      <div className='mx-auto flex-1 w-100 lt-sm:px-4 lt-sm:w-full'>
         <div className='pb-5 pt-10 flex flex-col gap-3'>
           <div className='flex min-h-64 items-center justify-center z-10'>
             <ShimmerButton className='shadow-2xl'>
@@ -79,7 +79,7 @@ function HomePage() {
                     await userList.refetch()
                   }}
                 >
-                  <span className='i-lucide:square-check text-primary-foreground h-5 w-5' />
+                  <span className='i-lucide-square-check text-primary-foreground h-5 w-5' />
                 </button>
 
                 <button
@@ -90,7 +90,7 @@ function HomePage() {
                     await userList.refetch()
                   }}
                 >
-                  <span className='i-lucide:x text-primary-foreground h-5 w-5' />
+                  <span className='i-lucide-x text-primary-foreground h-5 w-5' />
                 </button>
               </motion.span>
             ))}
@@ -131,9 +131,9 @@ function HomePage() {
             disabled={false}
           >
             {/* {createUser.isPending ? (
-                <span className="i-lucide:loader-circle mr-1 h-4 w-4 animate-spin" />
+                <span className="i-lucide-loader-circle mr-1 h-4 w-4 animate-spin" />
               ) : (
-                <span className="i-lucide:plus mr-1 h-4 w-4 text-primary-foreground" />
+                <span className="i-lucide-plus mr-1 h-4 w-4 text-primary-foreground" />
               )} */}
             New
           </Button>
@@ -143,13 +143,13 @@ function HomePage() {
       <motion.div
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
-        className='border-t border-t-1 border-border grid grid-cols-3 h-14'
+        className='border-t border-border grid grid-cols-3 h-14'
       >
         <span />
         <div className='mx-auto flex-center gap-2 h-full lt-sm:px-4'>
           <a href='https://fastify.io/' target='_blank' rel='noreferrer noopener'>
             <span className='p-1 rounded-lg bg-white flex-col-center h-5.5 w-5.5'>
-              <span className='i-logos:fastify-icon h-4 w-4' />
+              <span className='i-logos-fastify-icon h-4 w-4' />
             </span>
           </a>
           <a
@@ -158,7 +158,7 @@ function HomePage() {
             rel='noreferrer noopener'
             className='flex-col-center'
           >
-            <span className='i-devicon-plain:trpc h-5 w-5' />
+            <span className='i-devicon-plain-trpc h-5 w-5' />
           </a>
         </div>
         <span />

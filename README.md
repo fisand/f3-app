@@ -13,14 +13,14 @@ F3-App is your one-stop shop for kickstarting a modern web application with all 
 - 🏎️ **Vite-powered React**: Because waiting for your app to build is so last year!
 - 🔮 **tRPC API**: Type-safe APIs that'll make you wonder how you ever lived without them.
 - 💾 **Prisma**: Database management so smooth, it feels like cheating.
-- 🎨 **UnoCSS**: Atomic CSS on steroids - style your app faster than you can say "responsive"!
+- 🎨 **Tailwind CSS v4**: Utility-first styling with shared tokens, custom variants, and icon utilities.
 - 🚄 **Fastify**: An API server so quick, it'll give Usain Bolt a run for his money.
 - 🧰 **Turbo**: Monorepo management that'll make you feel like a 10x developer.
 
 ## 🚦 Getting Started
 
 1. Clone this repo (you're already awesome for choosing it!)
-2. Run `pnpm install` (because we're fancy and use pnpm)
+2. Run `vp install`
 3. Start coding like there's no tomorrow!
 
 ## 📋 Todo List (Because Even Awesome Projects Have Room for Improvement)
@@ -29,7 +29,7 @@ F3-App is your one-stop shop for kickstarting a modern web application with all 
 - [ ] Implement Vitest (Because testing is important, even if it's not as fun as coding)
 - [x] Integrate tRPC API (✅ Type-safety for the win!)
 - [x] Set up Prisma (💽 Database management has never been this cool)
-- [x] Configure UnoCSS (🎨 Making your app pretty, one utility class at a time)
+- [x] Configure Tailwind CSS v4 (🎨 Making your app pretty, one utility class at a time)
 - [x] Implement Fastify (🏃‍♂️ Gotta go fast!)
 - [ ] Add PostgreSQL (🐘 Because elephants never forget... your data)
 - [ ] docker deployment

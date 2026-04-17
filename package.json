@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "turbo build",
-    "check": "vp check --fix",
+    "check": "vp exec --filter web-remix -- react-router typegen && vp check --fix",
     "dev": "turbo dev",
     "dev:expo": "pnpm --filter expo-next ios",
     "format": "vp fmt . --write",

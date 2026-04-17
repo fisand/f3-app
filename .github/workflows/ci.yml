@@ -20,5 +20,5 @@ jobs:
         with:
           cache: true
       - run: vp install
-      - run: vp check
-      - run: vp build
+      - run: vp run check
+      - run: vp run build

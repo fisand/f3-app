@@ -1,15 +1,12 @@
-import { resolve } from 'node:path'
-
 // import { nitroV2Plugin as nitro } from '@tanstack/nitro-v2-vite-plugin'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
+import tailwindcss from '@tailwindcss/vite'
 import viteReact from '@vitejs/plugin-react'
+import rsc from '@vitejs/plugin-rsc'
 import { nitro } from 'nitro/vite'
-import UnoCSS from 'unocss/vite'
-import { FileSystemIconLoader } from 'unplugin-icons/loaders'
-import Icons from 'unplugin-icons/vite'
-import type { PluginOption } from 'vite'
-import { defineConfig } from 'vite'
 import checker from 'vite-plugin-checker'
+import type { PluginOption } from 'vite-plus'
+import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
   resolve: {
@@ -19,26 +16,21 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [
-    tanstackStart(),
+    tailwindcss() as PluginOption,
+    tanstackStart({
+      rsc: {
+        enabled: true,
+      },
+    }) as PluginOption,
+    rsc() as PluginOption,
     // react's vite plugin must come after start's vite plugin
-    viteReact(),
+    viteReact() as PluginOption,
     nitro({
       builder: 'rolldown',
       noExternals: false,
-    }),
+    }) as PluginOption,
     checker({
       typescript: true,
-    }),
-    Icons({
-      compiler: 'jsx',
-      jsx: 'react',
-      customCollections: {
-        'fisand-icons': FileSystemIconLoader(`${resolve(import.meta.dirname, 'app/assets/icons')}/`, svg =>
-          svg.replace(/^<svg /, '<svg fill="currentColor" ')),
-      },
-    }) as PluginOption,
-    UnoCSS({
-      configFile: '../../uno.config.ts',
     }) as PluginOption,
   ],
   build: {

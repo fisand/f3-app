@@ -3,7 +3,15 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-function Separator({ ref, className, orientation = 'horizontal', decorative = true, ...props }: React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> & { ref?: React.RefObject<React.ElementRef<typeof SeparatorPrimitive.Root> | null> }) {
+function Separator({
+  ref,
+  className,
+  orientation = 'horizontal',
+  decorative = true,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> & {
+  ref?: React.RefObject<React.ElementRef<typeof SeparatorPrimitive.Root> | null>
+}) {
   return (
     <SeparatorPrimitive.Root
       ref={ref}

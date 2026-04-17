@@ -19,7 +19,7 @@ const trpcClient = trpc.createClient({
     httpBatchLink({
       url: 'your api url',
       headers() {
-        const token = ''
+        const token: string = ''
         return token ? { Authorization: `Bearer ${token}` } : {}
       },
       // transformer: superjson,
@@ -42,10 +42,10 @@ export default function RootLayout() {
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
+          <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+          <Stack.Screen name='+not-found' />
         </Stack>
-        <StatusBar style="auto" />
+        <StatusBar style='auto' />
       </ThemeProvider>
     </trpc.Provider>
   )

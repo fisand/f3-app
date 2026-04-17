@@ -2,13 +2,13 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
     paths:
       - 'apps/**/*'
       - 'packages/**/*'
   pull_request:
-    branches: [ main, develop ]
-    types: [ opened, synchronize, reopened ]
+    branches: [main, develop]
+    types: [opened, synchronize, reopened]
 
 jobs:
   ci:
@@ -16,12 +16,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: voidzero-dev/setup-vp@v1
         with:
-          version: 10.5.2
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22.x'
-      - run: pnpm install --no-frozen-lockfile
-      - run: pnpm run lint
-      - run: pnpm run build
+          cache: true
+      - run: vp install
+      - run: vp run check
+      - run: vp run build

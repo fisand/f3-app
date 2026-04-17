@@ -1,5 +1,3 @@
-import '@unocss/reset/tailwind.css'
-import 'virtual:uno.css'
 import './assets/styles/index.css'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'

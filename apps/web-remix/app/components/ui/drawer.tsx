@@ -9,12 +9,7 @@ function Drawer({
   shouldScaleBackground = true,
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Root>) {
-  return (
-    <DrawerPrimitive.Root
-      shouldScaleBackground={shouldScaleBackground}
-      {...props}
-    />
-  )
+  return <DrawerPrimitive.Root shouldScaleBackground={shouldScaleBackground} {...props} />
 }
 Drawer.displayName = 'Drawer'
 
@@ -24,7 +19,13 @@ const DrawerPortal = DrawerPrimitive.Portal
 
 const DrawerClose = DrawerPrimitive.Close
 
-function DrawerOverlay({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay> & { ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Overlay> | null> }) {
+function DrawerOverlay({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay> & {
+  ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Overlay> | null>
+}) {
   return (
     <DrawerPrimitive.Overlay
       ref={ref}
@@ -35,7 +36,14 @@ function DrawerOverlay({ ref, className, ...props }: React.ComponentPropsWithout
 }
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
 
-function DrawerContent({ ref, className, children, ...props }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & { ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Content> | null> }) {
+function DrawerContent({
+  ref,
+  className,
+  children,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & {
+  ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Content> | null>
+}) {
   return (
     <DrawerPortal>
       <DrawerOverlay />
@@ -47,7 +55,7 @@ function DrawerContent({ ref, className, children, ...props }: React.ComponentPr
         )}
         {...props}
       >
-        <div className="bg-muted mx-auto mt-4 h-2 w-[100px] rounded-full" />
+        <div className='bg-muted mx-auto mt-4 h-2 w-[100px] rounded-full' />
         {children}
       </DrawerPrimitive.Content>
     </DrawerPortal>
@@ -55,47 +63,40 @@ function DrawerContent({ ref, className, children, ...props }: React.ComponentPr
 }
 DrawerContent.displayName = 'DrawerContent'
 
-function DrawerHeader({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div
-      className={cn('grid gap-1.5 p-4 text-center sm:text-left', className)}
-      {...props}
-    />
-  )
+function DrawerHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn('grid gap-1.5 p-4 text-center sm:text-left', className)} {...props} />
 }
 DrawerHeader.displayName = 'DrawerHeader'
 
-function DrawerFooter({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div
-      className={cn('mt-auto flex flex-col gap-2 p-4', className)}
-      {...props}
-    />
-  )
+function DrawerFooter({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn('mt-auto flex flex-col gap-2 p-4', className)} {...props} />
 }
 DrawerFooter.displayName = 'DrawerFooter'
 
-function DrawerTitle({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title> & { ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Title> | null> }) {
+function DrawerTitle({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title> & {
+  ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Title> | null>
+}) {
   return (
     <DrawerPrimitive.Title
       ref={ref}
-      className={cn(
-        'text-lg font-semibold leading-none tracking-tight',
-        className,
-      )}
+      className={cn('text-lg font-semibold leading-none tracking-tight', className)}
       {...props}
     />
   )
 }
 DrawerTitle.displayName = DrawerPrimitive.Title.displayName
 
-function DrawerDescription({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description> & { ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Description> | null> }) {
+function DrawerDescription({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description> & {
+  ref?: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Description> | null>
+}) {
   return (
     <DrawerPrimitive.Description
       ref={ref}

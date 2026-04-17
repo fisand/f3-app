@@ -17,7 +17,7 @@ const getCount = createServerFn({
 })
 
 const updateCount = createServerFn({ method: 'POST' })
-  .inputValidator((data: { email: string, name: string }) => data)
+  .inputValidator((data: { email: string; name: string }) => data)
   .handler(async ({ data }) => {
     await db.insert(user).values(data)
   })
@@ -41,42 +41,36 @@ function Home() {
   const [email, setEmail] = useState('')
 
   return (
-    <div className="flex flex-col gap-5 h-screen w-screen">
+    <div className='flex flex-col gap-5 h-screen w-screen'>
       <motion.div
         initial={{ opacity: 0, y: -6 }}
         animate={{ opacity: 1, y: 0 }}
-        className="border-b border-b-1 border-border h-14"
+        className='border-b border-border h-14'
       >
-        <div className="mx-auto container flex h-full items-center justify-between lt-sm:px-4">
-          <span className="text-lg font-500 flex gap-1.5 items-center">
-            <span className="p-1 rounded-lg bg-white flex-col-center h-5.5 w-5.5">
-              <span className="i-logos:fastify-icon h-4 w-4" />
+        <div className='mx-auto container flex h-full items-center justify-between lt-sm:px-4'>
+          <span className='text-lg font-medium flex gap-1.5 items-center'>
+            <span className='p-1 rounded-lg bg-white flex-col-center h-5.5 w-5.5'>
+              <span className='i-logos-fastify-icon h-4 w-4' />
             </span>
-            <img
-              className="h-5.5"
-              src="https://orpc.unnoq.com/logo.webp"
-            />
-
+            <img className='h-5.5' src='https://orpc.unnoq.com/logo.webp' />
             f3-app
           </span>
 
           <a
-            rel="noreferrer noopener"
-            href="https://github.com/fisand/f3-app"
-            target="_blank"
-            className="flex-col-center"
+            rel='noreferrer noopener'
+            href='https://github.com/fisand/f3-app'
+            target='_blank'
+            className='flex-col-center'
           >
-            <span className="i-simple-icons:github h-5.5 w-5.5 cursor-pointer transition-all hover:scale-105" />
+            <span className='i-simple-icons-github h-5.5 w-5.5 cursor-pointer transition-all hover:scale-105' />
           </a>
         </div>
       </motion.div>
-      <div className="mx-auto flex-1 w-100 lt-sm:(px-4 w-full)">
-        <div className="pb-5 pt-10 flex flex-col gap-3">
-          <div className="flex min-h-64 items-center justify-center z-10">
-            <ShimmerButton
-              className="shadow-2xl"
-            >
-              <span className="text-sm text-white leading-none tracking-tight font-medium text-center whitespace-pre-wrap lowercase lg:text-lg dark:from-white dark:to-slate-900/10">
+      <div className='mx-auto flex-1 w-100 lt-sm:px-4 lt-sm:w-full'>
+        <div className='pb-5 pt-10 flex flex-col gap-3'>
+          <div className='flex min-h-64 items-center justify-center z-10'>
+            <ShimmerButton className='shadow-2xl'>
+              <span className='text-sm text-white leading-none tracking-tight font-medium text-center whitespace-pre-wrap lowercase lg:text-lg dark:from-white dark:to-slate-900/10'>
                 DRIZZLE + TANSTACK + REACT
               </span>
             </ShimmerButton>
@@ -88,9 +82,9 @@ function Home() {
                 layout
                 key={user.id}
                 custom={index}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
+                initial='hidden'
+                animate='visible'
+                exit='hidden'
                 variants={{
                   visible: (i: number) => ({
                     opacity: 1,
@@ -101,33 +95,31 @@ function Home() {
                   }),
                   hidden: { opacity: 0, y: 10 },
                 }}
-                className="flex-center justify-between"
+                className='flex-center justify-between'
               >
-                <Button className="w-30 relative">
-                  {user.name}
-                </Button>
+                <Button className='w-30 relative'>{user.name}</Button>
 
                 <button
-                  type="button"
-                  className="ml-auto rounded bg-primary flex-col-center"
+                  type='button'
+                  className='ml-auto rounded bg-primary flex-col-center'
                   disabled={false}
                   onClick={async () => {
                     await router.invalidate()
                   }}
                 >
-                  <span className="i-lucide:square-check text-primary-foreground h-5 w-5" />
+                  <span className='i-lucide-square-check text-primary-foreground h-5 w-5' />
                 </button>
 
                 <button
-                  type="button"
-                  className="ml-2 rounded bg-primary flex-col-center"
+                  type='button'
+                  className='ml-2 rounded bg-primary flex-col-center'
                   disabled={false}
                   onClick={async () => {
                     await deleteCount({ data: { id: user.id } })
                     await router.invalidate()
                   }}
                 >
-                  <span className="i-lucide:x text-primary-foreground h-5 w-5" />
+                  <span className='i-lucide-x text-primary-foreground h-5 w-5' />
                 </button>
               </motion.span>
             ))}
@@ -136,27 +128,27 @@ function Home() {
               layout
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex gap-2 items-center"
+              className='flex gap-2 items-center'
             >
               <Input
-                type="text"
+                type='text'
                 maxLength={50}
                 value={name}
                 onInput={(e) => {
                   setName((e.target as HTMLInputElement).value)
                 }}
-                placeholder="Name"
-                className="bg-accent flex-1"
+                placeholder='Name'
+                className='bg-accent flex-1'
               />
               <Input
-                type="email"
+                type='email'
                 maxLength={50}
                 value={email}
                 onInput={(e) => {
                   setEmail((e.target as HTMLInputElement).value)
                 }}
-                placeholder="Email"
-                className="bg-accent flex-1"
+                placeholder='Email'
+                className='bg-accent flex-1'
               />
               <Button
                 onClick={async () => {
@@ -182,10 +174,8 @@ function Home() {
             </motion.div>
           </AnimatePresence>
 
-          <Link to="/posts/$postId" params={{ postId: '1' }}>
-            <Button>
-              Go to Post 1
-            </Button>
+          <Link to='/posts/$postId' params={{ postId: '1' }}>
+            <Button>Go to Post 1</Button>
           </Link>
         </div>
       </div>
@@ -193,19 +183,24 @@ function Home() {
       <motion.div
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
-        className="border-t border-t-1 border-border grid grid-cols-3 h-14"
+        className='border-t border-border grid grid-cols-3 h-14'
       >
         <span />
-        <div className="mx-auto flex-center gap-2 h-full lt-sm:px-4">
-          <a href="https://fastify.io/" target="_blank" rel="noreferrer noopener">
-            <span className="p-1 rounded-lg bg-white flex-col-center h-5.5 w-5.5">
-              <span className="i-logos:fastify-icon h-4 w-4" />
+        <div className='mx-auto flex-center gap-2 h-full lt-sm:px-4'>
+          <a href='https://fastify.io/' target='_blank' rel='noreferrer noopener'>
+            <span className='p-1 rounded-lg bg-white flex-col-center h-5.5 w-5.5'>
+              <span className='i-logos-fastify-icon h-4 w-4' />
             </span>
           </a>
-          <a href="https://orpc.unnoq.com/" target="_blank" rel="noreferrer noopener" className="flex-col-center">
+          <a
+            href='https://orpc.unnoq.com/'
+            target='_blank'
+            rel='noreferrer noopener'
+            className='flex-col-center'
+          >
             <img
-              className="h-5.5"
-              src="https://orpc.unnoq.com/logo.webp"
+              className='h-5.5'
+              src='https://orpc.unnoq.com/logo.webp'
               style={{
                 backgroundSize: 'cover',
               }}

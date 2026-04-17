@@ -1,10 +1,11 @@
 {
   "name": "drizzle",
-  "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@10.5.2",
   "description": "",
   "license": "ISC",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
       "import": {
@@ -17,15 +18,13 @@
       }
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
   "scripts": {
-    "build": "tsdown",
+    "build": "vp pack",
     "clean": "rm -rf dist",
-    "dev": "tsdown --w --no-clean",
+    "dev": "vp pack --w --no-clean",
     "generate": "drizzle-kit generate",
     "kit-pull": "drizzle-kit pull",
-    "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0",
+    "lint": "vp lint src",
     "migrate": "drizzle-kit migrate",
     "postinstall": "pnpm run build",
     "push": "drizzle-kit push"
@@ -38,5 +37,6 @@
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "drizzle-kit": "^0.31.4"
-  }
+  },
+  "packageManager": "pnpm@10.5.2"
 }

@@ -5,21 +5,30 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-function Avatar({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & { ref?: React.RefObject<React.ElementRef<typeof AvatarPrimitive.Root> | null> }) {
+function Avatar({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & {
+  ref?: React.RefObject<React.ElementRef<typeof AvatarPrimitive.Root> | null>
+}) {
   return (
     <AvatarPrimitive.Root
       ref={ref}
-      className={cn(
-        'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
-        className,
-      )}
+      className={cn('relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full', className)}
       {...props}
     />
   )
 }
 Avatar.displayName = AvatarPrimitive.Root.displayName
 
-function AvatarImage({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> & { ref?: React.RefObject<React.ElementRef<typeof AvatarPrimitive.Image> | null> }) {
+function AvatarImage({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> & {
+  ref?: React.RefObject<React.ElementRef<typeof AvatarPrimitive.Image> | null>
+}) {
   return (
     <AvatarPrimitive.Image
       ref={ref}
@@ -30,7 +39,13 @@ function AvatarImage({ ref, className, ...props }: React.ComponentPropsWithoutRe
 }
 AvatarImage.displayName = AvatarPrimitive.Image.displayName
 
-function AvatarFallback({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback> & { ref?: React.RefObject<React.ElementRef<typeof AvatarPrimitive.Fallback> | null> }) {
+function AvatarFallback({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback> & {
+  ref?: React.RefObject<React.ElementRef<typeof AvatarPrimitive.Fallback> | null>
+}) {
   return (
     <AvatarPrimitive.Fallback
       ref={ref}

@@ -1,33 +1,12 @@
-import '@unocss/reset/tailwind.css'
-import 'virtual:uno.css'
 import './app.css'
 import '@rainbow-me/rainbowkit/styles.css'
 
-import {
-  getDefaultConfig,
-  RainbowKitProvider,
-} from '@rainbow-me/rainbowkit'
-import {
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
+import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Briefcase, FileText, Home, User } from 'lucide-react'
-import {
-  isRouteErrorResponse,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from 'react-router'
+import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router'
 import { WagmiProvider } from 'wagmi'
-import {
-  arbitrum,
-  base,
-  mainnet,
-  optimism,
-  polygon,
-} from 'wagmi/chains'
+import { arbitrum, base, mainnet, optimism, polygon } from 'wagmi/chains'
 
 import type { Route } from './+types/root'
 import { Navbar } from './components/layout/Navbar'
@@ -56,10 +35,10 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <Meta />
         <Links />
       </head>
@@ -67,12 +46,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <WagmiProvider config={config}>
           <QueryClientProvider client={queryClient}>
             <RainbowKitProvider>
-              <Navbar items={[
-                { name: 'Home', url: '#', icon: Home },
-                { name: 'About', url: '#', icon: User },
-                { name: 'Projects', url: '#', icon: Briefcase },
-                { name: 'Connect', url: '#', icon: FileText },
-              ]}
+              <Navbar
+                items={[
+                  { name: 'Home', url: '#', icon: Home },
+                  { name: 'About', url: '#', icon: User },
+                  { name: 'Projects', url: '#', icon: Briefcase },
+                  { name: 'Connect', url: '#', icon: FileText },
+                ]}
               />
               {children}
             </RainbowKitProvider>
@@ -96,22 +76,19 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
   if (isRouteErrorResponse(error)) {
     message = error.status === 404 ? '404' : 'Error'
-    details
-      = error.status === 404
-        ? 'The requested page could not be found.'
-        : error.statusText || details
-  }
-  else if (import.meta.env.DEV && error && error instanceof Error) {
+    details =
+      error.status === 404 ? 'The requested page could not be found.' : error.statusText || details
+  } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message
     stack = error.stack
   }
 
   return (
-    <main className="container mx-auto p-4 pt-16">
+    <main className='container mx-auto p-4 pt-16'>
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (
-        <pre className="w-full overflow-x-auto p-4">
+        <pre className='w-full overflow-x-auto p-4'>
           <code>{stack}</code>
         </pre>
       )}

@@ -1,4 +1,4 @@
-/// <reference types="vite/client" />
+/// <reference types="vite-plus/client" />
 /// <reference types="vite-plugin-pages/client-react" />
 
 declare module '~icons/fisand-icons/*' {

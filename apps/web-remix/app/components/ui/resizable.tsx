@@ -10,10 +10,7 @@ function ResizablePanelGroup({
 }: React.ComponentProps<typeof ResizablePrimitive.PanelGroup>) {
   return (
     <ResizablePrimitive.PanelGroup
-      className={cn(
-        'flex h-full w-full data-[panel-group-direction=vertical]:flex-col',
-        className,
-      )}
+      className={cn('flex h-full w-full data-[panel-group-direction=vertical]:flex-col', className)}
       {...props}
     />
   )
@@ -37,8 +34,8 @@ function ResizableHandle({
       {...props}
     >
       {withHandle && (
-        <div className="bg-border z-10 h-4 w-3 flex items-center justify-center border rounded-sm">
-          <DragHandleDots2Icon className="h-2.5 w-2.5" />
+        <div className='bg-border z-10 h-4 w-3 flex items-center justify-center border rounded-sm'>
+          <DragHandleDots2Icon className='h-2.5 w-2.5' />
         </div>
       )}
     </ResizablePrimitive.PanelResizeHandle>

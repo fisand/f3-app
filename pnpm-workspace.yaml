@@ -1,3 +1,21 @@
 packages:
   - apps/*
   - packages/*
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@latest
+  vitest: npm:@voidzero-dev/vite-plus-test@latest
+  vite-plus: latest
+overrides:
+  vite: 'catalog:'
+  vitest: 'catalog:'
+  react: 19.2.3
+  react-dom: 19.2.3
+  '@types/react': 19.1.9
+  '@types/react-dom': 19.1.7
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    vite: '*'
+    vitest: '*'

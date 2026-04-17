@@ -3,7 +3,13 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-function Switch({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & { ref?: React.RefObject<React.ElementRef<typeof SwitchPrimitives.Root> | null> }) {
+function Switch({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & {
+  ref?: React.RefObject<React.ElementRef<typeof SwitchPrimitives.Root> | null>
+}) {
   return (
     <SwitchPrimitives.Root
       className={cn(

@@ -2,12 +2,8 @@ import { createServer } from 'node:http'
 
 import { RPCHandler } from '@orpc/server/node'
 import { CORSPlugin } from '@orpc/server/plugins'
-import type {
-  FastifyTRPCPluginOptions,
-} from '@trpc/server/adapters/fastify'
-import {
-  fastifyTRPCPlugin,
-} from '@trpc/server/adapters/fastify'
+import type { FastifyTRPCPluginOptions } from '@trpc/server/adapters/fastify'
+import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import consola from 'consola'
 import * as dotenv from 'dotenv'
 import fastify from 'fastify'
@@ -20,9 +16,7 @@ import { router } from './router/orpc'
 dotenv.config()
 
 const handler = new RPCHandler(router, {
-  plugins: [
-    new CORSPlugin(),
-  ],
+  plugins: [new CORSPlugin()],
 })
 
 const server = fastify({
@@ -58,12 +52,11 @@ server.register(fastifyTRPCPlugin, {
   } satisfies FastifyTRPCPluginOptions<AppRouter>['trpcOptions'],
 })
 
-;(async () => {
+void (async () => {
   try {
     await server.listen({ port: 5000 })
     consola.success('Server is running on port http://localhost:5000')
-  }
-  catch (err) {
+  } catch (err) {
     consola.error(err)
     throw err
   }

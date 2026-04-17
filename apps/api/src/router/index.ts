@@ -21,10 +21,14 @@ export const appRouter = t.router({
     return users[opts.input] // input type is string
   }),
   createUser: t.procedure
-    .input(wrap(v.object({
-      name: v.pipe(v.string(), v.minLength(3)),
-      bio: v.pipe(v.string(), v.maxLength(142)),
-    })))
+    .input(
+      wrap(
+        v.object({
+          name: v.pipe(v.string(), v.minLength(3)),
+          bio: v.pipe(v.string(), v.maxLength(142)),
+        }),
+      ),
+    )
     .mutation((opts) => {
       const id = Date.now().toString()
       const user: User = { id, ...opts.input }

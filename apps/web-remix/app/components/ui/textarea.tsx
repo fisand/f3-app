@@ -2,7 +2,11 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-function Textarea({ ref, className, ...props }: React.ComponentProps<'textarea'> & { ref?: React.RefObject<HTMLTextAreaElement | null> }) {
+function Textarea({
+  ref,
+  className,
+  ...props
+}: React.ComponentProps<'textarea'> & { ref?: React.RefObject<HTMLTextAreaElement | null> }) {
   return (
     <textarea
       className={cn(

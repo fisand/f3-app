@@ -1,14 +1,15 @@
 {
   "name": "api",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
-  "author": "",
   "license": "ISC",
+  "author": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "tsdown",
+    "build": "vp pack",
     "dev": "tsx watch ./src/index.ts",
+    "lint": "vp lint src",
     "preview": "node ./dist/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +19,6 @@
     "@typeschema/valibot": "^0.14.0",
     "db": "workspace:*",
     "dotenv": "^17.2.3",
-    "eslint-config": "workspace:*",
     "fastify": "^5.6.2"
   },
   "devDependencies": {

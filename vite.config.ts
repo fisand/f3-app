@@ -2,7 +2,7 @@ import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
   staged: {
-    '*': 'pnpm run lint',
+    '*': 'vp lint .',
   },
   fmt: {
     jsxSingleQuote: true,

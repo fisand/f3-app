@@ -4,15 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build --turbo",
-    "dev": "next dev --turbo",
+    "build": "next build",
+    "dev": "next dev",
     "lint": "vp lint .",
-    "preview": "pnpm dlx serve out",
+    "preview": "vp dlx serve out",
     "start": "next start"
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
-    "next": "^16.1.6",
+    "next": "^16.2.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

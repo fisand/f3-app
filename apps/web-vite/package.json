@@ -23,12 +23,12 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.11",
-    "@vitejs/plugin-react": "^5.1.2",
+    "@vitejs/plugin-react": "^6.0.1",
     "api": "workspace:*",
     "tailwindcss": "4.1.11",
     "vite": "catalog:",
-    "vite-plugin-checker": "^0.12.0",
-    "vite-plugin-pages": "^0.33.2",
+    "vite-plugin-checker": "^0.13.0",
+    "vite-plugin-pages": "^0.33.3",
     "vite-plus": "catalog:"
   }
 }

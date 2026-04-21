@@ -21,7 +21,7 @@
     "@bprogress/react": "^1.2.7",
     "@orpc/tanstack-query": "^1.12.2",
     "@repo/ui": "workspace:*",
-    "@vitejs/plugin-react": "^5.0.3",
+    "@vitejs/plugin-react": "^6.0.1",
     "drizzle": "workspace:*",
     "framer-motion": "^12.23.26",
     "nitro": "3.0.260415-beta",
@@ -37,7 +37,7 @@
     "tailwindcss": "4.1.11",
     "typescript": "^6.0.2",
     "vite": "catalog:",
-    "vite-plugin-checker": "^0.12.0",
+    "vite-plugin-checker": "^0.13.0",
     "vite-plus": "catalog:"
   },
   "packageManager": "pnpm@10.14.0"

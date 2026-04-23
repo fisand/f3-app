@@ -1,0 +1,41 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" rx="72" fill="#FFF9F3" />
+  <rect x="72" y="72" width="880" height="880" rx="54" fill="#EDE2D6" />
+  <rect x="120" y="120" width="784" height="784" rx="42" fill="#FFFFFF" />
+  <g fill="#2F241D">
+    <rect x="176" y="176" width="176" height="176" rx="24" />
+    <rect x="210" y="210" width="108" height="108" rx="16" fill="#FFF9F3" />
+    <rect x="672" y="176" width="176" height="176" rx="24" />
+    <rect x="706" y="210" width="108" height="108" rx="16" fill="#FFF9F3" />
+    <rect x="176" y="672" width="176" height="176" rx="24" />
+    <rect x="210" y="706" width="108" height="108" rx="16" fill="#FFF9F3" />
+    <rect x="432" y="176" width="52" height="52" rx="8" />
+    <rect x="520" y="176" width="52" height="52" rx="8" />
+    <rect x="608" y="176" width="52" height="52" rx="8" />
+    <rect x="432" y="264" width="52" height="52" rx="8" />
+    <rect x="608" y="264" width="52" height="52" rx="8" />
+    <rect x="520" y="352" width="52" height="52" rx="8" />
+    <rect x="608" y="352" width="52" height="52" rx="8" />
+    <rect x="696" y="352" width="52" height="52" rx="8" />
+    <rect x="432" y="440" width="52" height="52" rx="8" />
+    <rect x="520" y="440" width="52" height="52" rx="8" />
+    <rect x="696" y="440" width="52" height="52" rx="8" />
+    <rect x="784" y="440" width="52" height="52" rx="8" />
+    <rect x="432" y="528" width="52" height="52" rx="8" />
+    <rect x="520" y="528" width="52" height="52" rx="8" />
+    <rect x="608" y="528" width="52" height="52" rx="8" />
+    <rect x="696" y="528" width="52" height="52" rx="8" />
+    <rect x="432" y="616" width="52" height="52" rx="8" />
+    <rect x="608" y="616" width="52" height="52" rx="8" />
+    <rect x="696" y="616" width="52" height="52" rx="8" />
+    <rect x="784" y="616" width="52" height="52" rx="8" />
+    <rect x="432" y="704" width="52" height="52" rx="8" />
+    <rect x="608" y="704" width="52" height="52" rx="8" />
+    <rect x="696" y="704" width="52" height="52" rx="8" />
+    <rect x="520" y="792" width="52" height="52" rx="8" />
+    <rect x="608" y="792" width="52" height="52" rx="8" />
+    <rect x="784" y="792" width="52" height="52" rx="8" />
+  </g>
+  <rect x="120" y="824" width="784" height="80" rx="24" fill="#D78A67" />
+  <text x="512" y="877" text-anchor="middle" fill="#FFF9F3" font-family="'Noto Sans SC', sans-serif" font-size="30" letter-spacing="5">ANDROID APP</text>
+</svg>

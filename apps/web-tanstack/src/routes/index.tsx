@@ -95,7 +95,11 @@ const sectionClass = 'relative scroll-mt-24 py-[clamp(4.75rem,9vw,7.5rem)]'
 const sectionLabelClass =
   'inline-flex w-fit rounded-full bg-[#f6e8b4]/78 px-3 py-1 text-[0.72rem] uppercase tracking-[0.18em] text-[#5a4538]'
 const sectionTitleClass =
-  'font-serif font-semibold text-[clamp(2.15rem,4.4vw,4.35rem)] leading-[0.98] tracking-[-0.05em] text-[#5a4538]'
+  'font-serif text-[clamp(2.05rem,4vw,3.95rem)] leading-[1.12] tracking-[0.012em] [text-wrap:balance] text-[#5a4538]'
+const heroHeadlineClass =
+  'max-w-[7ch] font-serif text-[clamp(2.7rem,5.5vw,4.95rem)] leading-[1.08] tracking-[0.015em] [text-wrap:balance] text-[#5a4538]'
+const courseTitleClass =
+  'font-serif text-[1.9rem] leading-[1.12] tracking-[0.01em] text-[#5a4538] md:text-[2rem]'
 
 function Home() {
   const heroRef = useRef<HTMLElement | null>(null)
@@ -183,7 +187,7 @@ function Home() {
             animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className='space-y-4'>
+            <div className='space-y-5'>
               <p className={sectionLabelClass}>城市女性运动生活方式品牌</p>
               <motion.span
                 className='block font-serif text-[clamp(4.75rem,14vw,9.5rem)] font-semibold lowercase leading-[0.82] tracking-[-0.1em] text-[#5a4538]'
@@ -194,14 +198,13 @@ function Home() {
                 bhq
               </motion.span>
               <motion.h1
-                className='font-serif text-[clamp(2.9rem,6vw,5.45rem)] font-semibold leading-[0.95] tracking-[-0.06em] text-[#5a4538]'
+                className={heroHeadlineClass}
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
                 animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
                 transition={{ delay: 0.15, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
               >
-                自律成就
-                <br />
-                我们的美
+                <span className='block'>自律成就</span>
+                <span className='mt-2 block md:mt-3'>我们的美</span>
               </motion.h1>
             </div>
 
@@ -258,8 +261,8 @@ function Home() {
           >
             <div className='relative w-full max-w-[38rem] overflow-hidden rounded-[2rem_2rem_2rem_7rem] border border-white/88 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(248,242,220,0.66))] shadow-[0_30px_72px_rgba(90,69,56,0.10)] after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(180deg,rgba(255,255,255,0),rgba(90,69,56,0.08))] after:content-[\"\"] lt-lg:rounded-[1.75rem_1.75rem_1.75rem_4.5rem]'>
               <img
-                src='/bhq/hero-main.svg'
-                alt='柔和的女性运动视觉占位图'
+                src='/bhq/hero-main-v2.png'
+                alt='年轻女性在明亮室内进行普拉提训练'
                 className='h-full w-full object-cover'
                 fetchPriority='high'
               />
@@ -283,7 +286,7 @@ function Home() {
         <div
           className={cn(containerClass, 'grid gap-10 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-14')}
         >
-          <div className='space-y-4'>
+          <div className='space-y-5'>
             <p className={sectionLabelClass}>理念</p>
             <h2 className={cn(sectionTitleClass, 'max-w-[9ch]')}>把训练变成一种温柔的秩序</h2>
           </div>
@@ -325,7 +328,7 @@ function Home() {
         <div
           className={cn(containerClass, 'grid gap-10 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-14')}
         >
-          <div className='space-y-4'>
+          <div className='space-y-5'>
             <p className={sectionLabelClass}>课程</p>
             <h2 className={cn(sectionTitleClass, 'max-w-[8ch]')}>三种练习，落到同一种长期变化</h2>
           </div>
@@ -344,14 +347,12 @@ function Home() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <span className='font-serif text-[2rem] font-semibold tracking-[-0.06em] text-[#b8a35d]'>
+                <span className='font-serif text-[1.9rem] leading-none tracking-[0.02em] text-[#b8a35d] md:text-[2rem]'>
                   0{index + 1}
                 </span>
 
                 <div className='space-y-2'>
-                  <h3 className='font-serif text-[2rem] font-semibold tracking-[-0.05em] text-[#5a4538]'>
-                    {course.name}
-                  </h3>
+                  <h3 className={courseTitleClass}>{course.name}</h3>
                   <p className='text-sm uppercase tracking-[0.18em] text-[#8a7769]'>
                     {course.focus}
                   </p>
@@ -387,10 +388,12 @@ function Home() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className={sectionLabelClass}>空间</p>
-            <h2 className={cn(sectionTitleClass, 'max-w-[10ch]')}>
-              连锁门店，也保持同一种柔和的到店体验
-            </h2>
+            <div className='space-y-5'>
+              <p className={sectionLabelClass}>空间</p>
+              <h2 className={cn(sectionTitleClass, 'max-w-[10ch]')}>
+                连锁门店，也保持同一种柔和的到店体验
+              </h2>
+            </div>
             <p className='max-w-[36rem] text-[1rem] leading-8 text-[#8a7769] md:text-[1.06rem]'>
               bhq
               的门店不是单纯完成训练的场所。我们更希望它像一段可以放心进入的日常节奏，让身体先安静下来，再慢慢发力。无论在哪一家门店，都能感受到一致的氛围、流线与练习状态。
@@ -423,8 +426,8 @@ function Home() {
           >
             <div className='relative mx-auto max-w-[40rem] overflow-hidden rounded-[2rem] border border-white/88 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(248,242,220,0.64))] shadow-[0_30px_72px_rgba(90,69,56,0.10)] after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(180deg,rgba(255,255,255,0),rgba(90,69,56,0.08))] after:content-[\"\"]'>
               <img
-                src='/bhq/studio-detail.svg'
-                alt='连锁门店空间氛围占位图'
+                src='/bhq/studio-detail-v2.png'
+                alt='明亮通透的瑜伽教室空间'
                 className='h-full w-full object-cover'
               />
             </div>
@@ -505,10 +508,9 @@ function Home() {
           <div className='relative overflow-hidden rounded-[2.35rem] bg-[linear-gradient(135deg,#6a5548_0%,#5a4538_48%,#48362d_100%)] p-[clamp(1.6rem,4vw,2.8rem)] shadow-[0_28px_72px_rgba(90,69,56,0.24)] before:pointer-events-none before:absolute before:-bottom-32 before:-right-20 before:h-72 before:w-72 before:rounded-full before:bg-[#f6e8b4]/38 before:blur-[10px] before:content-[\"\"]'>
             <div className='relative z-10 max-w-[39rem] space-y-5'>
               <p className={sectionLabelClass}>download</p>
-              <h2 className='font-serif text-[clamp(2.4rem,4.6vw,4.4rem)] font-semibold leading-[0.95] tracking-[-0.05em] text-[#fffdf8]'>
-                把训练带回日常。
-                <br />
-                把节奏留在自己手里。
+              <h2 className='max-w-[9ch] font-serif text-[clamp(2.2rem,4.2vw,4rem)] leading-[1.12] tracking-[0.015em] [text-wrap:balance] text-[#fffdf8]'>
+                <span className='block'>把训练带回日常。</span>
+                <span className='mt-2 block md:mt-3'>把节奏留在自己手里。</span>
               </h2>
               <p className='text-[1rem] leading-8 text-[#fffdf8]/78 md:text-[1.05rem]'>
                 扫码进入 bhq 的移动入口。无论你偏好
@@ -532,14 +534,14 @@ function Home() {
                 >
                   <img
                     src={item.image}
-                    alt={`${item.name} 占位二维码`}
+                    alt={`${item.name} 二维码`}
                     className='aspect-square w-full rounded-2xl bg-[#fffdf8] object-cover p-[0.6rem]'
                   />
                   <div className='space-y-2'>
                     <p className='text-sm uppercase tracking-[0.18em] text-[#fff2cc]'>
                       {item.platform}
                     </p>
-                    <h3 className='font-serif text-[1.65rem] font-semibold tracking-[-0.04em] text-[#fffdf8]'>
+                    <h3 className='font-serif text-[1.5rem] leading-[1.12] tracking-[0.01em] text-[#fffdf8] md:text-[1.65rem]'>
                       {item.name}
                     </h3>
                     <p className='text-sm leading-7 text-[#fffdf8]/78'>{item.description}</p>

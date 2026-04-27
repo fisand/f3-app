@@ -10,6 +10,8 @@ overrides:
   vitest: 'catalog:'
   react: 19.2.3
   react-dom: 19.2.3
+  'app-user>react': 19.2.0
+  'app-user>react-dom': 19.2.0
   '@types/react': 19.1.9
   '@types/react-dom': 19.1.7
 peerDependencyRules:
@@ -19,3 +21,5 @@ peerDependencyRules:
   allowedVersions:
     vite: '*'
     vitest: '*'
+    react: '19.2.0 || 19.2.3'
+    react-dom: '19.2.0 || 19.2.3'

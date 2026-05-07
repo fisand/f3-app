@@ -25,6 +25,7 @@ export default function TabLayout() {
           },
           default: {},
         }),
+        freezeOnBlur: true,
       }}
     >
       <Tabs.Screen

@@ -9,9 +9,6 @@ import { defineConfig } from 'vite-plus'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  experimental: {
-    bundledDev: true,
-  },
   resolve: {
     alias: {
       '@/': `${resolve(import.meta.dirname, 'src')}/`,

@@ -24,7 +24,7 @@
     "@vitejs/plugin-react": "^6.0.1",
     "drizzle": "workspace:*",
     "framer-motion": "^12.23.26",
-    "nitro": "3.0.260415-beta",
+    "nitro": "3.0.260429-beta",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },

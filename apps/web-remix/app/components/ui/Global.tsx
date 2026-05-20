@@ -1,13 +1,12 @@
 import type { COBEOptions } from 'cobe'
 import createGlobe from 'cobe'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { cn } from '@/lib/utils'
 
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
   height: 800,
-  onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
   theta: 0.3,
@@ -39,61 +38,72 @@ export function Globe({
   className?: string
   config?: COBEOptions
 }) {
-  let phi = 0
-  let width = 0
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const pointerInteracting = useRef(null)
+  const pointerInteracting = useRef<number | null>(null)
   const pointerInteractionMovement = useRef(0)
-  const [r, setR] = useState(0)
+  const movementRef = useRef(0)
+  const phiRef = useRef(0)
+  const widthRef = useRef(0)
 
-  const updatePointerInteraction = (value: any) => {
+  const updatePointerInteraction = (value: number | null) => {
     pointerInteracting.current = value
     if (canvasRef.current) {
-      canvasRef.current.style.cursor = value ? 'grabbing' : 'grab'
+      canvasRef.current.style.cursor = value === null ? 'grab' : 'grabbing'
     }
   }
 
-  const updateMovement = (clientX: any) => {
+  const updateMovement = (clientX: number) => {
     if (pointerInteracting.current !== null) {
       const delta = clientX - pointerInteracting.current
       pointerInteractionMovement.current = delta
-      setR(delta / 200)
-    }
-  }
-
-  const onRender = useCallback(
-    (state: Record<string, any>) => {
-      if (!pointerInteracting.current)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        phi += 0.005
-      state.phi = phi + r
-      state.width = width * 2
-      state.height = width * 2
-    },
-    [r],
-  )
-
-  const onResize = () => {
-    if (canvasRef.current) {
-      width = canvasRef.current.offsetWidth
+      movementRef.current = delta / 200
     }
   }
 
   useEffect(() => {
+    const onResize = () => {
+      if (canvasRef.current) {
+        widthRef.current = canvasRef.current.offsetWidth
+      }
+    }
+
     window.addEventListener('resize', onResize)
     onResize()
 
     const globe = createGlobe(canvasRef.current!, {
       ...config,
-      width: width * 2,
-      height: width * 2,
-      onRender,
+      width: widthRef.current * 2,
+      height: widthRef.current * 2,
     })
 
-    setTimeout(() => (canvasRef.current!.style.opacity = '1'))
-    return () => globe.destroy()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    let animationFrameId = 0
+    const render = () => {
+      if (pointerInteracting.current === null) {
+        phiRef.current += 0.005
+      }
+
+      globe.update({
+        phi: phiRef.current + movementRef.current,
+        width: widthRef.current * 2,
+        height: widthRef.current * 2,
+      })
+      animationFrameId = requestAnimationFrame(render)
+    }
+    render()
+
+    const timeoutId = window.setTimeout(() => {
+      if (canvasRef.current) {
+        canvasRef.current.style.opacity = '1'
+      }
+    })
+
+    return () => {
+      window.removeEventListener('resize', onResize)
+      window.clearTimeout(timeoutId)
+      cancelAnimationFrame(animationFrameId)
+      globe.destroy()
+    }
+  }, [config])
 
   return (
     <div className={cn('absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]', className)}>

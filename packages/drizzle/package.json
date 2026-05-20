@@ -22,21 +22,21 @@
     "build": "vp pack",
     "clean": "rm -rf dist",
     "dev": "vp pack --w --no-clean",
-    "generate": "drizzle-kit generate",
-    "kit-pull": "drizzle-kit pull",
+    "generate": "vp exec drizzle-kit generate",
+    "kit-pull": "vp exec drizzle-kit pull",
     "lint": "vp lint src",
-    "migrate": "drizzle-kit migrate",
-    "postinstall": "pnpm run build",
-    "push": "drizzle-kit push"
+    "migrate": "vp exec drizzle-kit migrate",
+    "postinstall": "vp run build",
+    "push": "vp exec drizzle-kit push"
   },
   "dependencies": {
-    "@libsql/client": "^0.15.14",
-    "dotenv": "^17.2.2",
-    "drizzle-orm": "^0.44.5"
+    "@libsql/client": "^0.17.3",
+    "dotenv": "^17.4.2",
+    "drizzle-orm": "^0.45.2"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "drizzle-kit": "^0.31.4"
+    "drizzle-kit": "^0.31.10"
   },
   "packageManager": "pnpm@10.5.2"
 }

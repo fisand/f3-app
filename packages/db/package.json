@@ -21,23 +21,23 @@
   "scripts": {
     "build": "vp pack",
     "clean": "rm -rf dist",
-    "db:deploy": "prisma migrate deploy",
-    "db:dev": "prisma migrate dev",
-    "db:dev:create": "prisma migrate dev --create-only",
-    "db:push": "prisma db push",
+    "db:deploy": "vp exec prisma migrate deploy",
+    "db:dev": "vp exec prisma migrate dev",
+    "db:dev:create": "vp exec prisma migrate dev --create-only",
+    "db:push": "vp exec prisma db push",
     "dev": "vp pack --w --no-clean",
-    "format": "prisma format",
-    "generate": "prisma generate",
+    "format": "vp exec prisma format",
+    "generate": "vp exec prisma generate",
     "lint": "vp lint src",
-    "postinstall": "pnpm run generate && pnpm run build",
-    "studio": "prisma studio"
+    "postinstall": "vp run generate && vp run build",
+    "studio": "vp exec prisma studio"
   },
   "dependencies": {
-    "@prisma/client": "^6.12.0"
+    "@prisma/client": "^6.19.3"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "prisma": "^6.12.0"
+    "prisma": "^6.19.3"
   },
   "packageManager": "pnpm@10.5.2"
 }

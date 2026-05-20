@@ -3,10 +3,31 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import tailwindcss from '@tailwindcss/vite'
 import viteReact from '@vitejs/plugin-react'
 import rsc from '@vitejs/plugin-rsc'
+import { existsSync } from 'node:fs'
+import { isAbsolute, resolve } from 'node:path'
 import { nitro } from 'nitro/vite'
 import checker from 'vite-plugin-checker'
 import type { PluginOption } from 'vite-plus'
 import { defineConfig } from 'vite-plus'
+
+type TraceResult = {
+  fileList?: Set<string>
+  reasons?: Map<string, unknown>
+}
+
+const isLibsqlOptionalNativePath = (path: string) =>
+  /(?:^|[/\\])node_modules[/\\]@libsql[/\\](?:darwin|linux|win32)-/.test(path)
+
+const stripMissingLibsqlOptionalNativeDeps = (result: TraceResult) => {
+  for (const tracedPath of result.reasons?.keys() ?? []) {
+    const absolutePath = isAbsolute(tracedPath) ? tracedPath : resolve('/', tracedPath)
+
+    if (isLibsqlOptionalNativePath(tracedPath) && !existsSync(absolutePath)) {
+      result.reasons?.delete(tracedPath)
+      result.fileList?.delete(tracedPath)
+    }
+  }
+}
 
 export default defineConfig({
   resolve: {
@@ -28,6 +49,11 @@ export default defineConfig({
     nitro({
       builder: 'rolldown',
       noExternals: false,
+      traceOpts: {
+        hooks: {
+          traceResult: stripMissingLibsqlOptionalNativeDeps,
+        },
+      },
     }) as PluginOption,
     checker({
       typescript: true,

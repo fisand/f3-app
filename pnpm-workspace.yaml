@@ -8,8 +8,6 @@ catalog:
 overrides:
   vite: 'catalog:'
   vitest: 'catalog:'
-  react: 19.2.6
-  react-dom: 19.2.6
   '@types/react': 19.2.15
   '@types/react-dom': 19.2.3
 peerDependencyRules:
@@ -19,7 +17,5 @@ peerDependencyRules:
   allowedVersions:
     vite: '*'
     vitest: '*'
-    react: 19.2.6
-    react-dom: 19.2.6
     '@types/react': 19.2.15
     '@types/react-dom': 19.2.3

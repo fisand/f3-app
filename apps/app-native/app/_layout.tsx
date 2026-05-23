@@ -1,11 +1,10 @@
 import 'react-native-reanimated'
 import '../global.css'
 
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import { QueryClient } from '@tanstack/react-query'
 import { httpBatchLink } from '@trpc/react-query'
 import { useFonts } from 'expo-font'
-import { Stack } from 'expo-router'
+import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 
 import { useColorScheme } from '@/hooks/useColorScheme'

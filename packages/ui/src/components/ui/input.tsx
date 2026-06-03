@@ -38,10 +38,11 @@ function Input({
         type={type}
         data-slot='input'
         className={cn(
-          'placeholder:text-muted-foreground selection:bg-primary group-hover:border-ring/70 selection:text-primary-foreground bg-input flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base shadow-xs transition-[color,box-shadow,border-color] outline-none disabled:pointer-events-none disabled:opacity-50 md:text-sm',
+          'placeholder:text-muted-foreground/72 selection:bg-primary selection:text-primary-foreground border-input bg-background not-dark:bg-clip-padding flex h-9 w-full min-w-0 rounded-lg border px-3 py-1 text-base shadow-xs/5 ring-ring/24 transition-[color,box-shadow] outline-none before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] not-disabled:not-focus-visible:not-aria-invalid:before:shadow-[0_1px_--theme(--color-black/4%)] disabled:pointer-events-none disabled:opacity-64 sm:h-8 sm:text-sm',
+          'focus-visible:border-ring focus-visible:ring-[3px]',
+          'aria-invalid:border-destructive/36 focus-visible:aria-invalid:border-destructive/64 focus-visible:aria-invalid:ring-destructive/16',
           'file:text-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium',
-          'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
-          'aria-invalid:ring-destructive/50 aria-invalid:border-destructive',
+          'dark:bg-input/32 dark:not-disabled:not-focus-visible:not-aria-invalid:before:shadow-[0_-1px_--theme(--color-white/6%)]',
           leadingIcon && 'pl-10',
           trailingIcon && 'pr-10',
           className,

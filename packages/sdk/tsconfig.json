@@ -10,6 +10,7 @@
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "moduleDetection": "force",
+    /* noEmit is true for IDE type-checking; build script overrides with --noEmit false */
     "noEmit": true,
     "rootDir": "src",
     "outDir": "dist",

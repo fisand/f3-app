@@ -20,7 +20,7 @@
     }
   },
   "scripts": {
-    "build": "vp pack",
+    "build": "vp pack && node ../../scripts/generate-dts.mjs dist",
     "dev": "vp pack --w --no-clean",
     "postinstall": "pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1"

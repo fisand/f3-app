@@ -5,7 +5,7 @@ export default defineConfig({
     entry: './src/index.ts',
     outDir: './dist',
     format: ['cjs'],
-    dts: true,
+    dts: false,
     unbundle: true,
     target: 'node12',
     sourcemap: false,

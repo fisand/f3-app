@@ -7,7 +7,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "vp pack",
+    "build": "vp pack && node ../../scripts/generate-dts.mjs dist",
     "dev": "tsx watch ./src/index.ts",
     "lint": "vp lint src",
     "preview": "node ./dist/index.cjs",

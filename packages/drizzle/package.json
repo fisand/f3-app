@@ -19,7 +19,7 @@
     }
   },
   "scripts": {
-    "build": "vp pack",
+    "build": "vp pack && node ../../scripts/generate-dts.mjs dist",
     "clean": "rm -rf dist",
     "dev": "vp pack --w --no-clean",
     "generate": "vp exec drizzle-kit generate",

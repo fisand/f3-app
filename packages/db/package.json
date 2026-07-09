@@ -19,7 +19,7 @@
     }
   },
   "scripts": {
-    "build": "vp pack",
+    "build": "vp pack && node ../../scripts/generate-dts.mjs dist",
     "clean": "rm -rf dist",
     "db:deploy": "vp exec prisma migrate deploy",
     "db:dev": "vp exec prisma migrate dev",

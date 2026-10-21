@@ -39,5 +39,5 @@
     "@repo/typescript-config": "workspace:*",
     "prisma": "^6.19.3"
   },
-  "packageManager": "pnpm@10.5.2"
+  "packageManager": "pnpm@10.34.6"
 }

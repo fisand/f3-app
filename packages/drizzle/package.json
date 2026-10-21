@@ -38,5 +38,5 @@
     "@repo/typescript-config": "workspace:*",
     "drizzle-kit": "^0.31.10"
   },
-  "packageManager": "pnpm@10.5.2"
+  "packageManager": "pnpm@10.34.6"
 }

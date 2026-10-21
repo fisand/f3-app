@@ -31,17 +31,11 @@ function SelectGroup({ ...props }: React.ComponentProps<typeof SelectPrimitive.G
   return <SelectPrimitive.Group data-slot='select-group' {...props} />
 }
 
-function SelectValue({
-  className,
-  ...props
-}: React.ComponentProps<typeof SelectPrimitive.Value>) {
+function SelectValue({ className, ...props }: React.ComponentProps<typeof SelectPrimitive.Value>) {
   return (
     <SelectPrimitive.Value
       data-slot='select-value'
-      className={cn(
-        'flex-1 truncate data-placeholder:text-muted-foreground',
-        className,
-      )}
+      className={cn('flex-1 truncate data-placeholder:text-muted-foreground', className)}
       {...props}
     />
   )
@@ -97,10 +91,7 @@ function SelectContent({
       <div className='relative h-full min-w-(--anchor-width) rounded-lg border bg-popover not-dark:bg-clip-padding shadow-lg/5 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]'>
         <SelectPrimitive.Popup
           data-slot='select-content'
-          className={cn(
-            'origin-(--transform-origin) text-foreground outline-none',
-            className,
-          )}
+          className={cn('origin-(--transform-origin) text-foreground outline-none', className)}
           {...props}
         >
           <SelectPrimitive.List

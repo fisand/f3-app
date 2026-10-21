@@ -17,6 +17,12 @@ F3-App is your one-stop shop for kickstarting a modern web application with all 
 - 🚄 **Fastify**: An API server so quick, it'll give Usain Bolt a run for his money.
 - 🧰 **Turbo**: Monorepo management that'll make you feel like a 10x developer.
 
+## TypeScript 7 compatibility
+
+The workspace uses TypeScript 7.0.2. TypeScript 7 is a native compiler port and no longer exposes the previous compiler API from the `typescript` package, so tools that consume that API need separate compatibility verification.
+
+The current workspace checks and production builds pass with TypeScript 7, but some locked dependencies still exclude it in their peer ranges: Vite+ 0.2.4 and React Router 7.15.1 allow TypeScript 5/6, Expo SDK 56's `@expo/require-utils` allows 5/6, and the transitive Solana Kit 5.5.1 peer range allows only TypeScript 5. `vite-plugin-checker` is pinned to 0.14.5, whose TypeScript peer range is unrestricted. These peer warnings mean the ecosystem is not yet uniformly declaring TypeScript 7 support; upgrade the affected tool/framework stacks separately when their migration paths are validated.
+
 ## 🚦 Getting Started
 
 1. Clone this repo (you're already awesome for choosing it!)
